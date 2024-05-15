@@ -2785,33 +2785,33 @@
                             // nishida 
                             if(content != "＊筆者の主張"){
                                 
-                            var new_parent_id = node.id;
-                            add_Cnode_parentid(new_parent_id, "criticism");
+                                var new_parent_id = node.id;
+                                add_Cnode_parentid(new_parent_id, "criticism");
                             
-                            let parent_node = jmnode[i].getAttribute("parent_id");
+                                let parent_node = jmnode[i].getAttribute("parent_id");
                             
-                            for(var j=0; j<jmnode.length; j++){
-                                if(parent_node ==  jmnode[j].getAttribute("nodeid")){
-                                    if(jmnode[j].getAttribute("type")== "toi"){
-                                        let node_type = "toi_deep";
-                                        jmnode[j].setAttribute("type",node_type);
+                                for(var j=0; j<jmnode.length; j++){
+                                    if(parent_node ==  jmnode[j].getAttribute("nodeid")){
+                                        if(jmnode[j].getAttribute("type")== "toi"){
+                                            let node_type = "toi_deep";
+                                            jmnode[j].setAttribute("type",node_type);
+                                        }
                                     }
                                 }
-                            }
                             
                             
                             
-                        $.ajax({
+                                $.ajax({
 
-                            url: "php/update_node.php",
-                            type: "POST",
-                            data: { update : "type",
-                                    id : parent_node,
-                                    type : "toi_deep" }
+                                    url: "php/update_node.php",
+                                    type: "POST",
+                                    data: { update : "type",
+                                        id : parent_node,
+                                        type : "toi_deep" }
 
-                        });
+                                });
 
-                        }   
+                            }   
                             
                         }
 

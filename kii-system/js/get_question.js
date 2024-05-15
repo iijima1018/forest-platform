@@ -28,7 +28,6 @@ function get_question(){
                 success: function(question){
                     result = JSON.parse(question);
                     var questionArray = result;
-                    console.log(result);
                     var arrayDisplay = document.getElementById("result");
                     
 
