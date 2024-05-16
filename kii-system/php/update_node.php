@@ -34,7 +34,7 @@
 		$result = $mysqli->query($sql);
 
 	}else if($_POST["update"] == "type"){
-		$sql = "UPDATE nodes SET type = '".$_POST['type']."', concept_id = '".$_POST['concept_id']."', updated_at = '".$updated_at."' WHERE id = '".$_POST['id']."'";
+		$sql = "UPDATE nodes SET type = '".$_POST['type']."' updated_at = '".$updated_at."' WHERE id = '".$_POST['id']."'";
 		$result = $mysqli->query($sql);
 	}
 	else if($_POST["update"] == "sheet"){
@@ -70,5 +70,32 @@
 		}
 
 	}
+	else if ($_POST["update"] == "reflection") {
+		$sql = "UPDATE nodes SET reflection = '".$_POST["text"]."', class = 'other_to_myanswer', type = 'other_to_myanswer' WHERE id = '".$_POST["nodeid"]."'";
+		$result = $mysqli->query($sql);
+		echo $sql;
+	}
+
+	else if ($_POST["update"] == "summary") {
+		echo "ok";
+		$sql = "UPDATE sheets SET summary = '".$_POST["summary"]."' WHERE id = '".$_SESSION["SHEETID"]."'";
+		$result = $mysqli->query($sql);
+		echo $sql;
+	}
+	else if ($_POST["update"] == "annotated") {
+
+		$sql = "UPDATE nodes SET start_char_id = '".$_POST["start_char_id"]."', end_char_id = '".$_POST["end_char_id"]."'WHERE id = '".$_POST["id"]."'";
+		$result = $mysqli->query($sql);
+		echo $sql;
+	}else if($_POST["update"] == "micro_strat"){
+		$sql = "UPDATE nodes SET type = '".$_POST['type']."', reflection = '".$_POST['content']."', updated_at = '".$updated_at."' WHERE id = '".$_POST['nodeid']."'";
+		$result = $mysqli->query($sql);
+	}
+
+
+
+
+
+	
 
 ?>

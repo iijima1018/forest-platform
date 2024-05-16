@@ -10,7 +10,7 @@
             "request": "launch",
             "runtimeArgs": [
                 "-S",
-                "localhost:8888/kii-system/",
+                "localhost:8080/kii-system/",
                 "-t",
                 "."
             ],

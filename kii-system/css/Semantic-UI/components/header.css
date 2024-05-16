@@ -647,7 +647,7 @@ a.ui.inverted.grey.header:hover {
 .ui.small.block.header {
   font-size: 0.92857143rem;
 }
-.ui.block.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+.ui.block.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(div) {
   font-size: 1rem;
 }
 .ui.large.block.header {
@@ -696,7 +696,7 @@ a.ui.inverted.grey.header:hover {
 .ui.small.attached.header {
   font-size: 0.92857143em;
 }
-.ui.attached.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+.ui.attached.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(div) {
   font-size: 1em;
 }
 .ui.large.attached.header {
@@ -710,7 +710,7 @@ a.ui.inverted.grey.header:hover {
         Sizing
 --------------------*/
 
-.ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+.ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(div) {
   font-size: 1.28571429em;
 }
 

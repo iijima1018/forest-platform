@@ -65,7 +65,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
       <!---        タイトルメニューStart                 -->
       <div id="main_title">
         <form name="return" method="POST">
-          <span class="title_name">Forest </span>
+          <span class="title_name">ForestCR </span>
           <span><input class="button2" type="submit" name="logout" value="ログアウト"></span>
           <span><input class="button1" type="submit" name="sheetbtn" value="シート選択画面に戻る"></span>
         </form>
@@ -95,25 +95,11 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
       <!--      タブメニュー Start        -->
         <ul div class="tabnav">
           <li class="active"><a href="#tab01">論文読解支援システム</a></li>
-          
           <!-- <li class="active"><a href="#tab03" >リフレクション</a></li>yoshioka            -->
           <!-- yoshioka -->
-          
         </ul>
       <!-- タブメニュー　Finish -->
-
-      <!-- 　　　　view切り替え　Start        -->
-        <div class="view">
-          <form name="view_select">
-            <select name='view_select' onchange="change_view()">
-              <option value="all">All</option>
-              <option value="ymodel">Yモデル</option>
-            </select>
-          </form>
-        </div>
-      <!-- 　　　　view切り替え　Finish 　　　-->
-
-        <div class="Menu">Menu</div>
+        
         <div id="advice_frame" class="searchFrame"></div>
         
         <!--メインメニュー　Start  -->
@@ -122,26 +108,26 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
         <div id="tab01">
             <div id="layout">
               
-
+              <div id ="system">
               <div id="area">
               <div id="jsmind_nav">
               【Edit】
                   
               
-                  <button class="button4" id="question_node_b" onclick="add_Qnode();">
+                  <button class="button4" id="question_node_b" onclick="add_Qnode2();">
                     疑問ノード追加
                   </button>
                   
-                  <button class="button4" id="s_interpretation" onclick="add_Anode('answer','konkyo');">
+                  <button class="button4" id="s_interpretation" onclick="add_Anode('konkyo','konkyo');">
                    根拠ノード追加
                   </button>
-                  <button class="button4" id="s_interpretation" onclick="add_Anode('answer','answer');">
+                  <button class="button4" id="s_interpretation" onclick="add_Anode('predict','predict');">
                    解釈ノード追加
                   </button>
           
             
 
-                  <select name="add_criticism" id="s_criticism_node" class="button4">
+                  <!-- <select name="add_criticism" id="s_criticism_node">
                     <optgroup label="批評の観点（タグ）付与">
                     <option value="criticism">批評ノード追加</option>
                        <option value="evaluation">価値判断</option>
@@ -166,7 +152,9 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
 
 
                     </optgroup>
-                  </select>
+                  </select> -->
+
+                  
 
 
           
@@ -194,12 +182,19 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                     <!-- 縮小 -->
                     元のサイズ
                     </button> 
+                    
+                    <button id="help_button" class="button3" onclick="toggleImage()">help</button>
+                      <div id="floatingImage">
+                          <img src="image/help.png" alt="Floating Image">
+                      </div>
+                    
 
    
                   【Screenshot】
                   <button class="button4" style="width:80px" onclick="screen_shot();">
                     screenshot
                   </button>
+
 
                   <!-- <button class="button4" style="width:80px" onclick="Difference();"> -->
                   <!-- <label><input type="checkbox" name="Difference" id="Difference" onClick="Difference();">以前のマップとの差分</label> -->
@@ -208,7 +203,6 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               </div>
                 <div id="jsmind_area" oncontextmenu="return false;">           
                   <div id="jsmind_container" oncontextmenu="return false;"></div>
-                  <div id="jsmind_container_view" oncontextmenu="return false;"></div>
                   <div id="jsmind_container2_menu">
                     <div id="mindmap_tab"><span id="all_annotation"></span></div>
                     <!--
@@ -225,6 +219,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                 </div>
                 <div id="document_area" oncontextmenu="return false;"></div>             
             </div>
+            </div>
 
 
             <div id="mindmap_conmenu">
@@ -233,15 +228,15 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               <li>
                   ノード情報変更
               </li>
-              <li>                
-                  <button class="button6" onclick="add_annotation_toNode();">
-                    アノテーション付与
-                  </button>
-                </li>
               <li>
               <button class="button4" onclick="remove_node();">
                   ノードの削除
                 </button>
+              </li>
+              <li>
+                <!-- <button class="button4" onclick="move2anno_from_node(annotations);">
+                      紐付いた文参照
+                </button> -->
               </li>
 
                 <li>
@@ -251,32 +246,33 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                  <li>
                   論文からノード追加
                 </li> 
+                <li>  <button class="button4" onclick="add_Qnode2();">
+                    問いノード追加
+                  </button>
+                </li>
                 <li>  <button class="button4" onclick="add_Anode2('konkyo');">
                     根拠ノード追加
                   </button>
-                </li>
+                </li>       
+                <!-- <li><a href="javascript:void(0);" target="_blank" onClick="SetPurpose('提案')">ノード追加</a></li>  -->
                 <li>
-                  他者刺激
-                </li>
-                <li>  <button class="button6" onclick="test_show_other_mindmap()">
-                    マインドマップ表示
-                  </button>
-                <li>  
-                </li>
-                
-                <!--<li><a href="javascript:void(0);" target="_blank" onClick="SetPurpose('提案')">ノード追加</a></li> 
-               <li>
-                  <button class="button4" onclick="add_Anode2('answer');">
+                  <button class="button4" onclick="add_Anode2('predict');">
                     解釈ノード追加
                   </button>
                 </li>
                 <li>
-                  <li>
-                  <button class="button4" onclick="add_Anode2('criticism');">
+                  <button class="button4" onclick="add_Cnode('criticism');">
                     批評ノード追加
+                  </button> 
+                </li>     
+                <li>  
+                  
+                  <button class="button6 other" onclick="test_show_other_mindmap()">
+                    マインドマップ表示
                   </button>
-                  </li>
-                </li> --> 
+                  
+                
+                </li>
                 
                 
              
@@ -418,9 +414,10 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                 <li>            
                   
                   <li>
-                  <button class="button6" id="question_node_b" onclick="judge_charid();">
+                  <button class="button6" id="question_node_b" onclick="move2node_from_anno(annotations);">
                     紐づいた考えを参照
                   </button>
+                </li>
                   </li>
                 </li> 
        
@@ -439,50 +436,90 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                 </li> -->
                 <li>
                   <button class="button_other" onclick="add_Anode_from_other('other_answer', 'other_answer')">
-                    この解釈を反映する
-                  </button>   
-                    
-                </li>
-                <li>
-                  <button class="button_other" onclick="show_other_mibdmap()">
-                    マインドマップ
+                    この解釈を取り入れる
                   </button>
-                  
-                  
-                </li> 
-       
+                   
+        
+                </li>
               
               </ul>
             </div>
+
+            <!-- <div id="other_question_conmenu" oncontextmenu="return false;">
+              <ul> -->
+                <!-- <li><a href="javascript:void(0);" target="_blank" onClick="SelecttextToNode()">選択したをマインドマップに追加する</a>
+               -->
+                <!-- <li>
+                <button class="button6" onclick="add_annotation('highlight');" style="pointer-events: auto !important;">
+                    論文アノテーション追加
+                </button>
+                </li> -->
+                <!-- <li>
+                  <button class="button_other" onclick="add_Anode_from_other('toi', 'toi')">
+                    この解釈を取り入れる
+                  </button>
+                   
+        
+                </li>
+              
+              </ul>
+            </div> -->
             
 
             <!--サイドメニュー　start-->
             <div id="side_menu">
+            <div class="Menu">Menu</div>
+             <button id="change2" class="button10" onClick="confirmAndExecute('other');">マップを比較する</button>
 
+
+             <button id="change3" class="button10 other" onClick="confirmAndExecute('crit');">総評する</button>
+            
              <div class="checkbox">
                 <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()">
                 <label for="checkbox" data-on-label="On" data-off-label="Off"></label>
                 <span class="checkbox_text">【論文表示】<br><br></span>
               </div>
               <!-- マインドマップ編集のサイドメニュー -->
-              <div id="mind">
-              <button class="button6" style="position: center;" onclick="get_question()">
-                    他者の疑問の観点
-                  </button>
+              <div id="mind" class="side">
+               <div id = "make_micro_strat_form">
+                <div id = ref_guidance></div>
+                <div><input type="text" id="ref_text"></div>
+                <button id = "submit_strat_button" onclick="submit_strat()">送信する</button>             
+              </div>
+              
 
-              <div class="other_annotation" id="othercontainer" oncontextmenu="return false;">
+              
+              <button class="button6 other" style="position: center;" onclick="get_question()">
+                    他者の疑問の観点
+              </button>
+
+
+
+              <div class="other_annotation other" id="othercontainer" oncontextmenu="return false;">
         
                   <div id="result">ノードを選択してください</div>
               </div>
+              
+              <button class="button6" id = "comment_button" style="position: center; display: none;" onclick="input_comment();">
+                コメントを反映
+              </button>
+
+
+              
+
+              <!-- <div class="other_annotation ref" id="othercontainer" oncontextmenu="return false;">
+        
+                  <div id="">ノードを選択してください</div>
+              </div> -->
 
               
                 <!-- <div class="toi_menu">問い一覧</div> -->
-                <div class="toi_list">
+                <div class="toi_list other" style="display: block;">
                   <input class="button5" type="button" onclick="showGeneration();" value="all">
                   問い一覧を表示
                 </div>
 
-                <div class="inquiry_area">
+                <div class="inquiry_area other" style="display: block; resize: vertical">
                  
 
                   <div>【情報の表出化】</div>
@@ -498,6 +535,34 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                   <div id="deep"></div> -->
                 </div>
               </div>
+              
+
+              <div id="crit" class="side" >
+              <!-- <button id="change3" class="button10 " onClick="confirmAndExecute('ref');">モード３へ移行</button> -->
+                <div>自分の作ったマップをもとに，この論文のRQ(明かしたいこと)新規性・有用性・信頼性について踏まえて総評について考えてみましょう．
+                  <div>RQ</div>
+                  <div id="rq" class="resizable-textbox" contenteditable="true"></div>
+                  <div>新規性としての強み</div>
+                  <div id="e_1_strong" class="resizable-textbox" contenteditable="true"></div>
+                  <div>新規性としての弱み</div>
+                  <div id="e_1_weak" class="resizable-textbox" contenteditable="true"></div>
+                  <div>有用性としての強み</div>
+                  <div id="e_2_strong" class="resizable-textbox" contenteditable="true"></div>
+                  <div>有用性としての弱み</div>
+                  <div id="e_2_weak" class="resizable-textbox" contenteditable="true"></div>
+                  <div>信頼性としての強み</div>
+                  <div id="e_3_strong" class="resizable-textbox" contenteditable="true"></div>
+                  <div>信頼性としての弱み</div>
+                  <div id="e_3_weak" class="resizable-textbox" contenteditable="true"></div>
+                  <div>総評</div>
+                  <div id="summary" class="resizable-textbox" contenteditable="true"></div>
+                  <button id="submit_summary" onclick="submitSummary();">送信する</button>
+                </div>
+                
+              </div>
+              
+
+              
 
         
         </div>
@@ -615,6 +680,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
         <script type="text/javascript" src="js/creat_other_question.js"></script>
         <script type="text/javascript" src="js/get_other_from_annotation.js"></script>
         <script type="text/javascript" src="js/get_question.js"></script>
-        <script type="text/javascript" src="js/change_view.js"></script>
+        <script type="text/javascript" src="js/add_comment.js"></script>
+        <script type="text/javascript" src="js/reflection.js"></script>
     </body>
 </html>

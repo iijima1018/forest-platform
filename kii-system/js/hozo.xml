@@ -2,7 +2,7 @@
 <OE_FILE filename="hozo.xml" ont_id="1509010690552ont" >
 <FILENAME_ONT>hozo.xml</FILENAME_ONT>
 <W_CONCEPTS hasAny="false">
-<CANVAS_SIZE w="9857" h="9221" x="2047" y="38" />
+<CANVAS_SIZE w="10501" h="9795" x="41" y="426" />
 <CONCEPT id="1509010690552_n0" >
 <LABEL>Any</LABEL>
 <SUB_LABELS>
@@ -550,7 +550,6 @@
 <SUB_LABELS>
 </SUB_LABELS>
 <POS x="1060" y="60"/>
-<SUB_TREE>open</SUB_TREE>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -910,7 +909,7 @@
 <LABEL>自分のスキルを見定める</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="340" y="720"/>
+<POS x="350" y="721"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -1142,7 +1141,7 @@
 <LABEL>対象者を考える</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1771" y="1971"/>
+<POS x="1780" y="1980"/>
 <PART_TREE>close</PART_TREE>
 <SUB_TREE>open</SUB_TREE>
 <RELATIONS>
@@ -1578,7 +1577,6 @@
 <SUB_LABELS>
 </SUB_LABELS>
 <POS x="1160" y="60"/>
-<SUB_TREE>open</SUB_TREE>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -1587,7 +1585,7 @@
 <LABEL>学習目標</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1306" y="34"/>
+<POS x="1240" y="60"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -1875,7 +1873,7 @@
 <LABEL>システムを実装する</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="3600" y="526"/>
+<POS x="3440" y="620"/>
 <SLOTS>
 <SLOT id="1509074143607_s235" 
  type="NW"  label="slot"  kind="p/o"  num="1"  role="入力"  class_constraint="システムデザイン"  rh_name=""  value="" >
@@ -2365,9 +2363,8 @@
 <LABEL>システム</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1200" y="386"/>
+<POS x="1340" y="100"/>
 <PART_TREE>close</PART_TREE>
-<SUB_TREE>open</SUB_TREE>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -2512,7 +2509,6 @@
 <SUB_LABELS>
 </SUB_LABELS>
 <POS x="1580" y="240"/>
-<SUB_TREE>open</SUB_TREE>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -2548,8 +2544,7 @@
 <LABEL>モジュール</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1340" y="386"/>
-<SUB_TREE>open</SUB_TREE>
+<POS x="1460" y="100"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -2558,7 +2553,7 @@
 <LABEL>教材モジュール</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1483" y="334"/>
+<POS x="1560" y="80"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -2567,7 +2562,7 @@
 <LABEL>学習者モデルモジュール</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1486" y="366"/>
+<POS x="1560" y="100"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -2576,7 +2571,7 @@
 <LABEL>教授戦略モジュール</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1486" y="406"/>
+<POS x="1560" y="120"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -2862,7 +2857,7 @@
 <LABEL>自分の興味は何ですか？</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1960" y="1500"/>
+<POS x="1960" y="1515"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -3053,7 +3048,7 @@
 <LABEL>著者の研究はどのようなものですか？</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="2140" y="2080"/>
+<POS x="2142" y="2095"/>
 <PART_TREE>close</PART_TREE>
 <RELATIONS>
 </RELATIONS>
@@ -4748,7 +4743,7 @@
 <LABEL>学習者</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="600" y="280"/>
+<POS x="600" y="200"/>
 <PART_TREE>close</PART_TREE>
 <RELATIONS>
 </RELATIONS>
@@ -4974,7 +4969,7 @@
  type="NW"  label="slot2"  kind="p/o"  num="1"  role="出力"  class_constraint="学習者が抱える困難性"  rh_name=""  value="" >
 <SUB_LABELS>
 </SUB_LABELS>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
+<SUB_L label="" def="" role_name="" class_const="学習者の抱える困難性" rh_name ="" value ="" />
 </SLOT>
 <SLOT id="1608641547000_s636" 
  type="NW"  label="slot"  kind="p/o"  num="1"  role="サブ認知活動"  class_constraint="学習者を想定する"  rh_name=""  value="" >
@@ -5021,7 +5016,8 @@
 <LABEL>困難性</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1083" y="283"/>
+<POS x="1100" y="300"/>
+<PART_TREE>close</PART_TREE>
 <SUB_TREE>open</SUB_TREE>
 <RELATIONS>
 </RELATIONS>
@@ -5909,6 +5905,7 @@
 <SUB_LABELS>
 </SUB_LABELS>
 <POS x="7080" y="1800"/>
+<PART_TREE>close</PART_TREE>
 <SLOTS>
 <SLOT id="1624012815000_s755" 
  type="NW"  label="slot"  kind="p/o"  num="1"  role="認知活動"  class_constraint="具体例を考える"  rh_name=""  value="" >
@@ -5920,7 +5917,7 @@
 <SUB_LABELS>
 </SUB_LABELS>
 <PARENT_SLOT slot="具体例を考える$slot"/>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
+<SUB_L label="" def="" role_name="" class_const="学習者の抱える困難性" rh_name ="" value ="" />
 </SLOT>
 </SLOTS>
 <SUB_L label="" def="" role_name="" class_const="具体例を考える" rh_name ="" value ="" />
@@ -6988,15 +6985,8 @@
 <LABEL>学習者モデル</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1231" y="574"/>
-<SLOTS>
-<SLOT id="1700199931813_s837" 
- type="NW"  label="slot"  kind="a/o"  num="1.."  role="目標達成の難しさ"  class_constraint="学習者が抱える困難性"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
+<POS x="500" y="120"/>
+<PART_TREE>close</PART_TREE>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -7005,7 +6995,7 @@
 <LABEL>学習者モデルを考える</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="2920" y="2880"/>
+<POS x="2960" y="2860"/>
 <SUB_TREE>open</SUB_TREE>
 <SLOTS>
 <SLOT id="1643936184000_s842" 
@@ -7035,7 +7025,7 @@
 <LABEL>学習者モデルはどのようなものですか？</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="2952" y="3070"/>
+<POS x="2960" y="3040"/>
 <RELATIONS>
 </RELATIONS>
 <SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
@@ -7111,7 +7101,7 @@
 <LABEL>支援機能</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="1103" y="334"/>
+<POS x="1100" y="340"/>
 <PART_TREE>close</PART_TREE>
 <RELATIONS>
 </RELATIONS>
@@ -7164,7 +7154,7 @@
 <LABEL>学習目標に対して教授戦略が合理的であること</LABEL>
 <SUB_LABELS>
 </SUB_LABELS>
-<POS x="7200" y="2000"/>
+<POS x="7220" y="1940"/>
 <PART_TREE>close</PART_TREE>
 <SLOTS>
 <SLOT id="1643936184000_s861" 
@@ -7442,240 +7432,6 @@
 <SUB_LABELS>
 </SUB_LABELS>
 <SUB_L label="" def="" role_name="" class_const="システムの支援機能を考える" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<RELATIONS>
-</RELATIONS>
-<SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
-</CONCEPT>
-<CONCEPT id="1697175970758_n892" >
-<LABEL>学習者が抱える困難性と支援機能の合理性を担保する</LABEL>
-<SUB_LABELS>
-</SUB_LABELS>
-<POS x="2542" y="68"/>
-<SLOTS>
-<SLOT id="1700199931813_s893" 
- type="NW"  label="slot"  kind="p/o"  num="1.."  role="入力"  class_constraint="学習者が抱える困難性を考える"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SLOTS>
-<SLOT id="1700199931813_s894" 
- type="R2-2"  label="slot2"  kind="p/o"  num="1"  role="出力"  class_constraint="学習者が抱える困難性"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者が抱える困難性を考える$slot2"/>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s895" 
- type="R2-2"  label="slot"  kind="p/o"  num="1"  role="サブ認知活動"  class_constraint="学習者を想定する"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者が抱える困難性を考える$slot"/>
-<SLOTS>
-<SLOT id="1700199931813_s896" 
- type="R2-2"  label="slot2"  kind="p/o"  num="1"  role="出力"  class_constraint="学習者"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者を想定する$slot2"/>
-<SUB_L label="" def="" role_name="" class_const="学習者" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習者を想定する" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性を考える" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s897" 
- type="NW"  label="slot2"  kind="p/o"  num="1"  role="入力"  class_constraint="学習の支援方法を考える"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PART_TREE>close</PART_TREE>
-<SLOTS>
-<SLOT id="1700199931813_s898" 
- type="R2-2"  label="slot5"  kind="p/o"  num="1"  role="入力"  class_constraint="学習者が抱える困難性"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習の支援方法を考える$slot5"/>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s899" 
- type="R2-2"  label="slot3"  kind="p/o"  num="1"  role="サブ認知活動"  class_constraint="学習教材を考える"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習の支援方法を考える$slot3"/>
-<SLOTS>
-<SLOT id="1700199931813_s900" 
- type="R2-2"  label="slot2"  kind="p/o"  num="1"  role="出力"  class_constraint="学習教材"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習教材を考える$slot2"/>
-<SUB_L label="" def="" role_name="" class_const="学習教材" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習教材を考える" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s901" 
- type="R2-2"  label="slot4"  kind="p/o"  num="1"  role="サブ認知活動"  class_constraint="学習者モデルを考える"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習の支援方法を考える$slot4"/>
-<SLOTS>
-<SLOT id="1700199931813_s902" 
- type="R2-2"  label="slot"  kind="p/o"  num="1"  role="入力"  class_constraint="学習目標"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者モデルを考える$slot"/>
-<SUB_L label="" def="" role_name="" class_const="学習目標" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s903" 
- type="R2-2"  label="slot2"  kind="p/o"  num="1"  role="出力"  class_constraint="学習者モデル"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者モデルを考える$slot2"/>
-<SUB_L label="" def="" role_name="" class_const="学習者モデル" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習者モデルを考える" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習の支援方法を考える" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s904" 
- type="NW"  label="slot3"  kind="p/o"  num="1"  role="出力"  class_constraint="Yモデル"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SLOTS>
-<SLOT id="1700199931813_s905" 
- type="R2-2"  label="slot"  kind="p/o"  num="1"  role="学習目標"  class_constraint="学習目標"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="Yモデル$slot"/>
-<SUB_L label="" def="" role_name="" class_const="学習目標" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s906" 
- type="R2-2"  label="slot2"  kind="p/o"  num="1"  role="教授戦略"  class_constraint="教授戦略"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="Yモデル$slot2"/>
-<SUB_L label="" def="" role_name="" class_const="教授戦略" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s907" 
- type="R2-2"  label="slot3"  kind="p/o"  num="1"  role="学習教材"  class_constraint="学習教材"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="Yモデル$slot3"/>
-<SUB_L label="" def="" role_name="" class_const="学習教材" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s908" 
- type="R2-2"  label="slot4"  kind="p/o"  num="1"  role="学習者モデル"  class_constraint="学習者モデル"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="Yモデル$slot4"/>
-<SLOTS>
-<SLOT id="1700199931813_s909" 
- type="R2-2"  label="slot"  kind="a/o"  num="1.."  role="目標達成の難しさ"  class_constraint="学習者が抱える困難性"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者モデル$slot"/>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習者モデル" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s910" 
- type="OR"  label="slot5"  kind="p/o"  num="1"  role="学習支援システム"  class_constraint="学習支援システム"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="Yモデル$slot5"/>
-<SLOTS>
-<SLOT id="1700199931813_s911" 
- type="OR"  label="slot"  kind="p/o"  num="1"  role="支援機能"  class_constraint="支援機能"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習支援システム$slot"/>
-<SUB_L label="" def="" role_name="" class_const="支援機能" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習支援システム" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="Yモデル" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<RELATIONS>
-</RELATIONS>
-<SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
-</CONCEPT>
-<CONCEPT id="1697175970758_n913" >
-<LABEL>Yモデル</LABEL>
-<SUB_LABELS>
-</SUB_LABELS>
-<POS x="2108" y="423"/>
-<SLOTS>
-<SLOT id="1700199931813_s913" 
- type="NW"  label="slot"  kind="p/o"  num="1"  role="学習目標"  class_constraint="学習目標"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SUB_L label="" def="" role_name="" class_const="学習目標" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s914" 
- type="NW"  label="slot2"  kind="p/o"  num="1"  role="教授戦略"  class_constraint="教授戦略"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SUB_L label="" def="" role_name="" class_const="教授戦略" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s915" 
- type="NW"  label="slot3"  kind="p/o"  num="1"  role="学習教材"  class_constraint="学習教材"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SUB_L label="" def="" role_name="" class_const="学習教材" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s916" 
- type="NW"  label="slot4"  kind="p/o"  num="1"  role="学習者モデル"  class_constraint="学習者モデル"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SLOTS>
-<SLOT id="1700199931813_s917" 
- type="OR"  label="slot"  kind="a/o"  num="1"  role="目標達成の難しさ"  class_constraint="学習者が抱える困難性"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習者モデル$slot"/>
-<SUB_L label="" def="" role_name="" class_const="学習者が抱える困難性" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習者モデル" rh_name ="" value ="" />
-</SLOT>
-<SLOT id="1700199931813_s918" 
- type="NW"  label="slot5"  kind="p/o"  num="1"  role="学習支援システム"  class_constraint="学習支援システム"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SLOTS>
-<SLOT id="1700199931813_s919" 
- type="OR"  label="slot"  kind="p/o"  num="1"  role="支援機能"  class_constraint="支援機能"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<PARENT_SLOT slot="学習支援システム$slot"/>
-<SUB_L label="" def="" role_name="" class_const="支援機能" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<SUB_L label="" def="" role_name="" class_const="学習支援システム" rh_name ="" value ="" />
-</SLOT>
-</SLOTS>
-<RELATIONS>
-</RELATIONS>
-<SUB_L label="" def="" role_name="" class_const="" rh_name ="" value ="" />
-</CONCEPT>
-<CONCEPT id="1697175970758_n921" >
-<LABEL>学習支援システム</LABEL>
-<SUB_LABELS>
-</SUB_LABELS>
-<POS x="1340" y="440"/>
-<SLOTS>
-<SLOT id="1700199931813_s921" 
- type="NW"  label="slot"  kind="p/o"  num="1"  role="支援機能"  class_constraint="支援機能"  rh_name=""  value="" >
-<SUB_LABELS>
-</SUB_LABELS>
-<SUB_L label="" def="" role_name="" class_const="支援機能" rh_name ="" value ="" />
 </SLOT>
 </SLOTS>
 <RELATIONS>
@@ -8125,12 +7881,9 @@
 <ISA id="1643939432000_isa1340" parent="合理性を考える" child="学習目標を設定する，学習課題を考えるの合理性を考える" />
 <ISA id="1643939432000_isa1341" parent="合理性を考える" child="学習目標を設定する，教授戦略を考えるの合理性を考える" />
 <ISA id="1643939432000_isa1342" parent="合理性を考える" child="学習者が抱える困難性を考える，システムの支援機能を考えるの合理性を考える" />
-<ISA id="1697175970758_isa1366" parent="Any" child="学習者が抱える困難性と支援機能の合理性を担保する" />
-<ISA id="1697175970758_isa1367" parent="Any" child="Yモデル" />
-<ISA id="1697175970758_isa1368" parent="システム" child="学習支援システム" />
 </W_CONCEPTS>
 <R_CONCEPTS>
-<CANVAS_SIZE w="9722" h="9014" />
+<CANVAS_SIZE w="9138" h="8547" />
 <CONCEPT id="1509010690552_n241" >
 <LABEL>合理的</LABEL>
 <SUB_LABELS>

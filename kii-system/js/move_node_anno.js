@@ -116,7 +116,7 @@ const move2node_from_anno = (annotations_list) => {
         // let position_x = position.top * 1.5;    // 一番上からの位置sを取得
         let position_x = position.top;    // 一番上からの位置を取得
     
-        let position_y = position.left;    // 一番上からの位置を取得
+        let position_y = position.left;    // 一番左からの位置を取得
         console.log(position_y);
         // console.log(position_y2);
         var zoom = 1.5;

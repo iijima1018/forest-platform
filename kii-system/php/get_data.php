@@ -82,11 +82,51 @@
 			}
 
 		}
+	}
+	else if($_POST["val"] == "get_other_answer"){
 
-		echo json_encode($updated_array);
+		$node_id = $_POST["id"];
+
+		$i = 0;
+
+		$sql = "SELECT user_id, content, parent_sheet_id, sheet_id FROM nodes WHERE id = '$node_id'";
+		if ($result = $mysqli->query($sql)) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+				$sql2 = "SELECT name FROM users WHERE id = '".$row['user_id']."'";
+				$result2 = $mysqli->query($sql2);
+
+				$row2 = mysqli_fetch_assoc($result2);
+				$user_array[0] = array(
+					"name" => $row2["name"]
+				);
+
+				$sql3 = "SELECT summary FROM sheets WHERE id ='".$row['parent_sheet_id']."'";
+				$result3 = $mysqli->query($sql3);
+
+				$row3 = mysqli_fetch_assoc($result3);
+				$summary_array[0] = array(
+					"summary" => $row3["summary"]
+				);
+
+                $data_array[$i] = array(
+					"parent_sheet_id" => $row["parent_sheet_id"],
+					"sheet_id" => $row["sheet_id"],
+                    "content" => $row["content"],
+					"name" => $user_array[0]["name"],
+					"summary" => $summary_array[0]["summary"]
+
+                );
+
+                $i++;
+            }
+            echo json_encode($data_array);
+        }
+	}
 
 // MTタイムを選択した時の処理
-	}else if($_POST["val"] == "time"){
+	else if($_POST["val"] == "time"){
 
 		echo "ok";
 

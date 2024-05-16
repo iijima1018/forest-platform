@@ -29,35 +29,40 @@ function show_other_mindmap_anno(){
 
 //論文の選択部のidを取ってくる関数
 function get_charid(){
-    
-    var selection = window.getSelection();
-    if (selection.rangeCount > 0) {
-        var range = selection.getRangeAt(0);
+    var other = document.getElementById("change2").style.display;
 
-        
-        // 選択範囲内のテキストを取得
-        var selectedText = range.toString();
+    if (other == "none"){
+        var selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+            var range = selection.getRangeAt(0);
 
-        // 選択範囲内の最初の文字の `char_id` を取得
-        var startCharId = range.startContainer.parentNode.getAttribute("char_id");
+            
+            // 選択範囲内のテキストを取得
+            var selectedText = range.toString();
 
-        // 選択範囲内の最後の文字の `char_id` を取得
-        var endCharId = range.endContainer.parentNode.getAttribute("char_id");
+            // 選択範囲内の最初の文字の `char_id` を取得
+            var startCharId = range.startContainer.parentNode.getAttribute("char_id");
 
-        charid = [startCharId, endCharId];
-        var i = 0;
+            // 選択範囲内の最後の文字の `char_id` を取得
+            var endCharId = range.endContainer.parentNode.getAttribute("char_id");
 
-        for (var i = 0; i < charid.length; i++) {
-            charid[i] = charid[i].match(/\d+/)[0];
-        }      
+            charid = [startCharId, endCharId];
+            var i = 0;
+
+            for (var i = 0; i < charid.length; i++) {
+                charid[i] = charid[i].match(/\d+/)[0];
+            }      
+        }
+        return charid;
+
     }
-    return charid;
+    
 }
 
 //取得した文章と被るところの検索
+
 function judge_charid(callback) {
     var charid = get_charid(); // 文字IDを取得
-    console
 
     if (charid !== null) { // 選択が行われているかを確認
         $.ajax({
@@ -85,7 +90,7 @@ function judge_charid(callback) {
 }
 
 // judge は annotation か node
-function create_mindmapbutton(sheet_id_Array, judge){
+function create_mindmapbutton(sheet_id_Array, judge, concept_id=null){
     $('#mindmap_tab').empty();
     show_selected_sheet("on");
     var arrayDisplay = document.getElementById("mindmap_tab");
@@ -97,7 +102,7 @@ function create_mindmapbutton(sheet_id_Array, judge){
         console.log(CheckSelectedNode());
         jm2_menu.innerHTML = "選択中 : " + CheckSelectedNode()["topic"];
         jm2_menu.setAttribute("id", "concept_content");
-        jm2_menu.setAttribute("concept_id", CheckSelectedNode()["concept_id"]);
+        jm2_menu.setAttribute("concept_id", concept_id);
         arrayDisplay.appendChild(jm2_menu);
     }
     else if (judge == "annotation"){
@@ -114,8 +119,9 @@ function create_mindmapbutton(sheet_id_Array, judge){
         var button = document.createElement("button"); // 新しいボタン要素を作成
         sheet_id = sheet_id_Array[i]["sheet_id"];
         var result = hasSheetId(sheet_id);
+        console.log(result);
         if (!result){
-            button.innerHTML = n + 1
+            button.innerHTML = n + 1;
             button.setAttribute("data-sheet_id", sheet_id);
             button.setAttribute("data-content", sheet_id_Array[i]["content"]);
             button.setAttribute("data-parent_id", sheet_id_Array[i]["parent_id"]);
@@ -132,6 +138,13 @@ function create_mindmapbutton(sheet_id_Array, judge){
         allbutton.setAttribute("class", "button10");
         arrayDisplay.appendChild(allbutton);
 
+        var jumpbutton = document.createElement("button");
+        jumpbutton.setAttribute("id", "jump_button");
+        jumpbutton.innerHTML = "jump";
+        jumpbutton.setAttribute("class", "button10");
+        jumpbutton.setAttribute("onClick", "jump_node();")
+        arrayDisplay.appendChild(jumpbutton);
+
         var closebutton = document.createElement("button");
         closebutton.setAttribute("id", "close_button");
         closebutton.innerHTML = "閉じる";
@@ -144,6 +157,7 @@ function create_mindmapbutton(sheet_id_Array, judge){
 
 function hasSheetId(sheet_id) {
     var elements = document.querySelectorAll('[data-sheet_id]');
+    console.log(elements);
   
     for (var i = 0; i < elements.length; i++) {
       var element = elements[i];

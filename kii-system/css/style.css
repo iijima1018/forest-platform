@@ -145,12 +145,12 @@ table[type] {
 /* -------------------- メインの設定 ---------------------- */
 /* タブメニュー */
 .tabnav {
-	/*width: calc(50vw + 200px);*/
-	min-width: 200px;
+		width: calc(50vw + 200px);
+		min-width: 280px;
     padding: 0;
-	float: left;
-	margin-top: 10px;
-	margin-bottom:0;
+		float: left;
+		margin-top: 10px;
+		margin-bottom:0;
 }
 
 .tabnav li{
@@ -175,42 +175,11 @@ table[type] {
     color: #fff;
 }
 
-/*view切り替え*/
-
-.view {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-}
-
-.view::after {
-    position: absolute;
-    right: 15px;
-    width: 10px;
-    height: 7px;
-    background-color: #895959;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-    content: '';
-    pointer-events: none;
-}
-
-.view select {
-    appearance: none;
-    min-width: 150ßpx;
-    height: 2.3em;
-    padding: .4em calc(.8em + 30px) .4em .8em;
-	margin-top: 13px;
-    border: 2.0px solid #ee7575;
-    border-radius: 3px;
-    background-color: #fff;
-    color: #333333;
-    font-size: 1em;
-    cursor: pointer;
-}
-
 /* Menu見出し */
+
+
 .Menu {
-	width: 9vw;
+	width: 100%;
 	height:40px;
 	font-size: 1.6em;
 	text-align: center;
@@ -260,14 +229,16 @@ table[type] {
 	float:left;
 }
 
+
 /* 文書化モードのチェックボックス */
 .checkbox {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
 	float: right;
 	font-size: 30px;
 	vertical-align: middle;
-	margin-left: 15%;
 	margin-top:10px;
-	margin-bottom:2px;
 }
 
 /* 通常のチェックボックスの削除 */
@@ -328,21 +299,26 @@ input:checked+label::after {
 
 .checkbox+label {
 	background-color: #BBBBBB;
+	margin: 0 auto;
 }
 .checkbox+label::before {
 	color: #000000;
+	margin: 0 auto;
 }
 .checkbox:checked+label {
 	background-color: #3498db;
+	margin: 0 auto;
 }
 .checkbox:checked+label::before {
 	color: #fff;
+	margin: 0 auto;
 }
 
 /* チェックボックス横のテキスト設定 */
 .checkbox_text{
 	font-size:23px;
 	float:right;
+	margin: 0 auto;
 }
 
 /* マインドマップモードとドキュメントモードを切り替えるボタン */
@@ -400,22 +376,20 @@ input:checked+label::after {
 #jsmind_area{
 	width: 100%;
 	height:calc(100% - 34px);
-
-
-  background:#fff;
+	background:#fff;
 	float:left;
 	position: relative;
 
 }
 #area{
-	width: 90vw;
+	width: 85vw;
 	height:98vh;
 	margin-bottom:2vh;
  	border:solid 5px #F6D4D8;
 	box-sizing: border-box;
  	background:#fff;
 	float:left;
-	position: relative;
+	resize: horizontal;
 
 }
 
@@ -428,21 +402,9 @@ input:checked+label::after {
 	float:left;
 	overflow-x: scroll;
 	box-sizing: border-box;
-
+	resize: horizontal;
+	
 }
-
-#jsmind_container_view{
-	width: 100%;
-	height: 0%;
- 
-    background:#fff;
-	overflow: scroll;
-	float:left;
-	overflow-x: scroll;
-	box-sizing: border-box;
-
-}
-
 #jsmind_container2_menu{
 	width: 100%;
 	height: 85px;
@@ -633,6 +595,12 @@ h3 {
 	margin-left:30px;
 }
 
+#ref_text{
+	display: block;
+	width: 100%;
+	height: 30%;
+	resize: vertical;
+}
 
 /* ドキュメントエリア内で右クリックしたときのメニュー */
 #document_conmenu{
@@ -672,6 +640,15 @@ h3 {
 	margin:0px;
 	padding:5px;
   }
+  #other_question_conmenu{
+	display: none;
+	width:210px;
+	background-color:#f0f0f0;
+	border:1px solid #999999;
+	display:none;
+	position:fixed;
+	z-index: 4;
+  }
 
 /* ドキュメントエリア内で右クリックしたときのメニュー */
 #paper_conmenu{
@@ -700,14 +677,23 @@ h3 {
 /* -------------------- サイドメニューの設定 ---------------------- */
 /*　サイドメニュー全体の設定　*/
 #side_menu{
-	width: 9vw;
-	height: 75vh;
+	width: 15vw;
+	height: 98vh;
 	min-height: 450px;
 	float:right;
   background: #ffffff;
 	z-index: 1000;
 }
 
+.side{
+	display: flex;
+	flex-direction: column;
+    width: 90%;
+	height: 70%;
+    padding: 5%;
+	
+	margin: 5px;
+}
 /* 修正理由の見出し */
 #side_menu .correct_reason {
 	background-color: #9acd32;
@@ -733,9 +719,10 @@ h3 {
 	font-size: 14px;
 	align: left;
 	margin-bottom: 5px;
+	margin-top: 5px;
 }
 /* 問い一覧の全体 */
-#side_menu .inquiry_area {
+.inquiry_area {
 	height: 40%;
 	overflow-y: auto;
 	border:solid 5px #F6D4D8;
@@ -972,6 +959,12 @@ h3 {
     border: 3px double #F6D4D8;
 	overflow: auto;
 	user-select: text;
+}
+#comment_area{
+	display: none;
+	height: 25px;
+	width: 100%;
+	margin-top: 2px;
 }
 
 
@@ -1378,35 +1371,32 @@ h3 {
 }
 
 #s_criticism_node:hover{
-	background-color: #FF597B;
+	background-color: #ff7792;
 }
 #tag_node_b:hover{
 	background-color: #88A47C;
 }
 
 .button5 {
-	background-color: #ff822f;
+	background-color: #999;
 	color: #fff;
 	width: 70px;
 	height: 25px;
 	font-size: 14px;
 	margin-top: 5px;
-	border-color: #ff5900;
 }
 .button5:hover {
-	background-color: #fdc075;
+	background-color: #ff8c00;
 }
 
 .button6 {
-	background-color: #ff822f;
-	color: #ffffff;
-	width: 90%;
+	background-color: #999;
+	color: #fff;
+	width: 100%;
 	height: 25px;
-	border-color: #ff5900;
-	margin: 5px;
 }
 .button6:hover {
-	background-color: #fdc075;
+	background-color: #ff8c00;
 }
 
 
@@ -1496,6 +1486,21 @@ h3 {
 	margin: auto;
 } */
 
+
+#make_micro_strat_form{
+	display: none;
+	padding-bottom: 20px;
+	height: 50%;
+}
+
+input[type="text"] {
+    vertical-align: top;
+	word-wrap: break-word; /* 長い単語を折り返す */
+	overflow-wrap: break-word; /* CSS3 仕様としても有効です */
+	resize: vertical;
+	
+}
+
 .tab-wrap:after {
 content: '';
 width: 100%;
@@ -1550,8 +1555,7 @@ display: none;
 .b_que {
 	display: flex;
 	position: relative;
-	right: 5px ;
-    width: 260px;
+    width: 100%;
     margin: 0 auto;
     padding: .3em .7em;
     border: none;
@@ -1566,8 +1570,71 @@ display: none;
 .b_que:hover {
 	background-color: #eee;
 }
+.other{
+	display: none;
+}
+.ref{
+	display: none;
+}
+
+#crit{
+	display: none;
+}
+
+.resizable-textbox {
+	resize: vertical;
+	overflow: auto;
+	min-height: 50px;
+	min-width: 100px;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.side_commentarea{
+	margin-top: 10px;
+	width: 100%;
+	height: 100px;
+	overflow: scroll;
+	box-sizing: border-box;
+	resize: vertical;
+	line-height: 1;
+}
+
+.border-radius {
+	background-color: #ffbaa1;
+	border-radius: 30px;
+	color:#000000;
+	text-align: center;
+	word-break: break-all;
+	padding: 10px;
+  }
 
 
+#summary_area{
+	border: solid #000000 3px;
+}
+
+
+
+#floatingImage {
+	display: none;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 200px;
+	height: 100px;	
+	padding: 23px;
+	size: 10px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 3;
+}
+
+
+#floatingImage img {
+	max-width: 100%;
+	height: auto;
+}
 /* カラーパレット 
 白:#FFFFFF
 赤（ベース）:#E38692

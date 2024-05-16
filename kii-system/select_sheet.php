@@ -117,9 +117,6 @@ if(isset($_POST["sheet"])){
 		<link rel="stylesheet" type="text/css" href="css/ui.css">
 		<link rel="stylesheet" type="text/css" href="css/select_sheet.css">
     <link rel="stylesheet" href="css/Semantic-UI/semantic.css">
-		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/paper.js"></script>
 
 	</head>
 
@@ -171,8 +168,19 @@ if(isset($_POST["sheet"])){
                 <span class="paper_title">選択した論文</span>
                  <?php echo $_SESSION["PAPERID"]; ?>
               </p>
+              
     	       <!-- <p><input class="button2"  name="paper" value="登録済みの論文" onclick="CreateSheet()" id="create_sheet"></p> -->
     	       <p><input class="button" type="submit" name="newsheet" value="新規作成"  id="create_sheet"></p>
+             <div>
+              <p><strong>新しい論文をDBに登録</strong></p>
+              <p>HTMLファイルを選択</p>
+              <p><input type="file" value="【テキストファイルを選択】"  id="input_htmlfile"></p>
+              <!-- <p><input type="text" id="paper_read_area"></p> -->
+              <div id ="paper_read_area"></div>
+              <p><input type="text" name="paper_title" placeholder="論文のタイトル"></p>
+              <p><input class="button" type="button" name="newsheet" value="新規登録"  id="create_sheet"></p>
+              
+          </div>
            </div>
   	     </form>
        </div>
@@ -212,6 +220,11 @@ if(isset($_POST["sheet"])){
        </div>
     </div>
     <!-- メインメニュー　finish -->
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/paper.js"></script>
+    <script type="text/javascript" src="js/paper_load.js"></script>
+
  
 
 	</body>

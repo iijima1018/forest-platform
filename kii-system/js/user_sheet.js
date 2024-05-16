@@ -25,48 +25,7 @@ let now_array = [];
 // let obj_s={};
 // 過去のマインドマップのノード情報を取得する
 $('#user_list').change(function() { // セレクトボックスから選ばれた場合
-
-  var sheet_id = $('#user_list option:selected').val();
-  console.log(sheet_id); // selectboxから選択した値
-  sheet_id_tmp = sheet_id;
-  if(sheet_id == "null"){
-    return;
-  }
-  else{
-    $.ajax({
-      
-      url: "php/user_sheet.php",
-      type: "POST",
-      data: { 
-        // val : "user",
-        user : sheet_id,
-      },
-      success: function(data){
-        var obj = JSON.parse(data); // JSON型をパース
-        console.log(obj);
-        if(obj['user'] == ""){
-          // alert("ユーザの取得に失敗しました．");
-        }else{
-          alert("ユーザを取得しました．");
-          // console.log("取得日時", obj['time']);
-
-          // 配列に変換
-          var node_array = new Array();
-          node_array = obj['array'];
-
-          // 表示する関数に受け渡す
-          OpenPastSheet(node_array);
-        }
-      },
-      error : function(msg, status){
-        alert('通信ができない状態です。');
-      }
-    })
-
-    Rebuild_paper2("paper_area",sheet_id);
-
-    
-  }
+  getData2(167304889);
 })
 
 
@@ -162,7 +121,7 @@ let addHightlightChar2 = (char_object_id,type) => {
   
   if(object_elm !== null){
 
-      object_elm.attr('type', type);
+      object_elm.attr('class', type);
       // object_elm.setAttribute('style', 'background-color:rgba(255,255,0,0.7)');
   }
 };

@@ -4,7 +4,20 @@
 	$db_host = "localhost";  // DBサーバのurl
 	$db_user = "root";
 	$db_password = "root";
-	$db_dbname = "nishida_seta";
+	$db_dbname = "kawa_experiment_2";
+
+	// 実験データ参照用
+	// $db_host = "localhost";  // DBサーバのurl
+	// $db_user = "root";
+	// $db_password = "root";
+	// $db_dbname = "FCR-Experiment-Phase1";
+
+	// $db_host = "localhost:3306";
+	// $db_user = "root";
+	// $db_password = "kslabkslab";
+	// $db_dbname = "kii";
+
+	
 
 	// 　統合環境1
 	// $db_host = "192.168.0.82:3306";  // DBサーバのurl

@@ -140,7 +140,7 @@ function check_rationality_disp(node_class){
 											ultag.appendChild(imgtag);
 
 											var atag = document.createElement("a");
-											atag.href = "#";
+											atag.href = "#!";
 											atag.id = $id;
 											atag.onclick = add_node;
 											atag.innerHTML = $inquiry_content;
@@ -245,7 +245,7 @@ function check_rationality_disp(node_class){
 														ultag.appendChild(imgtag);
 
 														var atag = document.createElement("a");
-														atag.href = "#";
+														atag.href = "#!";
 														atag.id = $id;
 														atag.onclick = add_node;
 														atag.innerHTML = $inquiry_content;

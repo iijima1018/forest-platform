@@ -62,12 +62,12 @@ jQuery(function($){
   });
 
   // 他者のマインドマップ上で右クリック時に独自コンテキストメニューを表示する
-  mm_area_s.addEventListener('contextmenu',function(e){
-    mm_menu_s.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';
-    mm_menu_s.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
-    mm_menu_s.classList.add('on');
+  // mm_area_s.addEventListener('contextmenu',function(e){
+  //   mm_menu_s.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';
+  //   mm_menu_s.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
+  //   mm_menu_s.classList.add('on');
 
-  });
+  // });
   // 自分のマインドマップ上で右クリック時に独自コンテキストメニューを表示する
   mm_area_m.addEventListener('contextmenu',function(e){
     mm_menu_m.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';

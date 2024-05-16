@@ -42,7 +42,7 @@ function c_disp(){
 	var $concept = $(this).find('SLOT').text();
 	var $parent = $(this).find('R_CONST').text();
 
-	for(var i=0; i<$concept_tag.length; i++){
+	for(var i=$concept_tag.length - 1; i>=0; i--){
 
 		if($concept_tag[i].getAttribute('instantiation') == undefined){//概念
 
@@ -83,7 +83,7 @@ function c_disp(){
 								ultag.appendChild(imgtag);
 
 								var atag = document.createElement("a");
-								atag.href = "#";
+								atag.href = "#!";
 								atag.id = $id;
 								atag.onclick = add_node;
 								atag.innerHTML = $inquiry_content;
@@ -109,7 +109,7 @@ function c_disp(){
 								ultag.appendChild(imgtag);
 
 								var atag = document.createElement("a");
-								atag.href = "#";
+								atag.href = "#!";
 								atag.id = $id;
 								atag.onclick = add_node;
 								atag.innerHTML = $inquiry_content;
@@ -136,7 +136,7 @@ function c_disp(){
 								ultag.appendChild(imgtag);
 
 								var atag = document.createElement("a");
-								atag.href = "#";
+								atag.href = "#!";
 								atag.id = $id;
 								atag.onclick = add_node;
 								atag.innerHTML = $inquiry_content;

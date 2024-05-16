@@ -118,7 +118,7 @@ function showIntention(){
 			ultag.appendChild(imgtag);
 
 			var atag = document.createElement("a");
-			atag.href = "#";
+			atag.href = "#!";
 			atag.id = inquiry_id_array[i];
 			atag.onclick = add_node;
 			atag.innerHTML = inquiry_content_array[i];
@@ -157,7 +157,7 @@ function showIntention(){
 			ultag.appendChild(imgtag);
 
 			var atag = document.createElement("a");
-			atag.href = "#";
+			atag.href = "#!";
 			atag.id = inquiry_id_array[i];
 			atag.onclick = add_node;
 			atag.innerHTML = inquiry_content_array[i];
@@ -351,7 +351,7 @@ function showChildInquiry(arr,mode){
 			ultag.appendChild(imgtag);
 
 			var atag = document.createElement("a");
-			atag.href = "#";
+			atag.href = "#!";
 			atag.id = c_inquiry_id_array[i];
 			atag.onclick = add_node;
 			atag.innerHTML = c_inquiry_content_array[i];

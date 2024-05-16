@@ -16,7 +16,7 @@ function toi_create(deep_content){
 	ultag.appendChild(imgtag);
 
 	var atag = document.createElement("a");
-	atag.href = "#";
+	atag.href = "#!";
 	atag.id = Math.floor(Math.random() * 11);
 	atag.onclick = add_node;
 	atag.innerHTML = deep_content;

@@ -63,7 +63,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
       <!---        タイトルメニューStart                 -->
       <div id="main_title">
         <form name="return" method="POST">
-          <span class="title_name">Forest </span>
+          <span class="title_name">ForestCR </span>
           <span><input class="button2" type="submit" name="logout" value="ログアウト"></span>
           <span><input class="button1" type="submit" name="sheetbtn" value="シート選択画面に戻る"></span>
         </form>
@@ -104,7 +104,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
             <div id="layout">
               <div id="jsmind_nav">
                 【Edit】
-                  <button class="button4" onclick="add_Qnode();">
+                  <button class="button4" onclick="add_Qnode2();">
                     問いノード追加
                   </button>
                   <button class="button4" onclick="add_Anode();">

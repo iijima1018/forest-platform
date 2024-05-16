@@ -14,9 +14,8 @@
                     // console.log(position);
                     var positionObj = {"top": position.y, "left":position.x}; 
                     jmnode[i].style.backgroundColor = "#FFABE1";
-                    jmnode[i].style.border = "5px solid #C689C6";
                     let topic = jmnode[i].innerHTML;
-                    alert(topic);
+                    // alert(topic);
                     // わからない
                 }
                     if(position != undefined){
@@ -126,15 +125,15 @@ const move2node_from_anno = (annotations_list) => {
     };
 
     // 見つけたノードidから nishida 修正必要　一番最新のアノテーションを取得する
-    if(filterdAnnotations.length > 1){
-        let target_node_id = filterdAnnotations.slice(-1)[0].node_id;
-        move_nodeMotion(target_node_id);
-    }else{
-        let target_node_id = filterdAnnotations[0].node_id;
-        console.log(target_node_id);
-        move_nodeMotion(target_node_id);
+    // if(filterdAnnotations.length > 1){
+    //     let target_node_id = filterdAnnotations.slice(-1)[0].node_id;
+    //     move_nodeMotion(target_node_id);
+    // }else{
+    //     let target_node_id = filterdAnnotations[0].node_id;
+    //     console.log(target_node_id);
+    //     move_nodeMotion(target_node_id);
 
-    }
+    // }
       //   console.log(target_node_id);
 
 

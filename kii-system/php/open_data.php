@@ -168,7 +168,67 @@
 
 		echo json_encode($array);
 
-	}else if($_POST["val"] == "root"){
+	}
+	else if($_POST["val"] == "start_char_id"){
+
+		$id = $_SESSION["SHEETID"];
+
+		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+
+		$i = 0;
+		$array = array();
+
+		if($result = $mysqli->query($sql)){
+
+			while($row = mysqli_fetch_assoc($result)){
+
+				if($row["deleted"] == 0){
+
+					$array = $array + array($i=>$row["start_char_id"]);
+
+					$i += 1;
+
+				}
+
+			}
+
+		}
+
+		echo json_encode($array);
+
+	}
+	else if($_POST["val"] == "end_char_id"){
+
+		$id = $_SESSION["SHEETID"];
+
+		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+
+		$i = 0;
+		$array = array();
+
+		if($result = $mysqli->query($sql)){
+
+			while($row = mysqli_fetch_assoc($result)){
+
+				if($row["deleted"] == 0){
+
+					$array = $array + array($i=>$row["end_char_id"]);
+
+					$i += 1;
+
+				}
+
+			}
+
+		}
+		echo json_encode($array);
+
+	}
+	
+	
+	
+	
+	else if($_POST["val"] == "root"){
 
 		$id = $_SESSION["SHEETID"];
 

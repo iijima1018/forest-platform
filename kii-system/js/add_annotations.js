@@ -43,11 +43,31 @@ let addHightlightChar = (char_object_id, type) => {
     // ある文字にハイライトを反映する関数
     //const object_elm = document.getElementById(char_object_id)
     const object_elm = $("span[char_id='"+char_object_id+"']");
-    console.log(object_elm);
 
     if(object_elm !== null){
-        console.log(object_elm);
         object_elm.attr('type', type);
+    }
+};
+
+let addHightlightHover = (char_object_id, type) => {
+    // ある文字にハイライトを反映する関数
+    //const object_elm = document.getElementById(char_object_id)
+    const object_elm = $("span[char_id='"+char_object_id+"']");
+
+    if(object_elm !== null){
+        object_elm.addClass(type);
+        console.log(object_elm);
+    }
+};
+
+let removeHightlightHover = (char_object_id, type) => {
+    // ある文字にハイライトを反映する関数
+    //const object_elm = document.getElementById(char_object_id)
+    const object_elm = $("span[char_id='"+char_object_id+"']");
+
+    if(object_elm !== null){
+        object_elm.removeClass(type);
+        console.log(object_elm);
     }
 };
 
@@ -126,12 +146,12 @@ const remove_annotation = () => {
 
 //ハイライトボタンでannotationを追加する
 function add_annotation(type_fromNode, node_id){
-    let selected_obj = window.getSelection().anchorNode;
+    let selected_obj = window.getSelection().toString().length;
 
     
     console.log(selected_obj);
             // 論文の文字を先に選択してるか判定
-    if(selected_obj != null){
+    if(selected_obj != 0){
         
         console.log("anchorNode:", selected_obj.parentElement);
         let start_t_id_str = window.getSelection().anchorNode.parentElement.getAttribute("char_id").substr(6);
@@ -167,15 +187,18 @@ function add_annotation(type_fromNode, node_id){
             obj.node_id=node_id;
             obj.content=paper_content;
             annotations.push(obj);
-                
-    
+
+            $("[nodeid='"+node_id+"']").attr("start_char_id", start_t_id);
+            $("[nodeid='"+node_id+"']").attr("end_char_id", end_t_id);
+                  
             console.log(annotations);
     
         //文単位でハイライト
         for(let count=0; count <= (obj.end_char_id - obj.start_char_id); count++){
             let char_id = obj.start_char_id + count; 
             let char_id_txt = 'p_txt_'+char_id;  
-    
+
+
             addHightlightChar(char_id_txt, type_fromNode); 
     
     
@@ -195,8 +218,27 @@ function add_annotation(type_fromNode, node_id){
                     content : paper_content,
                     node_id : node_id,
                  },
-                    success: function () {
-                        console.log("登録成功");
+                    success: function (sql) {
+                        console.log(sql);
+                      },
+                      error: function () {
+                      console.log("登録失敗");},
+    
+        });
+
+        $.ajax({
+    
+            url: "php/update_node.php",
+            type: "POST",
+            data: { 
+                // insert : "annotation",
+                    update : "annotated",
+                    id :  node_id,
+                    start_char_id : start_t_id,
+                    end_char_id : end_t_id,
+                 },
+                    success: function (sql) {
+                        console.log(sql);
                       },
                       error: function () {
                       console.log("登録失敗");},
@@ -318,7 +360,12 @@ function add_Qnode2(){
   }
 
   var nodeid = jsMind.util.uuid.newid();//idの生成
-  var topic = window.getSelection().toString();
+  if (window.getSelection().toString().length != 0){
+    var topic = window.getSelection().toString();
+  }else{
+    var topic = "New Node";
+  }
+  
   var parent = document.getElementById("document_area");
 
   var node = _jm.add_node(parent_node, nodeid, topic);
@@ -333,7 +380,7 @@ function add_Qnode2(){
       if(nodeid == jmnode[i].getAttribute("nodeid")){
 
           jmnode[i].setAttribute("concept_id","");
-          jmnode[i].setAttribute("type","konkyo");
+          jmnode[i].setAttribute("type","toi");
           jmnode[i].setAttribute("parent_id",parent_id);
           jmnode[i].className = "";
 
@@ -345,7 +392,7 @@ function add_Qnode2(){
               data: { insert : "node",
                       id : nodeid,
                       parent_id : parent_id,
-                      type : "konkyo",
+                      type : "toi",
                       concept_id : "",
                       x : jmnode[i].style.left,
                       y : jmnode[i].style.top,
@@ -378,9 +425,69 @@ function add_Qnode2(){
       data: { update : "sheet" }
 
   });
+    if(window.getSelection().toString().length != 0){
+    add_annotation("toi", nodeid);
+    mouseoverNode();
+    }
+    var parent_id = nodeid; //追加した問いノード
+    var nodeid = jsMind.util.uuid.newid();//idの生成
+    var topic = '＊あなたの解釈';
+    var node = _jm.add_node(parent_id, nodeid, topic);
+
+    var jmnode = document.getElementsByTagName("jmnode");
+	var p_concept = parent_concept_id;
 
 
-  add_annotation("konkyo", nodeid);
+    for(var j=0; j<jmnode.length; j++){
+
+        if(nodeid == jmnode[j].getAttribute("nodeid")){
+
+            jmnode[j].setAttribute("concept_id",p_concept);
+            jmnode[j].setAttribute("type","predict");
+            jmnode[j].setAttribute("parent_id",parent_id);
+
+            $.ajax({
+
+                url: "php/insert_node.php",
+                type: "POST",
+                data: { insert : "node",
+                        id : nodeid,
+                        parent_id : parent_id,
+                        type : "predict",
+                        concept_id : p_concept,
+                        x : jmnode[j].style.left,
+                        y : jmnode[j].style.top,
+                        content : jmnode[j].innerHTML,
+                        class : "" },
+
+            });
+
+            //yoshioka登録　追加ボタンより答えを追加したこと
+            //渡す情報（ノードID，親ノードID，操作，テキスト，法造コンセプトID，タイプ，primary）
+            Record_activities(nodeid,
+                              parent_id,
+                              "add",
+                              jmnode[j].innerHTML,
+                              p_concept,
+                              "predict",
+                              jsMind.util.uuid.newid()
+                             );
+
+
+
+        }
+
+    }
+
+
+    //マップ編集時間更新
+    $.ajax({
+
+        url: "php/update_node.php",
+        type: "POST",
+        data: { update : "sheet" }
+
+    });
 
 
 
@@ -407,6 +514,11 @@ function add_Anode2(node_type){
   var nodeid = jsMind.util.uuid.newid();//idの生成
 
   var topic = window.getSelection().toString();;
+  if (topic == ""){
+    add_Anode(node_type, node_type);
+    return;
+  }
+
   var node = _jm.add_node(selected_node, nodeid, topic);
 
   var jmnode = document.getElementsByTagName("jmnode");
@@ -472,6 +584,7 @@ function add_Anode2(node_type){
 
   
   add_annotation(node_type, nodeid);
+  mouseoverNode();
 
     
 }

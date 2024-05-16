@@ -253,7 +253,7 @@
                     parent_node.children.push(node);
                     this._reindex(parent_node);
                 }else{
-                    logger.error('fail, the nodeid \''+node.id+'\' has been already exist.');
+                    // logger.error('fail, the nodeid \''+node.id+'\' has been already exist.');
                     node = null;
                 }
                 return node;
@@ -263,6 +263,8 @@
             }
 
         },
+
+        
 
         insert_node_before:function(node_before, nodeid, topic, data){
             if(!jm.util.is_node(node_before)){
@@ -478,7 +480,7 @@
 
         _put_node:function(node){
             if(node.id in this.nodes){
-                logger.warn('the nodeid \''+node.id+'\' has been already exist.');
+                // logger.warn('the nodeid \''+node.id+'\' has been already exist.');
                 return false;
             }else{
                 this.nodes[node.id] = node;
@@ -1275,8 +1277,8 @@
 
                             if(jmnode[i].getAttribute("nodeid") == thisId){
 
-                                jmnode[i].style.backgroundColor = "#ff69b4";
-                                jmnode[i].style.border = "5px solid #9fd94f";
+                                // jmnode[i].style.backgroundColor = "#ff69b4";
+                                //jmnode[i].style.border = "5px solid #9fd94f";
                                 // toi_create("支援の評価方法は何ですか？");
                                 // toi_create("反論はないか？");
 
@@ -1284,7 +1286,7 @@
 
                             }else{
 
-                                jmnode[i].style.backgroundColor = "#ffa500";
+                                // jmnode[i].style.backgroundColor = "#ffbaa1";
                                 
 
                             }
@@ -1369,10 +1371,6 @@
                                 continue;
                                 // jmnode[i].style.backgroundColor = "#9fd94f";
                                 
-                            }else{
-                                // nishida　わからない
-                                // let mm_menu2 = document.getElementById('mindmap_conmenu2');  //独自コンテキストメニュー
-                                mm_menu2.classList.remove('on');
                             }
                         }
                         
@@ -2764,26 +2762,26 @@
 
 
                          // nishida ノード内容変更による後続するノード追加
-                        if(jmnode[i].getAttribute("type") == "predict"){
+                        if(jmnode[i].getAttribute("type") == "toi"){
 
                            
                             
                             // nishida 自動追加された批評ノードに対して，タグつけを要求する
-                            if(content != "＊あなたの予測"){
+                            if(content != "New Node"){
                                 
                             // 今の親ノードのidが新しいparentid
-                            var new_parent_id = jmnode[i].getAttribute("parent_id"); //追加するノードid
+                            // var new_parent_id = jmnode[i].getAttribute("nodeid"); //追加するノードid
                             // 兄弟ノードにすでにanswerノードがない場合
                             // add_Anode_parentid(new_parent_id);
                             
                             }
-                        }else if(jmnode[i].getAttribute("type") == "answer"){
+                        }else if(jmnode[i].getAttribute("type") == "predict"){
                             // 今のnode.idが新しいparentid
 
            
                             
                             // nishida 
-                            if(content != "＊筆者の主張"){
+                            if(content != "＊あなたの解釈"){
                                 
                             var new_parent_id = node.id;
                             add_Cnode_parentid(new_parent_id, "criticism");
