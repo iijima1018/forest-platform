@@ -1,6 +1,6 @@
 <?php
 
-require_once("connect_db_user.php");
+require_once("connect_db.php");
 
 $username = $_GET['username'];
 
