@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require("php/connect_db.php");
+require("../php/connect_db.php");
 require_once("php/sheet.php");
 
 $mt_time_message = "";

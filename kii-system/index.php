@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("php/connect_db.php");
+require("../php/connect_db.php");
 require("php/sheet.php");
 
 // ログイン状態のチェック
@@ -100,7 +100,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
         </ul>
       <!-- タブメニュー　Finish -->
         
-        <div id="advice_frame" class="searchFrame"></div>
+      <div id="advice_frame" class="searchFrame"></div>
         
         <!--メインメニュー　Start  -->
       <div class="tabcontent">
@@ -203,7 +203,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               </div>
                 <div id="jsmind_area" oncontextmenu="return false;">           
                   <div id="jsmind_container" oncontextmenu="return false;"></div>
-                  <div id="jsmind_container2_menu">
+                  <div id="jsmind_container_menu">
                     <div id="mindmap_tab"><span id="all_annotation"></span></div>
                     <!--
                     <button class="button3" id="zoom-in-button" onclick="zoomIn2();">
@@ -215,7 +215,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                     -->
 
                   </div>    
-                  <div id="jsmind_container2"></div>
+                  <div id="jsmind_container_cr2"></div>
                 </div>
                 <div id="document_area" oncontextmenu="return false;"></div>             
             </div>
@@ -612,7 +612,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               
               <!-- 他者のマインドマップを表示する部分 -->
               <!-- 現在のマインドマップのコピー -->
-              <div id="jsmind_container3" oncontextmenu="return false;"></div>
+              <div id="jsmind_container_cr3" oncontextmenu="return false;"></div>
               <!-- <div id="#paper_container"> </div> -->
               <div id="paper_area" oncontextmenu="return false;"></div>
              
@@ -633,7 +633,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
             </div>
 
               <!--<div>他者のマップ</div>-->
-              <div id="jsmind_container2" oncontextmenu="return false;"></div>
+              <div id="jsmind_container_cr2" oncontextmenu="return false;"></div>
             
 
             <div id="mindmap_conmenu_someone">

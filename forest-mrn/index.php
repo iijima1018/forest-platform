@@ -1,6 +1,6 @@
 <?php
 session_start();
-// require("php/connect_db.php");
+// require("../php/connect_db.php");
 require("php/function.php");
 
 require("php/sheet.php");
@@ -573,11 +573,11 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                  </div>
                  </div> -->
             <!-- 過去のマインドマップを表示する部分 -->
-            <!-- <div id="jsmind_container2"> -->
+            <!-- <div id="jsmind_container_mrn2"> -->
             <!-- <div>過去のオントロジー</div> -->
             <!-- </div> -->
             <!-- 現在のマインドマップのコピー
-                 <div id="jsmind_container3"></div>
+                 <div id="jsmind_container_mrn3"></div>
                  </div>
                  </div> -->
 
@@ -604,14 +604,14 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                         </div>
                     </div>
                     <!-- ここから大槻修正 -->
-                    <div id="jsmind_container4">
+                    <div id="jsmind_container_mrn4">
                         <!-- ここまで大槻修正 -->
                         <!-- 過去のマインドマップを表示する部分 -->
-                        <div id="jsmind_container2"></div>
+                        <div id="jsmind_container_mrn2"></div>
                         <!--<div>過去のオントロジー</div>-->
                         <!-- </div> -->
                         <!-- 現在のマインドマップのコピー -->
-                        <div id="jsmind_container3"></div>
+                        <div id="jsmind_container_mrn3"></div>
                         <!-- ここから大槻修正 -->
                     </div>
                     <div id="mynetwork_show"></div>

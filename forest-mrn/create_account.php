@@ -1,6 +1,6 @@
 <?php
 require 'password.php';
-require 'php/connect_db.php';
+require '../php/connect_db.php';
 
 // セッション開始
 session_start();

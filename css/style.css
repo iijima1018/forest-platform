@@ -420,7 +420,7 @@ input:checked+label::after {
 #mindmap_conmenu{
   width:160px;
   background-color:#FAF6F1;
-  border:1px solid #FBC362;
+  border:1px solid #B3E0D8;
   display:none;
   position:fixed;
 	z-index: 1000;
@@ -434,9 +434,9 @@ input:checked+label::after {
   margin:0px;
   padding:5px;
 }
-#mindmap_conmenu li:hover{
+/* #mindmap_conmenu li:hover{
   background-color: #fedca6;
-}
+} */
 
 #mindmap_conmenu_other{
 	width:160px;
@@ -455,14 +455,14 @@ input:checked+label::after {
 	margin:0px;
 	padding:5px;
   }
-  #mindmap_conmenu_other li:hover{
+  /* #mindmap_conmenu_other li:hover{
 	background-color: #fedca6;
-  }
+  } */
 /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu2{
 	width:160px;
 	background-color:#FAF6F1;
-	border:1px solid #FBC362;
+	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -476,9 +476,9 @@ input:checked+label::after {
 	margin:0px;
 	padding:5px;
   }
-  #mindmap_conmenu2 li:hover{
+  /* #mindmap_conmenu2 li:hover{
 	background-color: #fedca6;
-}
+} */
 
 
 
@@ -486,7 +486,7 @@ input:checked+label::after {
 #mindmap_conmenu_someone{
 	width:160px;
 	background-color:#FAF6F1;
-	border:1px solid #FBC362;
+	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -500,16 +500,16 @@ input:checked+label::after {
 	margin:0px;
 	padding:5px;
   }
-  #mindmap_conmenu_someone li:hover{
+  /* #mindmap_conmenu_someone li:hover{
 	background-color: #fedca6;
-  }
+  } */
   
 
   /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu_my{
 	width:160px;
 	background-color:#FAF6F1;
-	border:1px solid #FBC362;
+	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -523,9 +523,9 @@ input:checked+label::after {
 	margin:0px;
 	padding:5px;
   }
-  #mindmap_conmenu_my li:hover{
+  /* #mindmap_conmenu_my li:hover{
 	background-color: #fedca6;
-  }
+  } */
 
   /*ここから大槻修正*/
 /*ネットワーク右クリック*/
@@ -710,7 +710,7 @@ h3 {
 #document_conmenu{
   width:210px;
   background-color:#FAF6F1;
-  border:1px solid #FBC362;
+  border:1px solid #B3E0D8;
   display:none;
   position:fixed;
   z-index: 4;
@@ -758,7 +758,7 @@ h3 {
 #paper_conmenu{
 	width:210px;
 	background-color:#FAF6F1;
-	border:1px solid #FBC362;
+	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
 	z-index: 4;
@@ -780,7 +780,7 @@ h3 {
 	min-width: 350px;
 	padding: 5px;
 	background-color:#FAF6F1;
-	border:2px solid #FBC362;
+	border:2px solid #B3E0D8;
 	  border-radius: 10px;
 	display:none;
 	position:fixed;
@@ -1249,12 +1249,12 @@ select[name="user_list"] {
 	font-size:1em;
 }
 
-/* 以下，containerの名前を変える必要あり */
-/* kii */
+
+/* kii only */
 
 /* 過去のマインドマップを表示するエリア */
 
-#jsmind_container2{
+#jsmind_container_cr2{
 	width: 100%;
 
 	height:calc(50vh - 17px);
@@ -1273,7 +1273,7 @@ select[name="user_list"] {
 
 
 /* 過去のマインドマップを表示するエリア */
-#jsmind_container3{
+#jsmind_container_cr3{
 		display: none;
 		width: 53vw; /* 27vw */
 		min-width: 300px;
@@ -1310,9 +1310,9 @@ select[name="user_list"] {
 
 
 
-/*ここから大槻修正*/
+/* mrn only */
 /* 過去のマインドマップを表示するエリア */
-#jsmind_container4{
+#jsmind_container_mrn4{
 	width: calc((100vw - 350px)*0.5);
 	min-width: 300px;
 	height:70vh;
@@ -1325,7 +1325,7 @@ select[name="user_list"] {
 }
 
 /* 過去のマインドマップ（上）を表示するエリア */
-#jsmind_container2{
+#jsmind_container_mrn2{
 	width: calc((100vw - 350px)*0.5);
 	min-width: 300px;
 	height:35vh;
@@ -1338,7 +1338,7 @@ select[name="user_list"] {
 }
 
 /* 過去のマインドマップ（下）を表示するエリア */
-#jsmind_container3{
+#jsmind_container_mrn3{
 	width: calc((100vw - 350px)*0.5);
 	min-width: 300px;
 	height:35vh;
@@ -1427,7 +1427,7 @@ select[name="user_list"] {
 	overflow: auto;
 }
 
-/* container問題ここまで */
+/* only mrn */
 
 
 /********************* リフレクションタブ関係 **********************/

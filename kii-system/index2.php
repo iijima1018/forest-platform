@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("php/connect_db.php");
+require("../php/connect_db.php");
 require("php/sheet.php");
 
 // ログイン状態のチェック
