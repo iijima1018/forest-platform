@@ -293,7 +293,7 @@ input:checked+label::before {
 /* Offの文字設定 */
 input:checked+label::after {
 	left: 60px;
-	background-color: #FFF5E5;
+	background-color: #B3E0D8;
 }
 
 .checkbox+label {
@@ -1020,7 +1020,7 @@ h3 {
 .inquiry_area {
 	height: 40%;
 	overflow-y: auto;
-	border:solid 5px #B3E0D8;
+	border:solid 5px #fbd393;
 	margin-bottom: 30px;
 	font-size: 14px;
 	text-align: left;
@@ -1029,7 +1029,7 @@ h3 {
 #side_menu .other_annotation {
 	height: 40%;
 	overflow-y: auto;
-	border:solid 5px #B3E0D8;
+	border:solid 5px #fbd393;
 	margin-bottom: 30px;
 	font-size: 14px;
 	text-align: left;
@@ -1707,7 +1707,7 @@ select[name="user_list"] {
 		-webkit-user-select: none;
 }
 .button:hover {
-	background-color: #FBC362;
+	background-color: #ffa200;
 }
 
 .button0 {
@@ -1718,7 +1718,7 @@ select[name="user_list"] {
 		-webkit-user-select: none;
 }
 .button0:hover {
-	background-color: #FBC362;
+	background-color: #ffa200;
 }
 
 /* シート選択画面に戻るボタン */
@@ -1759,7 +1759,7 @@ select[name="user_list"] {
 }
 
 .button3 {
-	background-color: #FFF5E5;
+	background-color: #90B1AB;
 	color: #fff;
 	width: 50px;
 	height: 25px;
@@ -1767,13 +1767,13 @@ select[name="user_list"] {
 	margin-left: 0;
 }
 .button3:hover {
-	background-color: #FBC362;
+	background-color: #B3E0D8;
 }
 /* ノード追加ボタン */
 
 
 .button4 {
-	background-color: #FFF5E5;
+	background-color: #90B1AB;
 	color: #fff;
 	width: 100px;
 	height: 25px;
@@ -1782,9 +1782,9 @@ select[name="user_list"] {
 	margin-top: 5px;
 	overflow: auto;
 }
-/* .button4:hover {
-	background-color: #FBC362;
-} */
+.button4:hover {
+	background-color: #B3E0D8;
+}
 
 /*他者の問いノード表示*/
 .button_q {
@@ -1823,7 +1823,7 @@ select[name="user_list"] {
 }
 
 #s_interpretation:hover{
-	background-color: #FBC252;
+	background-color: #FFBAA1;
 }
 
 #s_rethink_node:hover{
@@ -1838,7 +1838,7 @@ select[name="user_list"] {
 }
 
 .button5 {
-	background-color: #FFF5E5;
+	background-color: #FBC362;
 	color: #fff;
 	width: 70px;
 	height: 25px;
@@ -1846,17 +1846,17 @@ select[name="user_list"] {
 	margin-top: 5px;
 }
 .button5:hover {
-	background-color: #FBC362;
+	background-color: #ffa200;
 }
 
 .button6 {
-	background-color: #FFF5E5;
+	background-color: #FBC362;
 	color: #fff;
 	width: 100%;
 	height: 25px;
 }
 .button6:hover {
-	background-color: #FBC362;
+	background-color: #ffa200;
 }
 
 
@@ -1884,7 +1884,7 @@ select[name="user_list"] {
 	height: 30px;
 }
 /* .button8:hover {
-	background-color: #DAFDBA;
+	background-color: #ffa200;
 } */
 
 /* 操作確認ボタン */
@@ -1904,13 +1904,13 @@ select[name="user_list"] {
 }
 
 .button_other {
-	background-color: #FFF5E5;
+	background-color: #FBC362;
 	color: #fff;
 	width: 90%;
 	height: 25px;
 }
 .button_other:hover {
-	background-color: #FBC362;
+	background-color: #ffa200;
 }
 
 .button10 {
@@ -1922,16 +1922,19 @@ select[name="user_list"] {
 	padding: 5px 10px;
 	font-weight: bold;
 	border-radius: 10px;
-	color: #FBC362;
-	border: 3px solid #FBC362;
-	box-shadow: 1px 1px #FBC362;
+	color: #ffa8ba;
+	border: 3px solid #ffa8ba;
+	box-shadow: 1px 1px #ffa8ba;
+	background-color: #f9f9f9;
 	transition: 0.1s ease-in-out;
 	margin-bottom: 3px;
 }
 .button10:hover {
 	box-shadow: none;
 	transform: translate(5px, 5px);
-	color: #FBC362;
+	color: #ff8da4;
+	border: 3px solid #ff8da4;
+	background-color: #ffedec;
 }
 
 /* 修正理由記入テキストエリア */
@@ -2212,7 +2215,7 @@ display: none;
 #input_plural input.pluralBtn {
     width: 30px;
     height: 30px;
-    border: 1px solid #FAF6F1;
+    border: 1px solid #FAF6F1	;
     background: #fff;
     border-radius: 5px;
     padding: 0;
@@ -2307,7 +2310,7 @@ display: none;
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #FFF5E5;/*ボタン色*/
+  background: #FBC362;/*ボタン色*/
   color: #FFF;
   border-bottom: solid 4px #FBC362;
   border-radius: 3px;
@@ -2578,7 +2581,8 @@ display: none;
 深緑（ベース）:#00473E
 緑:#90B1AB
 薄緑:#B3E0D8
-オレンジ(ハイライト):#B3E0D8
+オレンジ(ベース):#FBC362
+オレンジ(ハイライト)#ffb432
 薄オレンジ:#FFF5E5
 ピンク(secondary):#ffa8ba
 濃いピンク(tertiary):#fa5246

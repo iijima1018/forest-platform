@@ -5,20 +5,20 @@ require("php/sheet.php");
 
 // ログイン状態のチェック
 if (!isset($_SESSION["USERID"]) ) { //ログイン出来ていない
-    header("Location: logout.php");
+    header("Location: ./../logout.php");
     exit;
 }
 
 if( (isset($_POST["sheetbtn"])) ||   //シート選択ボタンが押された
     (isset($_SESSION["USERID"]) && !isset($_SESSION["SHEETID"]) )) { //ログインは出来ているがシート未選択の場合
-  header("Location: select_sheet.php");
+  header("Location: ./../select_sheet.php");
   $_SESSION["SHEETID"] = null; //シート選択画面に遷移させた時にSHEETIDをリセット
 }
 
 if(isset($_POST["logout"])){ //logoutボタンが押された
     // alert("本当にログアウトしますか？");
     // 時間があれば確認ダイアログを作る
-    header("../logout.php");
+    header("Location: ./../logout.php");
 }
 
 
