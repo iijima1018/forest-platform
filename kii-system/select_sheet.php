@@ -111,12 +111,12 @@ if(isset($_POST["sheet"])){
 	<head>
 		<meta charset="UTF-8">
 		<title>論文読解支援システム</title>
-		<link rel="stylesheet" type="text/css" href="css/item.css">
-		<link rel="stylesheet" type="text/css" href="css/font.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.cleditor.css">
-		<link rel="stylesheet" type="text/css" href="css/ui.css">
-		<link rel="stylesheet" type="text/css" href="css/select_sheet.css">
-    <link rel="stylesheet" href="css/Semantic-UI/semantic.css">
+		<link rel="stylesheet" type="text/css" href="../css/item.css">
+		<link rel="stylesheet" type="text/css" href="../css/font.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery.cleditor.css">
+		<link rel="stylesheet" type="text/css" href="../css/ui.css">
+		<link rel="stylesheet" type="text/css" href="../css/select_sheet.css">
+    <link rel="stylesheet" href="../css/Semantic-UI/semantic.css">
 
 	</head>
 

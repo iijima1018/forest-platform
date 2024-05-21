@@ -8,12 +8,12 @@ $mt_time_message = "";
 
 // ログイン状態のチェック
 if (!isset($_SESSION["USERID"])) {
-  header("Location: ./../logout.php");
+  header("../logout.php");
   exit;
 }
 
 if (isset($_POST["logout"])) {
-  header("Location: ./../logout.php");
+  header("../logout.php");
   exit;
 }
 
@@ -111,12 +111,12 @@ if(isset($_POST["sheet"])){
 	<head>
 		<meta charset="UTF-8">
 		<title>論文読解支援システム</title>
-		<link rel="stylesheet" type="text/css" href="css/item.css">
-		<link rel="stylesheet" type="text/css" href="css/font.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.cleditor.css">
-		<link rel="stylesheet" type="text/css" href="css/ui.css">
-		<link rel="stylesheet" type="text/css" href="css/select_sheet.css">
-    <link rel="stylesheet" href="css/Semantic-UI/semantic.css">
+		<link rel="stylesheet" type="text/css" href="../css/item.css">
+		<link rel="stylesheet" type="text/css" href="../css/font.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery.cleditor.css">
+		<link rel="stylesheet" type="text/css" href="../css/ui.css">
+		<link rel="stylesheet" type="text/css" href="../css/select_sheet.css">
+    <link rel="stylesheet" href="../css/Semantic-UI/semantic.css">
 		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/paper.js"></script>

@@ -18,7 +18,7 @@ if( (isset($_POST["sheetbtn"])) ||   //シート選択ボタンが押された
 if(isset($_POST["logout"])){ //logoutボタンが押された
     // alert("本当にログアウトしますか？");
     // 時間があれば確認ダイアログを作る
-    header("Location: logout.php");
+    header("../logout.php");
 }
 
 
@@ -30,14 +30,14 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>論文読解支援システム</title>
-        <link type="text/css" rel="stylesheet" href="css/jsmind.css" />
-        <link rel="stylesheet" type="text/css" href="css/item.css">
-        <link rel="stylesheet" type="text/css" href="css/font.css">
-        <link rel="stylesheet" type="text/css" href="css/jquery.cleditor.css">
-        <link rel="stylesheet" type="text/css" href="css/ui.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/button.css">
-        <link rel="stylesheet" type="text/css" href="css/annotation.css">
+        <link type="text/css" rel="stylesheet" href="../css/jsmind.css" />
+        <link rel="stylesheet" type="text/css" href="../css/item.css">
+        <link rel="stylesheet" type="text/css" href="../css/font.css">
+        <link rel="stylesheet" type="text/css" href="../css/jquery.cleditor.css">
+        <link rel="stylesheet" type="text/css" href="../css/ui.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/button.css">
+        <link rel="stylesheet" type="text/css" href="../css/annotation.css">
         <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/create_question.js"></script>
