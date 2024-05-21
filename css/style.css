@@ -45,7 +45,7 @@ table[type] {
 	min-width: 765px;
 	height: 80px;
 	color: #fff;
-	background-color: #E38692; /* forestgreen */
+	background-color: #00473E;
 
 	margin-right: 10px;
 	margin-left: 0;
@@ -63,8 +63,11 @@ table[type] {
 	margin-top: 0;
 	margin-bottom: 0;
 	padding: 0;
+	color: #EFE7C3;
 
 }
+
+
 
 .popup {
   position: fixed;
@@ -126,7 +129,7 @@ table[type] {
 	width: 99vw;
 	min-width: 765px;
 	height: 60px;
-	background: #F6D4D8;
+	background: #B3E0D8;
 	float: left;
 	margin-right: 10px;
 	overflow:auto;
@@ -165,17 +168,15 @@ table[type] {
 }
 
 .tabnav li a:hover {
-	background-color: #ff8c00;
+	background-color: #40847b;
 }
 
 .tabnav li a.active{
-	background: #f65c5c;
+	background: #00473E;
     color: #fff;
 }
 
 /* Menu見出し */
-
-
 .Menu {
 	width: 100%;
 	height:40px;
@@ -183,7 +184,7 @@ table[type] {
 	text-align: center;
 	padding: 0.3em 0;
 	background: #ffffff;
-	background-color: #13678A;
+	background-color: #FAAE2B;
 	color: #fff;
 	float:right;
 }
@@ -220,7 +221,7 @@ table[type] {
 	height:34px;
 	display: inline;
 	font-size: 1em;
-	border-bottom:double 2px #F6D4D8;
+	border-bottom:double 2px #B3E0D8;
 	box-sizing: border-box;
 	overflow-x: auto;
 	overflow-y: visible;
@@ -292,7 +293,7 @@ input:checked+label::before {
 /* Offの文字設定 */
 input:checked+label::after {
 	left: 60px;
-	background-color: #f7f7f7;
+	background-color: #FFF5E5;
 }
 
 .checkbox+label {
@@ -300,11 +301,11 @@ input:checked+label::after {
 	margin: 0 auto;
 }
 .checkbox+label::before {
-	color: #000000;
+	color: #292929;
 	margin: 0 auto;
 }
 .checkbox:checked+label {
-	background-color: #3498db;
+	background-color: #FBC362;
 	margin: 0 auto;
 }
 .checkbox:checked+label::before {
@@ -333,7 +334,7 @@ input:checked+label::after {
     color: #ffffff;
 		border-radius: 4px;
 		background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
-    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    	background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 		border-bottom: solid 3px #c58668;
 		float:right;
@@ -383,7 +384,7 @@ input:checked+label::after {
 	width: 85vw;
 	height:98vh;
 	margin-bottom:2vh;
- 	border:solid 5px #F6D4D8;
+ 	border:solid 5px #B3E0D8;
 	box-sizing: border-box;
  	background:#fff;
 	float:left;
@@ -407,7 +408,7 @@ input:checked+label::after {
 	width: 100%;
 	height: 85px;
 	display: flex;
-	border-top: solid 5px #F6D4D8;
+	border-top: solid 5px #B3E0D8;
 	padding: 3px;
 	display: none;
 	box-sizing: border-box;
@@ -418,8 +419,8 @@ input:checked+label::after {
 /* マインドマップ上で右クリックしたときのメニュー */
 #mindmap_conmenu{
   width:160px;
-  background-color:#f0f0f0;
-  border:1px solid #999999;
+  background-color:#FAF6F1;
+  border:1px solid #FBC362;
   display:none;
   position:fixed;
 	z-index: 1000;
@@ -434,13 +435,13 @@ input:checked+label::after {
   padding:5px;
 }
 #mindmap_conmenu li:hover{
-  background-color: #CCFFFF;
+  background-color: #fedca6;
 }
 
 #mindmap_conmenu_other{
 	width:160px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -455,13 +456,13 @@ input:checked+label::after {
 	padding:5px;
   }
   #mindmap_conmenu_other li:hover{
-	background-color: #CCFFFF;
+	background-color: #fedca6;
   }
 /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu2{
 	width:160px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -476,16 +477,16 @@ input:checked+label::after {
 	padding:5px;
   }
   #mindmap_conmenu2 li:hover{
-	background-color: #CCFFFF;
-  }
+	background-color: #fedca6;
+}
 
 
 
   /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu_someone{
 	width:160px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -500,15 +501,15 @@ input:checked+label::after {
 	padding:5px;
   }
   #mindmap_conmenu_someone li:hover{
-	background-color: #CCFFFF;
+	background-color: #fedca6;
   }
   
 
   /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu_my{
 	width:160px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	  z-index: 1000;
@@ -523,24 +524,113 @@ input:checked+label::after {
 	padding:5px;
   }
   #mindmap_conmenu_my li:hover{
-	background-color: #CCFFFF;
+	background-color: #fedca6;
   }
 
+  /*ここから大槻修正*/
+/*ネットワーク右クリック*/
+#network_conmenu{
+	width:350px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	  border-radius: 10px;
+	display:none;
+	position:fixed;
+	  z-index: 1000;
+	  text-align: center;
+  }
+  #network_conmenu ul{
+	list-style:none;
+	margin:0px;
+	padding:7px;
+  }
+  #network_conmenu li:hover{
+	background-color: #fedca6;
+  }
+	
+/*ここから大槻修正*/
+/*ネットワーク右クリック*/
+#network_conmenu{
+	width:350px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	  border-radius: 10px;
+	display:none;
+	position:fixed;
+	  z-index: 1000;
+	  text-align: center;
+  }
+  #network_conmenu ul{
+	list-style:none;
+	margin:0px;
+	padding:7px;
+  }
+  #network_conmenu li:hover{
+	background-color: #fedca6;
+  }
+#labelselect{
+	width:200px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+  }
+  #recruitselect{
+	width:200px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+  }
+  #recruit_reason{
+	display: none;
+  }
+/*ここまで大槻修正*/;
+
+#labelselect{
+	width:200px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+  }
+  #recruitselect{
+	width:200px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+  }
+  #recruit_reason{
+	display: none;
+  }
+/*ここまで大槻修正*/
 
 /* 文書を作成するエリア */
 #document_area {
 	/*（全体）ー（サイドメニュー */
 	width:calc(60vw - 350px); /* ここで設定しても意味がない */
 	position: relative;
-	z-index:3 ;												/* チェックボックスが押されるたびにCSSを上書きしている  */
-
+	z-index:3 ;	
+	/* チェックボックスが押されるたびにCSSを上書きしている  */
 	height:calc(100% - 34px);
 	/* font-size:25px; */
 	display: none;
 	float: left;
 	background-color:	#e2f8e5; 
-
-    border-left: 3px  #F6D4D8;
+    border-left: 3px  #B3E0D8;
 	overflow: auto;
 	user-select: text;
 
@@ -548,7 +638,7 @@ input:checked+label::after {
 
 /* ドラッグの際に見える枠線 */
 .ghostClass {
-	border: 1px dashed red;
+	border: 1px dashed #fa5246;
 	height:auto;
 	background-color: pink;
 	margin-top:10px;
@@ -567,14 +657,28 @@ input:checked+label::after {
 	background-color: #FF6666;
 }
 #document_area .thread-contents:hover{
-	background-color: #CCFFFF;
+	background-color: #fedca6;
 	cursor: grabbing;
 }
+
+/* スライドのコンテンツを入れ替え可能にする */
+.scenario_content:hover{
+	/* cursor: pointer; */
+}
+
+#document_area .thread-contents:hover{
+	background-color: #fedca6;
+	cursor: grabbing;
+}
+
 
 /* 議論目的の部分 */
 #document_title{
 	overflow: visible;
 	background-color: orange;
+}
+#document_title::-webkit-scrollbar{
+	display:none;
 }
 h3 {
 	margin:0;
@@ -591,6 +695,8 @@ h3 {
 	padding-top:0px;
 	padding-bottom:0px;
 	margin-left:30px;
+	text-align:center;
+	border: solid 1px #7f8080;
 }
 
 #ref_text{
@@ -603,8 +709,8 @@ h3 {
 /* ドキュメントエリア内で右クリックしたときのメニュー */
 #document_conmenu{
   width:210px;
-  background-color:#f0f0f0;
-  border:1px solid #999999;
+  background-color:#FAF6F1;
+  border:1px solid #FBC362;
   display:none;
   position:fixed;
   z-index: 4;
@@ -622,8 +728,8 @@ h3 {
 
 #other_conmenu{
 	width:210px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	z-index: 4;
@@ -641,18 +747,18 @@ h3 {
   #other_question_conmenu{
 	display: none;
 	width:210px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	z-index: 4;
   }
 
-/* ドキュメントエリア内で右クリックしたときのメニュー */
+/* 論文エリア内で右クリックしたときのメニュー */
 #paper_conmenu{
 	width:210px;
-	background-color:#f0f0f0;
-	border:1px solid #999999;
+	background-color:#FAF6F1;
+	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
 	z-index: 4;
@@ -668,6 +774,80 @@ h3 {
 	padding:5px;
   }
 
+  /* ドキュメントエリア内で右クリックしたとき[ノード2個選択時]のメニュー */
+#document_area_conmenu2{
+	width:auto;
+	min-width: 350px;
+	padding: 5px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	  border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+}
+#document_area_conmenu2.on{
+  display:block;
+}
+#document_area_conmenu2 ul{
+  list-style:none;
+  margin:0px;
+  padding:5px;
+}
+#document_area_conmenu2 li:hover{
+	background-color: #fedca6;
+}
+
+/* スライドに関係性を設定するためのメニュー */
+#document_area_conmenu3{
+	width:auto;
+	min-width: 350px;
+	padding: 5px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	  border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+}
+#document_area_conmenu3.on{
+  display:block;
+}
+#document_area_conmenu3 ul{
+  list-style:none;
+  margin:0px;
+  padding:5px;
+}
+#document_area_conmenu3 li:hover{
+	background-color: #fedca6;
+}
+
+/* スライドに関係性を設定するためのメニュー */
+#document_area_conmenu4{
+	width:auto;
+	min-width: 350px;
+	padding: 5px;
+	background-color:#FAF6F1;
+	border:2px solid #FBC362;
+	  border-radius: 10px;
+	display:none;
+	position:fixed;
+	z-index: 1000;
+	text-align: center;
+}
+#document_area_conmenu4.on{
+  display:block;
+}
+#document_area_conmenu4 ul{
+  list-style:none;
+  margin:0px;
+  padding:5px;
+}
+#document_area_conmenu4 li:hover{
+	background-color: #fedca6;
+}
 
 
 
@@ -679,7 +859,7 @@ h3 {
 	height: 98vh;
 	min-height: 450px;
 	float:right;
-  background: #ffffff;
+  background: #F9F9F9;
 	z-index: 1000;
 }
 
@@ -694,7 +874,7 @@ h3 {
 }
 /* 修正理由の見出し */
 #side_menu .correct_reason {
-	background-color: #9acd32;
+	background-color: #a9c66e;
 	color: #fff;
 	padding: 0.7em 0;
 	margin: 0;
@@ -703,9 +883,126 @@ h3 {
 	margin-bottom: 10px;
 }
 
+/*ここから大槻修正*/
+#side_menu .correct_reason2 {
+	background-color: #1289f8;
+	color: #fff;
+	padding: 0.7em 0;
+	margin: 0;
+	text-transform: capitalize;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+#side_menu .correct_reason3 {
+	background-color: #f8247c;
+	color: #fff;
+	padding: 0.7em 0;
+	margin: 0;
+	text-transform: capitalize;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+#feedback_area{
+	background-color: #f9f9f9;
+	height: 200px;
+	padding: 10px;
+	overflow-y: scroll;
+    border: 1px solid #B3E0D8;
+    margin-bottom: 10px;
+}
+
+  /* アコーディオンメニューのスタイル */
+  #accordion_discussion {
+    background-color: #f9f9f9;
+	height: 150px;
+	padding: 10px;
+	overflow-y: scroll;
+    border: 1px solid #B3E0D8;
+    margin-bottom: 10px;
+  }
+  #accordion_discussion .accordion-item {
+    border-bottom: 1px solid #B3E0D8;
+    margin-bottom: 5px;
+  }
+  #accordion_discussion .accordion-item:last-child {
+    border-bottom: none;
+  }
+  #accordion_discussion .accordion-item .accordion-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #ddd;
+    font-weight: bold;
+  }
+  #accordion_discussion .accordion-item .accordion-content {
+    display: none;
+    padding: 10px;
+  }
+  #accordion_discussion .accordion-item.active .accordion-content {
+    display: block;
+  }
+  #accordion_discussion .accordion-item.active .accordion-input{
+	width: 100%; /* 要素の幅を親要素に合わせる */
+	height: 50px;
+	word-wrap: break-word; /* 幅が埋まったら自動的に改行する */
+    box-sizing: border-box; /* 幅の計算にborderやpaddingを含める */
+  }
+
+  /* ネットワークを点滅させる */
+  @keyframes blink1 {
+	0% {
+	  border-color: red;
+	}
+	50% {
+	  border-color: transparent;
+	}
+	100% {
+	  border-color: red;
+	}
+  }
+
+  @keyframes blink2 {
+	0% {
+	  border-color: green;
+	}
+	50% {
+	  border-color: transparent;
+	}
+	100% {
+	  border-color: green;
+	}
+  }
+  
+  .vis-network-node.blinking1 {
+	animation: blink1 1s infinite;
+  }
+
+  .vis-network-node.blinking2 {
+	animation: blink2 1s infinite;
+  }
+  
+  #ontology_feedback{
+	width: 100%;
+	height: 50px;
+	overflow: scroll;
+	text-align: center;
+	
+  }
+  .feedback_message{
+	width: fit-content;
+    background-color: lightgray;
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 0.3em;
+  }
+/*ここまで大槻修正*/
+
+
 /* 問い一覧の見出し */
 #side_menu .toi_menu {
-	background-color: #9acd32;
+	background-color: #a9c66e;
 	color: #fff;
 	padding: 0.7em 0;
 	margin: 0;
@@ -723,7 +1020,7 @@ h3 {
 .inquiry_area {
 	height: 40%;
 	overflow-y: auto;
-	border:solid 5px #F6D4D8;
+	border:solid 5px #B3E0D8;
 	margin-bottom: 30px;
 	font-size: 14px;
 	text-align: left;
@@ -732,7 +1029,7 @@ h3 {
 #side_menu .other_annotation {
 	height: 40%;
 	overflow-y: auto;
-	border:solid 5px #F6D4D8;
+	border:solid 5px #B3E0D8;
 	margin-bottom: 30px;
 	font-size: 14px;
 	text-align: left;
@@ -827,7 +1124,7 @@ h3 {
 	resize: none;
 	cursor: default;
 	font-size: 20px;
-	border:solid 5px #F6D4D8;
+	border:solid 5px #B3E0D8;
 }
 /* 【選択中のノード】の部分乗せ亭 */
 #selected_node_area{
@@ -837,7 +1134,7 @@ h3 {
 	resize: none;
 	cursor: default;
 	font-size: 15px;
-	border:solid 5px #F6D4D8;
+	border:solid 5px #B3E0D8;
 }
 /* 記述推奨の表示ボタン */
 /* 最初は見えないが，法造と結びついて表示させる */
@@ -884,6 +1181,49 @@ h3 {
 	cursor: pointer;
 }
 
+.deco-file label{
+    display: inline-block;
+    border: 2px solid #1E88E5;
+    color: #1E88E5;
+    text-align: center;
+    padding: 10px 15px;
+}
+.deco-file label:hover{
+    cursor: pointer;
+}
+.deco-file input[type="file"]{
+    display: none;
+}
+
+.file-names{
+	font-size: 10px;
+}
+/* 20222-12-16 shimizu */
+
+
+
+#set_audience{
+	font-size:15px;
+}
+
+#set_model{
+	display: none;
+	font-size:15px;
+}
+
+#set_final{
+	display: none;
+	font-size:15px;
+}
+
+#edit_model{
+	display: none;
+	font-size:15px;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+
 /* -------------------- 過去のマインドマップ表示の設定 ---------------------- */
 #jsmind_nav2 {
 	width: calc(100vw);
@@ -893,7 +1233,7 @@ h3 {
 	height:37px;
 	display: inline;
 	font-size: 1em;
-	border:solid 5px #F6D4D8;
+	border:solid 5px #B3E0D8;
 	margin: 0;
 	overflow-x: auto;
 	overflow-y: visible;
@@ -901,13 +1241,16 @@ h3 {
 }
 
 /* 過去のMT時間一覧のリストの設定 */
-/* select[name="user_list"] {
+select[name="user_list"] {
   width: 20vw;
 	min-width: 300px;
   height: 35px;
   line-height: 30px;
 	font-size:1em;
-} */
+}
+
+/* 以下，containerの名前を変える必要あり */
+/* kii */
 
 /* 過去のマインドマップを表示するエリア */
 
@@ -922,7 +1265,7 @@ h3 {
 	float:left;
 	display: none; /* 要素を横並びに配置するために Flexbox を使用 */
     flex-direction: column; /* 要素を縦方向に配置 */
-	border-bottom: solid #F6D4D8 5px;
+	border-bottom: solid #B3E0D8 5px;
 	box-sizing: border-box;
 	}
 
@@ -937,7 +1280,7 @@ h3 {
 		height:76vh;
 		min-height: 450px;
 		margin-bottom:2vh;
-		border:solid 5px #F6D4D8;
+		border:solid 5px #B3E0D8;
 		background:#fff;
 		overflow: scroll;
 		float:left;
@@ -954,7 +1297,7 @@ h3 {
 	min-height: 450px;
 	margin-bottom:2vh;
 	float: left;
-    border: 3px double #F6D4D8;
+    border: 3px double #B3E0D8;
 	overflow: auto;
 	user-select: text;
 }
@@ -966,6 +1309,125 @@ h3 {
 }
 
 
+
+/*ここから大槻修正*/
+/* 過去のマインドマップを表示するエリア */
+#jsmind_container4{
+	width: calc((100vw - 350px)*0.5);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 5px #ccc;
+	background:#fff;
+	overflow: scroll;
+	float:left;
+}
+
+/* 過去のマインドマップ（上）を表示するエリア */
+#jsmind_container2{
+	width: calc((100vw - 350px)*0.5);
+	min-width: 300px;
+	height:35vh;
+	min-height: 225px;
+	margin-bottom:2vh;
+	border:solid 5px #ccc;
+	background:#fff;
+	overflow: scroll;
+	float:left;
+}
+
+/* 過去のマインドマップ（下）を表示するエリア */
+#jsmind_container3{
+	width: calc((100vw - 350px)*0.5);
+	min-width: 300px;
+	height:35vh;
+	min-height: 225px;
+	margin-bottom:2vh;
+	border:solid 5px #ccc;
+	background:#fff;
+	overflow: scroll;
+	float:left;
+}
+/*議事録マップ表示*/
+#mynetwork_show{
+	width: calc((100vw - 350px)*0.5);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 5px #c5c3c3;
+	background:#fff;
+	overflow: auto;
+	float:left;
+}
+
+/*ネットワーク*/
+#network_container{
+	width: calc((100vw - 350px)*0.6);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 5px #c5c3c3;
+	background:#fff;
+	overflow: hidden;
+	float:left;
+	display: none;
+}
+#mynetwork2{
+	width: calc((100vw - 350px)*0.45);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 5px #c5c3c3;
+	background:#fff;
+	overflow: auto;
+}
+#timedisplay{
+	height:50px;
+}
+#rclick2{
+	position: sticky;
+	top: 0;
+	width: calc((100vw - 350px)*0.15);
+	height:80px;
+	background:#c6deff;
+}
+#utterance_area{
+	width: calc((100vw - 350px)*0.15);
+	min-width: 100px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	background:#c6deff;
+	overflow-y: scroll;
+}
+#utterance_area2{
+	width: calc((100vw - 350px)*0.15);
+	min-width: 100px;
+	margin-bottom:2vh;
+	border:solid 5px #cccccc00;
+	background:#c6deff;
+	overflow-y: scroll;
+	float:left;
+	line-height:20px;
+	cursor: pointer;
+}
+#mynetwork {
+	position: relative;
+	width: calc((100vw - 350px)*0.45);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 0.5px #000000;
+	background:#fff;
+	overflow: auto;
+}
+
+/* container問題ここまで */
 
 
 /********************* リフレクションタブ関係 **********************/
@@ -980,8 +1442,8 @@ h3 {
     float:left;
 		width: calc(100vw - 350px);
 		height:85%;
-    border:solid 5px #F6D4D8;
-    background:#F6D4D8;
+    border:solid 5px #B3E0D8;
+    background:#B3E0D8;
 		overflow: scroll;
 		text-align:center;
 }
@@ -1142,7 +1604,7 @@ h3 {
     float:left;
 		width: calc(100vw - 350px);
 		height:85%;
-    border:solid 5px #F6D4D8;
+    border:solid 5px #B3E0D8;
 		background-color: #fffafa;
 		overflow: scroll;
 		text-align:center;
@@ -1174,7 +1636,7 @@ h3 {
 
 #record_timestamp_title{
 	background-color: #ffdead;
-	border: solid 1px #F6D4D8;
+	border: solid 1px #B3E0D8;
 	width: 10%;
 	/* color: white; */
 
@@ -1182,33 +1644,33 @@ h3 {
 
 #record_ref_textp_title{
 	background-color: #ffdead;
-	border: solid 1px #F6D4D8;
+	border: solid 1px #B3E0D8;
 	width: 40%;
 
 }
 
 #record_activity_title{
 	background-color: #ffdead;
-	border: solid 1px #F6D4D8;
+	border: solid 1px #B3E0D8;
 	width: 8%;
 
 }
 
 #record_late_act_title{
 	background-color: #ffdead;
-	border: solid 1px #F6D4D8;
+	border: solid 1px #B3E0D8;
 	width: 8%;
 
 }
 
 #record_reason_title{
 	background-color: #ffdead;
-	border: solid 1px #F6D4D8;
+	border: solid 1px #B3E0D8;
 
 }
 
 .record_table_cells{
-	border: solid 1px #F6D4D8;
+	border: solid 1px #B3E0D8;
 	font-size: 12px;
 	background-color: #fffff0;
 }
@@ -1245,7 +1707,7 @@ h3 {
 		-webkit-user-select: none;
 }
 .button:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 }
 
 .button0 {
@@ -1256,7 +1718,7 @@ h3 {
 		-webkit-user-select: none;
 }
 .button0:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 }
 
 /* シート選択画面に戻るボタン */
@@ -1265,7 +1727,7 @@ h3 {
 	height: 80px;
 	font-size: 1.2vw;
 	color: #fff;
-	background-color: #f68080;
+	background-color: #52A59B;
 	float: right;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -1273,7 +1735,7 @@ h3 {
 }
 
 .button1:hover {
-	background-color: #f65c5c;
+	background-color: #3E7F77;
 }
 
 /* ログアウトボタン */
@@ -1282,7 +1744,7 @@ h3 {
 	height: 80px;
 	font-size: 1.2vw;
 	color: #fff;
-	background-color: #f68080;
+	background-color: #52A59B;
 	float: right;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -1293,11 +1755,11 @@ h3 {
 }
 
 .button2:hover {
-	background-color: #f65c5c;
+	background-color: #3E7F77;
 }
 
 .button3 {
-	background-color: #999;
+	background-color: #FFF5E5;
 	color: #fff;
 	width: 50px;
 	height: 25px;
@@ -1305,13 +1767,13 @@ h3 {
 	margin-left: 0;
 }
 .button3:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 }
 /* ノード追加ボタン */
 
 
 .button4 {
-	background-color: #999;
+	background-color: #FFF5E5;
 	color: #fff;
 	width: 100px;
 	height: 25px;
@@ -1321,7 +1783,7 @@ h3 {
 	overflow: auto;
 }
 /* .button4:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 } */
 
 /*他者の問いノード表示*/
@@ -1376,7 +1838,7 @@ h3 {
 }
 
 .button5 {
-	background-color: #999;
+	background-color: #FFF5E5;
 	color: #fff;
 	width: 70px;
 	height: 25px;
@@ -1384,17 +1846,17 @@ h3 {
 	margin-top: 5px;
 }
 .button5:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 }
 
 .button6 {
-	background-color: #999;
+	background-color: #FFF5E5;
 	color: #fff;
 	width: 100%;
 	height: 25px;
 }
 .button6:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 }
 
 
@@ -1416,14 +1878,14 @@ h3 {
 }
 
 .button8 {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 	color: #fff;
 	width: 30%;
 	height: 30px;
 }
-.button8:hover {
+/* .button8:hover {
 	background-color: #DAFDBA;
-}
+} */
 
 /* 操作確認ボタン */
 .button9 {
@@ -1442,13 +1904,13 @@ h3 {
 }
 
 .button_other {
-	background-color: #999;
+	background-color: #FFF5E5;
 	color: #fff;
 	width: 90%;
 	height: 25px;
 }
 .button_other:hover {
-	background-color: #ff8c00;
+	background-color: #FBC362;
 }
 
 .button10 {
@@ -1460,16 +1922,16 @@ h3 {
 	padding: 5px 10px;
 	font-weight: bold;
 	border-radius: 10px;
-	color: #27acd9;
-	border: 3px solid #27acd9;
-	box-shadow: 1px 1px #27acd9;
+	color: #FBC362;
+	border: 3px solid #FBC362;
+	box-shadow: 1px 1px #FBC362;
 	transition: 0.1s ease-in-out;
 	margin-bottom: 3px;
 }
 .button10:hover {
 	box-shadow: none;
 	transform: translate(5px, 5px);
-	color: #27acd9;
+	color: #FBC362;
 }
 
 /* 修正理由記入テキストエリア */
@@ -1533,7 +1995,7 @@ opacity: 0;
 }
 /* アクティブなタブ */
 .tab-switch:checked+.tab-label {
-background: DeepSkyBlue;
+background: #00473E;
 }
 .tab-switch:checked+.tab-label+.tab-content {
 height: auto;
@@ -1584,7 +2046,7 @@ display: none;
 	overflow: auto;
 	min-height: 50px;
 	min-width: 100px;
-	border: 1px solid #ccc;
+	border: 1px solid #B3E0D8;
 	padding: 5px;
 }
 
@@ -1633,11 +2095,492 @@ display: none;
 	max-width: 100%;
 	height: auto;
 }
+
+
+/*presentation*/
+
+.slide_detail:after {
+    content: none;
+}
+.slide_detail:before {
+    content: none;
+}
+#node_slide{
+	display: none;
+	text-align: center;
+}
+#ImageAddContent{
+	display: none;
+	text-align: center;
+}
+#document_slide{
+	display: none;
+	text-align: center;
+}
+#clear_run{
+	text-align: center;
+}
+
+
+.micro_text{
+	width: 600px;
+	height: 70px;
+}
+
+.box2 {
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+.slideTag {
+	background-color: red;
+	width: 100px;
+	float: left;
+}
+
+.select-box {
+  background: #FFFDF4;
+  border: 2px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 150px;
+}
+
+#gouri{
+	width:250px;
+	height:100px;
+	margin-left: 15px;
+	resize: none;
+	cursor: default;
+	font-size: 15px;
+	border:solid 5px #ccc;
+}
+
+#sinario{
+	width:250px;
+	height:100px;
+	margin-left: 15px;
+	resize: none;
+	cursor: default;
+	font-size: 15px;
+	border:solid 5px #ccc;
+}
+
+
+#macro_feedback_area{
+	/* width: 100vw; */
+	width: 35%;
+	height: auto;
+	/* height:calc(100% - 200px); */
+	text-align: left;
+	font-size:14px;
+	background-color: #F9F9F9;
+	margin-left: 10px;
+	padding-top: 200px;
+}
+
+#presen_menu{
+	display : none;
+	text-align:right;
+	float:right;
+	margin-right:15px;
+}
+
+/* 聴衆の観点追加フォーム */
+#input_plural {
+    margin: 1px;
+}
+
+#input_plural input.form-control {
+    display: inline-block;
+    width: 80%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+#input_plural input.pluralBtn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #FAF6F1;
+    background: #fff;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+}
+/* -ーーーーーーーーーースライド関連ーーーーーーーーーーーー */
+
+.cspan{
+	font-size:15px;
+	background-color:#ffffff;
+	border-radius:10px;
+	margin-bottom:5px;
+	/* margin-left: 20px; */
+	display:inline-block;
+	text-indent: 0.5em;
+	/* height:25px; */
+	white-space: pre-wrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.text_border{
+	border: solid 1px #008080;
+	/* font-size:15px; */
+	margin-bottom:3px;
+	/* resize:none; */
+	/* min-height: 30px; */
+	border-radius: 0.67em;
+	display:none;
+	/* height:auto; */
+}
+
+.tspan{
+	font-size:20px;
+	background-color:transparent;
+	width:90%;
+	margin-bottom:0px;
+	display:inline-block;
+	height:35px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #010F29;
+	font-weight:  bold;
+}
+
+
+.title_slide{
+	font-size:20px;
+	width:90%;
+	margin-bottom:10px;
+	resize:none;
+	height:35px;
+	display:none;
+}
+.content_delete{
+	/* width:25px;
+	height:25px; */
+	font-size:15px;
+	float:right;
+	background-color:transparent;
+	border:none;
+	outline:none;
+	/* position: absolute; */
+	/* right: 10px; */
+}
+
+.scenario_content{
+	/* position: relative; */
+}
+
+.under_line {
+	font-size: 15px;
+  border-bottom: solid 3px #87CEFA;
+	margin-bottom: 10px;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+.ad_font{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	background: linear-gradient(transparent 70%, #CCCCCC 90%);
+}
+
+.nor_font{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 15px;
+}
+
+.presen-btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #FFF5E5;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #FBC362;
+  border-radius: 3px;
+	cursor: pointer;
+}
+
+.presen-btn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+
+
+.simple_btn{
+	box-shadow: 0.5px 0.5px 1px gray;
+	margin: 0.2px;
+}
+
+.cspan:focus {
+  outline: none;
+}
+
+.tspan:focus {
+  outline: none;
+}
+
+/* 2022-12 shimizu バッジ表現 */
+
+.badge {
+    display: inline-block;
+    color: #fff;
+    padding: 0.125rem 0.3rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* 合理性 */
+.bg-blue {
+    background-color: #3998DB;
+}
+/* 妥当性 */
+.bg-red {
+    background-color: #E74C3C;
+}
+/* 推測関係 */
+.bg-green {
+    background-color: #5CBD9D;
+}
+/* 議論目的 */
+.bg-yellow {
+    background-color: #F29C33;
+}
+
+/* 2022 12-20 shimizu */
+/* .DecideLogicRelationButton{
+	text-align: center;
+} */
+
+/* 2022/12/23 shimizu セレクトボックスのデザイン */
+/* モード管理 */
+.cp_ipselect2 {
+	overflow: hidden;
+	font-size: 20;
+	width: 78%;
+	margin: 0;
+	text-align: center;
+}
+.cp_ipselect2 select {
+	width: 65%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.cp_ipselect2 select::-ms-expand {
+    display: none;
+}
+.cp_ipselect2.cp_sl02 {
+	position: relative;
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	background: #ffffff;
+}
+.cp_ipselect2.cp_sl02::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.cp_ipselect2.cp_sl02:after {
+	position: absolute;
+	top: 0;
+	right: 2.5em;
+	bottom: 0;
+	width: 1px;
+	content: '';
+	border-left: 1px solid #bbbbbb;
+}
+.cp_ipselect2.cp_sl02 select {
+	padding: 8px 38px 8px 8px;
+	color: #666666;
+}
+
+/* スライド */
+.cp_ipselect {
+	overflow: hidden;
+	width: 15%;
+	margin: 0;
+	text-align: center;
+}
+.cp_ipselect select {
+	width: 25%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl04 {
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid #da3c41;
+  	border-radius: 50px;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl04::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #da3c41;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl04 select {
+	padding: 8px 38px 8px 8px;
+	color: #da3c41;
+}
+/* ノード */
+.cp_ipselect.cp_sl05 {
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid #3790cc;
+  	border-radius: 50px;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl05::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #3790cc;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl05 select {
+	padding: 8px 38px 8px 8px;
+	color: #3790cc;
+}
+/* -------------------------------------------------------------- */
+
+/*  ------- hatakeyama ------  */
+
+.version_reason{
+	position:relative
+	/* position: sticky; */
+}
+/* バージョン更新理由記述の誘導 */
+.comment {
+	background: rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	color: rgb(215, 215, 215);
+	padding-right: 10px;
+	padding-left: 15px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	position: absolute;
+    top: -55px;
+	margin:30px;
+	font-size: 15px;
+}
+.balloon-under::after {
+	border-left: solid 7px transparent;
+	border-right: solid 7px transparent;
+	border-top: solid 10px rgb(0, 0, 0,.75);
+	bottom: -10px;
+	content:"";
+	display:block;
+	height:0;
+	left:50%;
+	margin-left:-5px;
+	position: absolute;
+	width:0;
+}
+.node_version_log {
+	font-size:12px;
+	text-align:left;
+}
+/* -------------------------------------------------------------- */
+
+/* 論理関係の設定用 */
+#second_choice{
+	display: none;
+
+}
+
+#logic_intention1{
+	visibility: hidden;
+}
+
+#logic_intention2{
+	visibility: hidden;
+}
+
+/* --------------- */
+
+.highlightedTempRectangle {
+	position: absolute;
+	background-color: rgba(0, 255, 0, 0.3); /* 薄緑色のハイライト */
+	border: 1px solid green;
+}
+
+.highlightedDecideRectangle {
+	position: absolute;
+	background-color: rgba(0, 140, 255, 0.3); /* 薄青色のハイライト */
+	border: 1px solid blue;
+}
+
+
 /* カラーパレット 
 白:#FFFFFF
-赤（ベース）:#E38692
-ピンク:#F6D4D8
-黄:#F6D580
-緑:#6EB7DB
-青:#64C99B */
+深緑（ベース）:#00473E
+緑:#90B1AB
+薄緑:#B3E0D8
+オレンジ(ハイライト):#B3E0D8
+薄オレンジ:#FFF5E5
+ピンク(secondary):#ffa8ba
+濃いピンク(tertiary):#fa5246
+*/
 
