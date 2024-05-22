@@ -70,6 +70,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
           <span><input class="button1" type="submit" name="sheetbtn" value="シート選択画面に戻る"></span>
         </form>
       </div>
+
       <form name="return" method="POST">
         <div id="session">
           <span class="session_php">
@@ -106,90 +107,89 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
       <div class="tabcontent">
         <!-- 思考整理支援システム -->
         <div id="tab01">
-            <div id="layout">
+          <div id="layout">
               
-              <div id ="system">
+            <div id ="system">
               <div id="area">
-              <div id="jsmind_nav">
-              【Edit】
-                  
-              
+                <div id="jsmind_nav">
+                【Edit】
+                    
+                
                   <button class="button4" id="question_node_b" onclick="add_Qnode2();">
                     疑問ノード追加
                   </button>
-                  
+                    
                   <button class="button4" id="s_interpretation" onclick="add_Anode('konkyo','konkyo');">
-                   根拠ノード追加
+                    根拠ノード追加
                   </button>
                   <button class="button4" id="s_interpretation" onclick="add_Anode('predict','predict');">
-                   解釈ノード追加
+                    解釈ノード追加
                   </button>
-          
+            
+              
+
+                    <!-- <select name="add_criticism" id="s_criticism_node">
+                      <optgroup label="批評の観点（タグ）付与">
+                      <option value="criticism">批評ノード追加</option>
+                        <option value="evaluation">価値判断</option>
+                            <optgroup label="----L価値判断">
+                                <option value="e_1">---L有用性</option>
+                                <option value="e_2">---L新規性</option>
+                                <option value="e_3">---L信頼性</option>
+                              </optgroup>
+
+                        <option value="objection">意見</option>
+                              <optgroup label="----L意見">
+                              <option value="o_1">---L反論</option>
+                                <option value="o_2">---L改善策</option>
+                                <option value="o_3">---L代替案</option>
+                              </optgroup>
+                        <option value="modification">問題点</option>
+                              <optgroup label="----L問題点">
+                              <option value="m_1">---L語の妥当性</option>
+                                <option value="m_2">---L証拠の十分生</option>
+                                <option value="m_3">---L論理の整合性</option>
+                              </optgroup>
+
+
+                      </optgroup>
+                    </select> -->
+
+                    
+
+
             
 
-                  <!-- <select name="add_criticism" id="s_criticism_node">
-                    <optgroup label="批評の観点（タグ）付与">
-                    <option value="criticism">批評ノード追加</option>
-                       <option value="evaluation">価値判断</option>
-                          <optgroup label="----L価値判断">
-                              <option value="e_1">---L有用性</option>
-                              <option value="e_2">---L新規性</option>
-                              <option value="e_3">---L信頼性</option>
-                            </optgroup>
-
-                       <option value="objection">意見</option>
-                            <optgroup label="----L意見">
-                            <option value="o_1">---L反論</option>
-                              <option value="o_2">---L改善策</option>
-                              <option value="o_3">---L代替案</option>
-                            </optgroup>
-                      <option value="modification">問題点</option>
-                            <optgroup label="----L問題点">
-                            <option value="m_1">---L語の妥当性</option>
-                              <option value="m_2">---L証拠の十分生</option>
-                              <option value="m_3">---L論理の整合性</option>
-                            </optgroup>
-
-
-                    </optgroup>
-                  </select> -->
-
-                  
-
-
-          
-
-                  【mindmap】
+                   【mindmap】
                   <button class="button3" id="zoom-in-button" onclick="zoomIn();">
-                      拡大
+                    拡大
                   </button>
                   <button class="button3" id="zoom-out-button" onclick="zoomOut();">
-                      縮小
+                    縮小
                   </button>
 
                   【paper】
                   <button class="zoom" onclick="zoomIn_paper();">
-                      <!-- 拡大 -->
-                      <i class="fas fa-search-plus"></i>
-                    </button>   
-
-                    <button class="zoom" onclick="zoomOut_paper();">
-                    <!-- 縮小 -->
-                    <i class="fas fa-search-minus"></i>
-                    </button> 
+                    <!-- 拡大 -->
+                    <i class="fas fa-search-plus"></i>
+                  </button>   
+                  <button class="zoom" onclick="zoomOut_paper();">
+                  <!-- 縮小 -->
+                  <i class="fas fa-search-minus"></i>
+                  </button> 
                     
-                    <button class="zoom" onclick="zoomInit_paper();">
-                    <!-- 縮小 -->
+                  <button class="zoom" onclick="zoomInit_paper();">
+                  <!-- 縮小 -->
                     元のサイズ
-                    </button> 
+                  </button> 
                     
-                    <button id="help_button" class="button3" onclick="toggleImage()">help</button>
-                      <div id="floatingImage">
-                          <img src="image/help.png" alt="Floating Image">
-                      </div>
-                    
+                  <button id="help_button" class="button3" onclick="toggleImage()">help</button>
+                  <div id="floatingImage">
+                    <img src="image/help.png" alt="Floating Image">
+                  </div>
+                      
 
-   
+    
                   【Screenshot】
                   <button class="button4" style="width:80px" onclick="screen_shot();">
                     screenshot
@@ -199,8 +199,10 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                   <!-- <button class="button4" style="width:80px" onclick="Difference();"> -->
                   <!-- <label><input type="checkbox" name="Difference" id="Difference" onClick="Difference();">以前のマップとの差分</label> -->
                   <!-- </button> -->
-          
-              </div>
+            
+                </div>
+                <!--jsmind_nav fin-->
+
                 <div id="jsmind_area" oncontextmenu="return false;">           
                   <div id="jsmind_container" oncontextmenu="return false;"></div>
                   <div id="jsmind_container_menu">
@@ -218,8 +220,10 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                   <div id="jsmind_container_cr2"></div>
                 </div>
                 <div id="document_area" oncontextmenu="return false;"></div>             
+              </div>
+              <!--area fin-->
             </div>
-            </div>
+            <!--system fin-->
 
 
             <div id="mindmap_conmenu">
@@ -391,42 +395,40 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                     </ul>
 
             </div>
-
-
-          
            
           </div>
+          <!-- layout fin -->
 
           <!-- <iframe id="document_area" src="papaer\contemporary_self.html" frameborder="0">
 
           </iframe> -->
           <!-- <div id="document_area" style="width: calc(60vw - 350px); display: block;"> -->
 
-            <div id="document_conmenu">
-              <ul>
-                <!-- <li><a href="javascript:void(0);" target="_blank" onClick="SelecttextToNode()">選択したをマインドマップに追加する</a>
+          <div id="document_conmenu">
+            <ul>
+              <!-- <li><a href="javascript:void(0);" target="_blank" onClick="SelecttextToNode()">選択したをマインドマップに追加する</a>
                -->
                 <!-- <li>
                 <button class="" onclick="add_annotation('highlight');" style="pointer-events: auto !important;">
                     論文アノテーション追加
                 </button>
                 </li> -->
-                <li>            
+              <li>            
                   
-                  <li>
-                  <button class="button6" id="question_node_b" onclick="move2node_from_anno(annotations);">
-                    紐づいた考えを参照
-                  </button>
+                <li>
+                <button class="button6" id="question_node_b" onclick="move2node_from_anno(annotations);">
+                  紐づいた考えを参照
+                </button>
                 </li>
                   </li>
-                </li> 
+              </li> 
        
               
-              </ul>
-            </div>
+            </ul>
+          </div>
 
-            <div id="other_conmenu" >
-              <ul>
+          <div id="other_conmenu" >
+            <ul>
                 <!-- <li><a href="javascript:void(0);" target="_blank" onClick="SelecttextToNode()">選択したをマインドマップに追加する</a>
                -->
                 <!-- <li>
@@ -434,16 +436,14 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                     論文アノテーション追加
                 </button>
                 </li> -->
-                <li>
-                  <button class="button_other" onclick="add_Anode_from_other('other_answer', 'other_answer')">
-                    この解釈を取り入れる
-                  </button>
-                   
-        
-                </li>
+              <li>
+                <button class="button_other" onclick="add_Anode_from_other('other_answer', 'other_answer')">
+                  この解釈を取り入れる
+                </button>
+              </li>
               
-              </ul>
-            </div>
+            </ul>
+          </div>
 
             <!-- <div id="other_question_conmenu" oncontextmenu="return false;">
               <ul> -->
@@ -468,13 +468,13 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
 
             <!--サイドメニュー　start-->
             <div id="side_menu">
-            <div class="Menu">Menu</div>
-             <button id="change2" class="button10" onClick="confirmAndExecute('other');">マップを比較する</button>
+              <div class="Menu">Menu</div>
+              <button id="change2" class="button10" onClick="confirmAndExecute('other');">マップを比較する</button>
 
 
-             <button id="change3" class="button10 other" onClick="confirmAndExecute('crit');">総評する</button>
+              <button id="change3" class="button10 other" onClick="confirmAndExecute('crit');">総評する</button>
             
-             <div class="checkbox">
+              <div class="checkbox">
                 <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()">
                 <label for="checkbox" data-on-label="On" data-off-label="Off"></label>
                 <span class="checkbox_text">【論文表示】<br><br></span>
