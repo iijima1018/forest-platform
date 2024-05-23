@@ -158,7 +158,39 @@ jmnodes.theme-asbestos jmnode.root{}
 jmnodes.theme-asbestos jmexpander{}
 jmnodes.theme-asbestos jmexpander:hover{}
 
-/*問いノードと答えノード*/
+
+/* 他者のマインドマップのtheme */
+jmnodes.theme-past_sheet jmnode.root{background-color:#bdc3c7;color:#fff;}
+jmnodes.theme-past_sheet jmnode{background-color:#e0ffff;color:#000;}
+jmnodes.theme-past_sheet jmnode:hover{background-color:#e0ffff;}
+jmnodes.theme-past_sheet jmnode.selected{background-color:#bee2f9;color:#000;}
+jmnodes.theme-past_sheet jmnode[type="answer"]{background-color:#ffa07a;color:#000;}
+jmnodes.theme-past_sheet jmnode[type="answer"]:hover{background-color:#ffa07a;}
+jmnodes.theme-past_sheet jmnode[type="answer"].selected{background-color:#dc143c;color:#000;}
+/* jmnodes.theme-past_sheet jmexpander{} */
+/* jmnodes.theme-past_sheet jmexpander:hover{} */
+
+/*index.phpに直書きされていたcss*/
+.file_input{width:100px;}
+button.sub{width:100px;}
+
+
+jmnode.horisage{
+    background-color:#ff69b4;color:#fff;
+}
+
+jmnode.horisage:hover{
+    background-color:#ff69b4;
+}
+
+jmnode.horisage.selected{
+    background-color:#ff69b4;color:#fff;
+}
+
+
+/* typrごとのノードのcss */
+
+/*　問いノード　*/
 jmnode.root{background-color:#47ff3a;color:#fff;}
 jmnode[type="toi"]{background-color:#bee2f9;color:#000;} /*bee2f9　*/
 jmnode[type="toi"]:hover{background-color:#bee2f9;}
@@ -184,10 +216,27 @@ jmnode[type="toi_deep"]{background-color:#bee2f9;color:#000;} /*bee2f9　*/
 jmnode[type="toi_deep"]:hover{background-color:#bee2f9;}
 jmnode[type="toi_deep"].selected{background-color:#bee2f9;color:#000;}
 
+
+/* 根拠ノード */
 jmnode[type="konkyo"]{background-color:#fbdae1;color:#000;} /*bee2f9　*/
 jmnode[type="konkyo"]:hover{background-color:#fbdae1;}
 jmnode[type="konkyo"].selected{background-color:#fbdae1;color:#000;}
 
+
+/* 解釈ノード */
+jmnode[type="predict"]{background-color:#ffbaa1;color:#000;}
+jmnode[type="predict"]:hover{background-color:#ffbaa1;}
+jmnode[type="predict"].selected{background-color:#ffbaa1;color:#000;}
+
+jmnode[type="answer"]{background-color:#ffbaa1;color:#000;} 
+/* jmnode[type="answer"]{background-color:#ff69b4;color:#000;border: 5px solid #9fd94f;}  */
+/*                                 jmnode[i].style.backgroundColor = "#ff69b4";
+                                jmnode[i].style.border = "5px solid #9fd94f"; */
+jmnode[type="answer"]:hover{background-color:#ffbaa1;}
+jmnode[type="answer"].selected{background-color:#ffbaa1;color:#000;}
+
+
+/* 他者から取り入れたノードたち */
 jmnode[type="other_answer"]{background-color:#ffbaa1;color:#000;border: 5px dashed red;} /*bee2f9　*/
 jmnode[type="other_answer"]:hover{background-color:#ffbaa1;border: 5px solid dashed red;}
 jmnode[type="other_answer"].selected{background-color:#ffbaa1;color:#000;border: 5px solid dashed red;}
@@ -208,26 +257,6 @@ jmnode[class="commented"]{background-color:#ffbaa1;color:#000;border: 5px dashed
 jmnode[class="commented"]:hover{background-color:#ffbaa1;border: 5px solid dashed #ec3f1d;}
 jmnode[class="commented"].selected{background-color:#ffbaa1;color:#000;border: 5px solid dashed #ec3f1d;}
 
-/* 解釈 */
-jmnode[type="predict"]{background-color:#ffbaa1;color:#000;}
-jmnode[type="predict"]:hover{background-color:#ffbaa1;}
-jmnode[type="predict"].selected{background-color:#ffbaa1;color:#000;}
-
-/* 予測 */
-jmnode[type="answer_predict"]{background-color:#9999FF;color:#000;
-}
-jmnode[type="answer_predict"]:hover{background-color:#9999FF;}
-jmnode[type="answer_predict"].selected{background-color:#9999FF;color:#000;}
-
-/* 解釈
-jmnode[type="interpretation"]{background-color:#FEBE8C;color:#000;}
-jmnode[type="interpretation"]:hover{background-color:#FEBE8C;}
-jmnode[type="interpretation"].selected{background-color:#FEBE8C;color:#000;} */
-
-
-
-
-/* FEBE8C */
 
 
 /* 批評 add_Cnode();*/
@@ -235,84 +264,6 @@ jmnode[type="interpretation"].selected{background-color:#FEBE8C;color:#000;} */
 jmnode[class="criticism"]{background-color:#ff7792;color:#000;border-radius: 0px;}
 jmnode[class="criticism"]:hover{background-color:#ff7792;border-radius: 0px;}
 jmnode[class="criticism"].selected{background-color:#ff7792;color:#000;border-radius: 0px;}
-
-
-
-
-jmnode[type="answer"]{background-color:#ffbaa1;color:#000;} 
-/* jmnode[type="answer"]{background-color:#ff69b4;color:#000;border: 5px solid #9fd94f;}  */
-/*                                 jmnode[i].style.backgroundColor = "#ff69b4";
-                                jmnode[i].style.border = "5px solid #9fd94f"; */
-jmnode[type="answer"]:hover{background-color:#ffbaa1;}
-jmnode[type="answer"].selected{background-color:#ffbaa1;color:#000;}
-
-jmnode[type="non-relation"]{background-color:#88A47C;color:#000;}
-jmnode[type="non-relation"]:hover{background-color:#88A47C;}
-jmnode[type="non-relation"].selected{background-color:#88A47C;color:#000;}
-
-
-
-
-
-
-/* 差分表示時のテーマ */
-jmnode.root{background-color:#bdc3c7;color:#fff;}
-  /* 以前のタイミングから新しく作成されたノード */
-jmnode[type="new_create_toi"]{background-color:black;color:#fff;} /* 背景：黒，文字色：白 */
-jmnode[type="new_create_toi"]:hover{background-color:#bee2f9;} 
-jmnode[type="new_create_toi"].selected{background-color:black;color:#fff;}
-jmnode[type="new_create_answer"]{background-color:black;color:#fff;}
-jmnode[type="new_create_answer"]:hover{background-color:#ffbaa1;}
-jmnode[type="new_create_answer"].selected{background-color:black;color:#fff;}
-  /* 以前のタイミングから内容が変えられたノード */
-jmnode[type="change_topic_toi"]{background-color:#0000ff;color:#fff;}
-jmnode[type="change_topic_toi"]:hover{background-color:#0000ff;}
-jmnode[type="change_topic_toi"].selected{background-color:#0000ff;color:#fff;}
-jmnode[type="change_topic_answer"]{background-color:#8b4513;color:#fff;}
-jmnode[type="change_topic_answer"]:hover{background-color:#8b4513;}
-jmnode[type="change_topic_answer"].selected{background-color:#8b4513;color:#fff;}
- 
-
-/* 以前のタイミングから削除されたノード */
-jmnode[type="deleted_toi"]{background-color:#e6e6fa;color:#000;border:dashed; border:dashed solid #000;}
-jmnode[type="deleted_toi"]:hover{background-color:#e6e6fa;}
-jmnode[type="deleted_toi"].selected{background-color:#e6e6fa;color:#000;}
-jmnode[type="deleted_answer"]{background-color:#fffacd;color:#000;border:dashed; border:dashed solid #000;}
-jmnode[type="deleted_answer"]:hover{background-color:#fffacd;}
-jmnode[type="deleted_answer"].selected{background-color:#fffacd;color:#000;}
-
-
-/* 他者のマインドマップのtheme */
-jmnodes.theme-past_sheet jmnode.root{background-color:#bdc3c7;color:#fff;}
-jmnodes.theme-past_sheet jmnode{background-color:#e0ffff;color:#000;}
-jmnodes.theme-past_sheet jmnode:hover{background-color:#e0ffff;}
-jmnodes.theme-past_sheet jmnode.selected{background-color:#bee2f9;color:#000;}
-jmnodes.theme-past_sheet jmnode[type="answer"]{background-color:#ffa07a;color:#000;}
-jmnodes.theme-past_sheet jmnode[type="answer"]:hover{background-color:#ffa07a;}
-jmnodes.theme-past_sheet jmnode[type="answer"].selected{background-color:#dc143c;color:#000;}
-/* jmnodes.theme-past_sheet jmexpander{} */
-/* jmnodes.theme-past_sheet jmexpander:hover{} */
-
-/*index.phpに直書きされていたcss*/
-.file_input{width:100px;}
-button.sub{width:100px;}
-
-
-
-jmnode.horisage{
-    background-color:#ff69b4;color:#fff;
-}
-
-jmnode.horisage:hover{
-    background-color:#ff69b4;
-}
-
-jmnode.horisage.selected{
-    background-color:#ff69b4;color:#fff;
-}
-
-
-
 
 
 jmnode[type="evaluation"]{background-color:#ff7792;color:#000;border-radius: 0px;}
@@ -362,4 +313,53 @@ jmnode[type="m_2"].selected{background-color:#ff7792;color:#000;border-radius: 0
 jmnode[type="m_3"]{background-color:#ff7792;color:#000;border-radius: 0px;}
 jmnode[type="m_3"]:hover{background-color:#ff7792;border-radius: 0px;}
 jmnode[type="m_3"].selected{background-color:#ff7792;color:#000;border-radius: 0px;}
+
+
+
+
+
+/* 以下は過去使用されていたと思われるtype */
+
+
+/* 用途不明 */
+jmnode[type="non-relation"]{background-color:#88A47C;color:#000;}
+jmnode[type="non-relation"]:hover{background-color:#88A47C;}
+jmnode[type="non-relation"].selected{background-color:#88A47C;color:#000;}
+
+/* 予測 */
+jmnode[type="answer_predict"]{background-color:#9999FF;color:#000;
+}
+jmnode[type="answer_predict"]:hover{background-color:#9999FF;}
+jmnode[type="answer_predict"].selected{background-color:#9999FF;color:#000;}
+
+/* 解釈
+jmnode[type="interpretation"]{background-color:#FEBE8C;color:#000;}
+jmnode[type="interpretation"]:hover{background-color:#FEBE8C;}
+jmnode[type="interpretation"].selected{background-color:#FEBE8C;color:#000;} */
+
+/* 差分表示時のテーマ */
+jmnode.root{background-color:#bdc3c7;color:#fff;}
+  /* 以前のタイミングから新しく作成されたノード */
+jmnode[type="new_create_toi"]{background-color:black;color:#fff;} /* 背景：黒，文字色：白 */
+jmnode[type="new_create_toi"]:hover{background-color:#bee2f9;} 
+jmnode[type="new_create_toi"].selected{background-color:black;color:#fff;}
+jmnode[type="new_create_answer"]{background-color:black;color:#fff;}
+jmnode[type="new_create_answer"]:hover{background-color:#ffbaa1;}
+jmnode[type="new_create_answer"].selected{background-color:black;color:#fff;}
+  /* 以前のタイミングから内容が変えられたノード */
+jmnode[type="change_topic_toi"]{background-color:#0000ff;color:#fff;}
+jmnode[type="change_topic_toi"]:hover{background-color:#0000ff;}
+jmnode[type="change_topic_toi"].selected{background-color:#0000ff;color:#fff;}
+jmnode[type="change_topic_answer"]{background-color:#8b4513;color:#fff;}
+jmnode[type="change_topic_answer"]:hover{background-color:#8b4513;}
+jmnode[type="change_topic_answer"].selected{background-color:#8b4513;color:#fff;}
+ 
+
+/* 以前のタイミングから削除されたノード */
+jmnode[type="deleted_toi"]{background-color:#e6e6fa;color:#000;border:dashed; border:dashed solid #000;}
+jmnode[type="deleted_toi"]:hover{background-color:#e6e6fa;}
+jmnode[type="deleted_toi"].selected{background-color:#e6e6fa;color:#000;}
+jmnode[type="deleted_answer"]{background-color:#fffacd;color:#000;border:dashed; border:dashed solid #000;}
+jmnode[type="deleted_answer"]:hover{background-color:#fffacd;}
+jmnode[type="deleted_answer"].selected{background-color:#fffacd;color:#000;}
 
