@@ -489,7 +489,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               
 
               
-              <button class="button6 other" style="position: center;" onclick="get_question()">
+              <button class="button8 other" style="position: center;" onclick="get_question()">
                     他者の疑問の観点
               </button>
 

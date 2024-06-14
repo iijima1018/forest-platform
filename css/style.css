@@ -293,19 +293,19 @@ input:checked+label::before {
 /* Offの文字設定 */
 input:checked+label::after {
 	left: 60px;
-	background-color: #B3E0D8;
+	background-color: #fff;
 }
 
 .checkbox+label {
-	background-color: #BBBBBB;
+	background-color: #f4ece0;
 	margin: 0 auto;
 }
 .checkbox+label::before {
-	color: #292929;
+	color: #402c08;
 	margin: 0 auto;
 }
 .checkbox:checked+label {
-	background-color: #FBC362;
+	background-color: #fdda9e;
 	margin: 0 auto;
 }
 .checkbox:checked+label::before {
@@ -378,6 +378,7 @@ input:checked+label::after {
 	background:#fff;
 	float:left;
 	position: relative;
+	border-right: #B3E0D8;
 
 }
 #area{
@@ -419,7 +420,7 @@ input:checked+label::after {
 /* マインドマップ上で右クリックしたときのメニュー */
 #mindmap_conmenu{
   width:160px;
-  background-color:#FAF6F1;
+  background-color:#f8fffd;
   border:1px solid #B3E0D8;
   display:none;
   position:fixed;
@@ -440,7 +441,7 @@ input:checked+label::after {
 
 #mindmap_conmenu_other{
 	width:160px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:1px solid #FBC362;
 	display:none;
 	position:fixed;
@@ -461,7 +462,7 @@ input:checked+label::after {
 /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu2{
 	width:160px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
@@ -485,7 +486,7 @@ input:checked+label::after {
   /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu_someone{
 	width:160px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
@@ -508,7 +509,7 @@ input:checked+label::after {
   /* マインドマップ上で左クリックしたときのメニュー */
 #mindmap_conmenu_my{
 	width:160px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
@@ -531,7 +532,7 @@ input:checked+label::after {
 /*ネットワーク右クリック*/
 #network_conmenu{
 	width:350px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:2px solid #FBC362;
 	  border-radius: 10px;
 	display:none;
@@ -552,7 +553,7 @@ input:checked+label::after {
 /*ネットワーク右クリック*/
 #network_conmenu{
 	width:350px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:2px solid #FBC362;
 	  border-radius: 10px;
 	display:none;
@@ -709,7 +710,7 @@ h3 {
 /* ドキュメントエリア内で右クリックしたときのメニュー */
 #document_conmenu{
   width:210px;
-  background-color:#FAF6F1;
+  background-color:#f8fffd;
   border:1px solid #B3E0D8;
   display:none;
   position:fixed;
@@ -728,8 +729,8 @@ h3 {
 
 #other_conmenu{
 	width:210px;
-	background-color:#FAF6F1;
-	border:1px solid #FBC362;
+	background-color:#f8fffd;
+	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
 	z-index: 4;
@@ -757,7 +758,7 @@ h3 {
 /* 論文エリア内で右クリックしたときのメニュー */
 #paper_conmenu{
 	width:210px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:1px solid #B3E0D8;
 	display:none;
 	position:fixed;
@@ -779,7 +780,7 @@ h3 {
 	width:auto;
 	min-width: 350px;
 	padding: 5px;
-	background-color:#FAF6F1;
+	background-color:#f8fffd;
 	border:2px solid #B3E0D8;
 	  border-radius: 10px;
 	display:none;
@@ -804,8 +805,8 @@ h3 {
 	width:auto;
 	min-width: 350px;
 	padding: 5px;
-	background-color:#FAF6F1;
-	border:2px solid #FBC362;
+	background-color:#f8fffd;
+	border:2px solid #B3E0D8;
 	  border-radius: 10px;
 	display:none;
 	position:fixed;
@@ -829,8 +830,8 @@ h3 {
 	width:auto;
 	min-width: 350px;
 	padding: 5px;
-	background-color:#FAF6F1;
-	border:2px solid #FBC362;
+	background-color:#f8fffd;
+	border:2px solid #B3E0D8;
 	  border-radius: 10px;
 	display:none;
 	position:fixed;
@@ -1850,13 +1851,13 @@ select[name="user_list"] {
 }
 
 .button6 {
-	background-color: #FBC362;
+	background-color: #90B1AB;
 	color: #fff;
 	width: 100%;
 	height: 25px;
 }
 .button6:hover {
-	background-color: #ffa200;
+	background-color: #B3E0D8;
 }
 
 
@@ -1880,12 +1881,13 @@ select[name="user_list"] {
 .button8 {
 	background-color: #FBC362;
 	color: #fff;
-	width: 30%;
-	height: 30px;
+	width: 100%;
+	height: 25px;
+	margin-bottom: 5px;
 }
-/* .button8:hover {
+.button8:hover {
 	background-color: #ffa200;
-} */
+}
 
 /* 操作確認ボタン */
 .button9 {
@@ -2049,9 +2051,24 @@ display: none;
 	overflow: auto;
 	min-height: 50px;
 	min-width: 100px;
-	border: 1px solid #B3E0D8;
+	border: 2px solid #ffa8ba;
 	padding: 5px;
 }
+
+#submit_summary{
+	background-color: #ffdfe6;
+	color: #be4b43;
+	border: 1px solid #ffa8ba;
+	width: 100px;
+	height: 25px;
+	font-size: 14px;
+	margin-top: 5px;
+	overflow: auto;
+}
+#submit_summary:hover{
+	background-color: #f8b7c5;
+}
+
 
 .side_commentarea{
 	margin-top: 10px;
@@ -2511,8 +2528,7 @@ display: none;
 /*  ------- hatakeyama ------  */
 
 .version_reason{
-	position:relative
-	/* position: sticky; */
+	/* position:relative */
 }
 /* バージョン更新理由記述の誘導 */
 .comment {
