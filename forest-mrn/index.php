@@ -128,6 +128,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         </ul>
         
         <!-- タブメニュー　Finish -->
+
         
 
         <!--メインメニュー　Start  -->
@@ -419,7 +420,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
 
                  <!--サイドメニュー　start-->
                 <div id="side_menu">
-                    <div class="Menu">Menu</div>
+                    
+
                     <!-- プレゼンモードのサイドメニュー -->
                     <div id="document">
                         <div id="advice_frame" class="searchFrame">
@@ -485,7 +487,29 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                     </div><!--document fin -->
 
                     <!-- マインドマップ編集のサイドメニュー -->
+                    
                     <div id="mind">
+                        <div class="Menu">Menu</div>
+
+                        <!--チェックメニュー　Start  -->
+                        <div class="checkbox">
+                            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()"> -->
+                            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick=""> -->
+                            <!-- onclick="CheckClick()" -->
+                            <!-- <label for="checkbox" data-on-label="" data-off-label=""></label> -->
+                            <!-- <span class="checkbox_text">【資料作成】</span> -->
+                            <form name="target_mode" action="">
+                                <select class="cp_ipselect2 cp_sl02"name="Select1">
+                                    <option>自己内対話モード</option>
+                                    <option>資料構成作成モード</option>
+                                    <option>資料作成モード</option>
+                                    <option>議論内省マップモード</option>
+                                </select>
+                                <input type="button" class="button3" value="実行" onclick="ModeChangeButtonClick();" />
+                            </form>
+                            
+                        </div>
+
                         <!--ここから大槻修正-->
                         <div id = "feedback_area" style="display: none">
                             <div id = "ontology_feedback"></div>
@@ -661,29 +685,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
             
             </div>
 
-        </div>
+        </div>    
 
-        <div class="checkbox">
-            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()"> -->
-            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick=""> -->
-            <!-- onclick="CheckClick()" -->
-            <!-- <label for="checkbox" data-on-label="" data-off-label=""></label> -->
-            <!-- <span class="checkbox_text">【資料作成】</span> -->
-            <form name="target_mode" action="">
-                <select class="cp_ipselect2 cp_sl02"name="Select1">
-                    <option>自己内対話モード</option>
-                    <option>資料構成作成モード</option>
-                    <option>資料作成モード</option>
-                    <option>議論内省マップモード</option>
-                </select>
-                <input type="button" class="button3" value="実行" onclick="ModeChangeButtonClick();" />
-            </form>
-            
-        </div>
-
-
-            
-        </div>
         <!-- メインメニュー　Finish -->
 
         <div id="macro_feedback_area">
