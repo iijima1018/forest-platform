@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["xmlFile"])) {
     }
 
     // アップロードディレクトリに保存
-    $uploadDir = "/Applications/MAMP/htdocs/forest-mrn/text/";
+    $uploadDir = "/Applications/MAMP/htdocs/kagitani-system/text/";
     $uploadPath = $uploadDir . basename($file["name"]);
     $File_name = $file["name"];
     if (move_uploaded_file($file["tmp_name"], $uploadPath)) {
