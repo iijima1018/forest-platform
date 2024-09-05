@@ -311,6 +311,20 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                 <div id="layout">
                     <div id="jsmind_nav">
                         <div style="text-align: left">
+                            <!-- 鍵谷お試し -->
+                            <button class="button4" onclick="add_Qnode();">
+                                合理性ノード追加
+                            </button>
+                            <button class="button4" onclick="add_Anode();">
+                                根拠ノード追加
+                            </button>
+                            <!-- <li><button onclick="horisage();">掘り下げる</button></li>
+                                 horisage()関数は現在存在しない-->
+                            <button class="button4" onclick="remove_node();">
+                                ノードの削除
+                            </button>
+                            <!--鍵谷お試し-->
+
                             <!-- 【Edit】 -->
                             <button class="button4" onclick="add_Qnode();">
                                 問いノード追加
