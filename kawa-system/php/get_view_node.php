@@ -2,7 +2,7 @@
 session_start();
 require "connect_db.php";
 
-    $sheet_id = $_SESSION["SHEETID"];
+    $map_id = $_SESSION["SHEETID"];
     $paper_id = $_SESSION["PAPERID"]; 
 
 	if($_POST["val"] == "view_ymodel"){

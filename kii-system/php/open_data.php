@@ -10,7 +10,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id."  ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id."  ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -37,7 +37,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -64,7 +64,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -91,7 +91,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -118,7 +118,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -145,7 +145,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -173,7 +173,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -201,7 +201,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." ORDER BY created_at asc";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
 		$i = 0;
 		$array = array();
@@ -232,7 +232,7 @@
 
 		$id = $_SESSION["SHEETID"];
 
-		$sql = "SELECT * FROM nodes WHERE sheet_id = ".$id." AND type = 'root'";
+		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." AND type = 'root'";
 
 		if($result = $mysqli->query($sql)){
 

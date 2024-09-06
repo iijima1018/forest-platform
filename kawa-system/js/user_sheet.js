@@ -3,7 +3,7 @@
 let annotations_s=[]; //annotation_text_object
 let annotations_m=[]; //annotation_text_object
      annotations_m=annotations; //annotation_text_object
-let sheet_id_tmp = new Number(); 
+let map_id_tmp = new Number(); 
 
 let past_array = [];
 let now_array = [];
@@ -26,10 +26,10 @@ let now_array = [];
 // 過去のマインドマップのノード情報を取得する
 $('#user_list').change(function() { // セレクトボックスから選ばれた場合
 
-  var sheet_id = $('#user_list option:selected').val();
-  console.log(sheet_id); // selectboxから選択した値
-  sheet_id_tmp = sheet_id;
-  if(sheet_id == "null"){
+  var map_id = $('#user_list option:selected').val();
+  console.log(map_id); // selectboxから選択した値
+  map_id_tmp = map_id;
+  if(map_id == "null"){
     return;
   }
   else{
@@ -39,7 +39,7 @@ $('#user_list').change(function() { // セレクトボックスから選ばれ�
       type: "POST",
       data: { 
         // val : "user",
-        user : sheet_id,
+        user : map_id,
       },
       success: function(data){
         var obj = JSON.parse(data); // JSON型をパース
@@ -63,7 +63,7 @@ $('#user_list').change(function() { // セレクトボックスから選ばれ�
       }
     })
 
-    Rebuild_paper2("paper_area",sheet_id);
+    Rebuild_paper2("paper_area",map_id);
 
     
   }
@@ -192,8 +192,8 @@ function OpenPastSheet(array){
 
   console.log("更新");
 
-  var sheet_id = $('#user_list option:selected').val(); // selectboxから選択
-  // $('#jsmind_container2').prepend("<div>"+sheet_id+"のマインドマップ</div>");
+  var map_id = $('#user_list option:selected').val(); // selectboxから選択
+  // $('#jsmind_container2').prepend("<div>"+map_id+"のマインドマップ</div>");
 
   // テーマ設定
   var options = {
@@ -490,7 +490,7 @@ function show_annotation(){
   if(check.checked == true){
     addHightlightSentences2(annotations,"user_m");
   }else{
-    Rebuild_paper2("paper_area",sheet_id_tmp);
+    Rebuild_paper2("paper_area",map_id_tmp);
     // removeAnnotationSentences(annotations);
   }
 }

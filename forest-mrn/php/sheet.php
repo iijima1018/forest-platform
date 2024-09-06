@@ -4,7 +4,7 @@
 
 		require "connect_db.php";
 
-		$sql = "SELECT * FROM sheets WHERE id = ".$_SESSION["SHEETID"];
+		$sql = "SELECT * FROM maps WHERE id = ".$_SESSION["SHEETID"];
 
 		if($result = $mysqli->query($sql)){
 
@@ -26,7 +26,7 @@
 		require "connect_db.php";
 
 		$id = $_SESSION['USERID'];
-		$sql = "SELECT * FROM sheets WHERE user_id = '$id' AND self_conversation_activity_mode = 'self_research' ORDER BY updated_at DESC";
+		$sql = "SELECT * FROM maps WHERE user_id = '$id' AND self_conversation_activity_mode = 'self_research' ORDER BY updated_at DESC";
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
 				echo"<p><label><input type='radio' name='sheet' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
@@ -49,7 +49,7 @@
 
 		//if($name == ""){
 
-			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, self_conversation_activity_mode) VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."', 'self_research')";
+			$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted, self_conversation_activity_mode) VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."', 'self_research')";
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
@@ -122,7 +122,7 @@
 		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
 		echo $_SESSION['SHEETID'];
-		$sql = "DELETE FROM sheets WHERE id = ".$_SESSION['SHEETID'];
+		$sql = "DELETE FROM maps WHERE id = ".$_SESSION['SHEETID'];
 		$result = $mysqli->query($sql);
 		if (!$result) {
 		     print('Error - SQLSTATE');

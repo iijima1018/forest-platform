@@ -15,7 +15,7 @@
 			$result = $mysqli->query($sql);
 
 		}else{
-			$sql = "UPDATE nodes SET content = '".$_POST['content']."', updated_at = '".$updated_at."' WHERE type = 'root' AND sheet_id = ".$_SESSION['SHEETID'];
+			$sql = "UPDATE nodes SET content = '".$_POST['content']."', updated_at = '".$updated_at."' WHERE type = 'root' AND map_id = ".$_SESSION['SHEETID'];
 			$result = $mysqli->query($sql);
 			if(!$result){
 				echo "error";
@@ -35,8 +35,8 @@
 
 	}else if($_POST["update"] == "sheet"){
 
-		// $sql = "UPDATE sheets SET updated_at = '".$updated_at."' WHERE id = '".$_POST['id']."'";
-		$sql = "UPDATE sheets SET updated_at = '".$updated_at."' WHERE id = '".$_SESSION['SHEETID']."'";
+		// $sql = "UPDATE maps SET updated_at = '".$updated_at."' WHERE id = '".$_POST['id']."'";
+		$sql = "UPDATE maps SET updated_at = '".$updated_at."' WHERE id = '".$_SESSION['SHEETID']."'";
 		$result = $mysqli->query($sql);
 
 	}else if($_POST["update"] == "edit_reason"){

@@ -162,7 +162,7 @@ function show_node2(id,pid,str,cid,type,cname, sid, eid, psid){
             jmnode[i].setAttribute("parent_id",pid);
             jmnode[i].setAttribute("start_char_id",sid);
             jmnode[i].setAttribute("end_char_id",eid)
-            jmnode[i].setAttribute("parent_sheet_id",psid);;
+            jmnode[i].setAttribute("parent_map_id",psid);;
 
         }
 
@@ -1389,7 +1389,7 @@ function CheckClick(){
         
         $('#jsmind_container2').css('width','35%');
         $('#paper_area').show();
-        Rebuild_paper2("paper_area",sheet_id_tmp);
+        Rebuild_paper2("paper_area",map_id_tmp);
     };
 
     function hide_paper(){

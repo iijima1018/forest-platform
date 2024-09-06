@@ -54,7 +54,7 @@ function get_other_nodeid(){
                             button.setAttribute("id", "answer_button"+i);
                         }
                         button.innerHTML = Array[i]["content"]; // ボタンのテキストを配列の要素に設定
-                        button.setAttribute("data-sheet_id", Array[i]["sheet_id"]);
+                        button.setAttribute("data-map_id", Array[i]["map_id"]);
 
 
                         button.addEventListener("contextmenu", function(e) {
@@ -206,14 +206,14 @@ function reset_annotation(){
     });
 }
 
-function show_other_mindmap(button, sheet_id, parent_id=null){
+function show_other_mindmap(button, map_id, parent_id=null){
     reset_annotation();
-    if(sheet_id == "null"){
+    if(map_id == "null"){
       return;
     }
   else{
     var button = document.getElementById("all_annotation");
-    button.setAttribute("onClick", "show_other_mindmap(this, "+sheet_id+")");
+    button.setAttribute("onClick", "show_other_mindmap(this, "+map_id+")");
 
     $.ajax({
       
@@ -221,7 +221,7 @@ function show_other_mindmap(button, sheet_id, parent_id=null){
       type: "POST",
       data: { 
         // val : "user",
-        user : sheet_id,
+        user : map_id,
       },
       success: function(data){
         var obj = JSON.parse(data); // JSON型をパース
@@ -247,10 +247,10 @@ function show_other_mindmap(button, sheet_id, parent_id=null){
     })
 
     if (parent_id != null){
-        Rebuild_paper3("paper_area",sheet_id, parent_id);  
+        Rebuild_paper3("paper_area",map_id, parent_id);  
     }
     else{
-        Rebuild_paper2("paper_area",sheet_id);
+        Rebuild_paper2("paper_area",map_id);
     }
   }
 }

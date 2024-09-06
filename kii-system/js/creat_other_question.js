@@ -1,4 +1,4 @@
-var parent_sheet_id = null
+var parent_map_id = null
 var text = null;
 
 function get_other_nodeid(){
@@ -55,7 +55,7 @@ function get_other_nodeid(){
                             button.setAttribute("id", "answer_button"+i);
                         }
                         button.innerHTML = Array[i]["content"]; // ボタンのテキストを配列の要素に設定
-                        button.setAttribute("data-sheet_id", Array[i]["sheet_id"]);
+                        button.setAttribute("data-map_id", Array[i]["map_id"]);
 
 
                         button.addEventListener("contextmenu", function(e) {
@@ -142,11 +142,11 @@ function add_Anode_from_other(node_class, node_type){
             jmnode[j].setAttribute("class",node_class);
             jmnode[j].setAttribute("type",node_type);
             jmnode[j].setAttribute("parent_id",parent_id);
-            // if (document.getElementsByClassName(" selected")[1].getAttribute("parent_sheet_id")== ""){
-            //     jmnode[j].setAttribute("parent_sheet_id",parent_sheet_id);
+            // if (document.getElementsByClassName(" selected")[1].getAttribute("parent_map_id")== ""){
+            //     jmnode[j].setAttribute("parent_map_id",parent_map_id);
             //     console.log("オリジナル");
             // }else{
-            //     jmnode[j].setAttribute("parent_sheet_id",document.getElementsByClassName(" selected")[1].getAttribute("parent_sheet_id"));
+            //     jmnode[j].setAttribute("parent_map_id",document.getElementsByClassName(" selected")[1].getAttribute("parent_map_id"));
             //     console.log("オリジナルじゃない");
             // }
 
@@ -163,7 +163,7 @@ function add_Anode_from_other(node_class, node_type){
                         y : jmnode[j].style.top,
                         content : jmnode[j].innerHTML,
                         class : node_class,
-                        parent_sheet_id : parent_sheet_id},
+                        parent_map_id : parent_map_id},
                         success: function(question){
                             console.log(question);
                         }
@@ -227,19 +227,19 @@ function reset_annotation() {
     });
 }
 
-function show_other_mindmap(button=null, sheet_id, parent_id=null){
+function show_other_mindmap(button=null, map_id, parent_id=null){
     reset_annotation();
 
     cid = $("#concept_content").attr("concept_id");
-    parent_sheet_id = sheet_id;
-    if(sheet_id == "null"){
+    parent_map_id = map_id;
+    if(map_id == "null"){
       return;
     }
   else{
     var button = document.getElementById("all_annotation");
-    button.setAttribute("onClick", "show_other_mindmap(this, "+sheet_id+")");
+    button.setAttribute("onClick", "show_other_mindmap(this, "+map_id+")");
     
-    getData2(sheet_id);
+    getData2(map_id);
     
 
     // $.ajax({
@@ -248,7 +248,7 @@ function show_other_mindmap(button=null, sheet_id, parent_id=null){
     //   type: "POST",
     //   data: { 
     //     // val : "user",
-    //     user : sheet_id,
+    //     user : map_id,
     //   },
     //   success: function(data){
     //     var obj = JSON.parse(data); // JSON型をパース
@@ -275,10 +275,10 @@ function show_other_mindmap(button=null, sheet_id, parent_id=null){
     console.log(parent_id);
 
     if (parent_id != null){
-        Rebuild_paper3("paper_area",sheet_id, parent_id); 
+        Rebuild_paper3("paper_area",map_id, parent_id); 
     }
     else{
-        Rebuild_paper2("paper_area",sheet_id);
+        Rebuild_paper2("paper_area",map_id);
   }
 }
 
@@ -387,7 +387,7 @@ function change_othermode(mode) {
             //                 text = "この問いを思いつくためにはどのようなことを考えながら読めば良いでしょうか"
             //                 // text = "あなたは<br><br><div id='ref_area' class='border-radius' >"+result[0]["content"]+"</div><br><br>という解釈を参考にしました．<br><br>このような読解を行なった学習者は，この論文に対して，<div id='summary_area'>"+result[0]["summary"]+"</div><br>という要約をしています．もう一度この要約やマインドマップを見て，この解釈について，<br><br>何故自分が思いつけなかったのか<br><br>どうすればこの解釈ができるか<br><br>に着目して考えてみましょう"
             //                 // document.getElementById("ref_text").innerHTML = text;
-            //                 // sheetid = result[0]["parent_sheet_id"];
+            //                 // sheetid = result[0]["parent_map_id"];
             //                 // show_selected_sheet("on");
             //                 // $("mindmap_tab").css("display: none;");
 

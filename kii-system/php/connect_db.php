@@ -4,7 +4,7 @@
 	$db_host = "localhost";  // DBサーバのurl
 	$db_user = "root";
 	$db_password = "root";
-	$db_dbname = "forest";
+	$db_dbname = "forest_platform";
 
 	// 実験データ参照用
 	// $db_host = "localhost";  // DBサーバのurl

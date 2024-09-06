@@ -1277,7 +1277,7 @@ function CheckClick(){
         
         $('#jsmind_container2').css('width','35%');
         $('#paper_area').show();
-        Rebuild_paper2("paper_area",sheet_id_tmp);
+        Rebuild_paper2("paper_area",map_id_tmp);
     };
 
     function hide_paper(){

@@ -57,9 +57,10 @@ if(isset($_POST["record"])){
   if(($_POST["date"] != "") && ($_POST["time"] != "") ){
 
     $mt_time = (date($_POST["date"]) ." " . date($_POST["time"]) );
+    $id = rand();
 
-    $sql = "INSERT INTO mt_timing (user_id, mt_time)
-            VALUES ('".$_SESSION['USERID']."', '".$mt_time."')";
+    $sql = "INSERT INTO mt_timing (id, user_id, mt_time)
+            VALUES ('".$id."', '".$_SESSION['USERID']."', '".$mt_time."')";
 
     $result = $mysqli->query($sql);
     $mt_time_message = ('ミーティングタイムを記録しました. <br>前回：' . $mt_time);

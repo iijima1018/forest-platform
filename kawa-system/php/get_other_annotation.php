@@ -2,7 +2,7 @@
 session_start();
 require "connect_db.php";
 
-    $sheet_id = $_SESSION["SHEETID"];
+    $map_id = $_SESSION["SHEETID"];
     $paper_id = $_SESSION["PAPERID"]; 
 
 	if($_POST["val"] == "get_conceptid"){
@@ -34,9 +34,9 @@ require "connect_db.php";
         $id = $_POST["id"];   
         $i = 0;
         $data_array = array(); // contentとsheetidを格納する配列 
-        $sheet_id = $_SESSION["SHEETID"];
+        $map_id = $_SESSION["SHEETID"];
         $paper_id = $_SESSION["PAPERID"]; 
-        $sql = "SELECT * FROM nodes WHERE concept_id = '".$id."' AND type = 'predict' AND deleted = '0' AND content NOT LIKE '＊あなたの解釈' AND content NOT LIKE '＊あなたの予測' AND sheet_id != '".$sheet_id."' AND (paper_id = '".$paper_id."')";
+        $sql = "SELECT * FROM nodes WHERE concept_id = '".$id."' AND type = 'predict' AND deleted = '0' AND content NOT LIKE '＊あなたの解釈' AND content NOT LIKE '＊あなたの予測' AND map_id != '".$map_id."' AND (paper_id = '".$paper_id."')";
 
         if ($result = $mysqli->query($sql)) {
 
@@ -44,7 +44,7 @@ require "connect_db.php";
                 $data_array[$i] = array(
                     
                     "content" => $row["content"],
-                    "sheet_id" => $row["sheet_id"],
+                    "map_id" => $row["map_id"],
                     "id" => $row["id"],
                     "parent_id"=> $row["parent_id"]
                 );
@@ -68,12 +68,12 @@ require "connect_db.php";
         if ($result = $mysqli->query($sql)) {
             $i = 0;
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($row["paper_id"] == $paper_id && $row["sheet_id"] != $sheet_id){
+                if ($row["paper_id"] == $paper_id && $row["map_id"] != $map_id){
                     $data_array[$i] = array(
                         "content" => $row["content"],
                         "end_char_id"=> $row["end_char_id"],
                         "start_char_id"=> $row["start_char_id"],
-                        "sheet_id"=> $row["sheet_id"],
+                        "map_id"=> $row["map_id"],
                         "parent_id"=> $row["parent_id"]
                     );      
                     $i++;
@@ -90,13 +90,13 @@ require "connect_db.php";
         $i = 0;
         $node_id_array = array();
 
-        $sql = "SELECT * FROM nodes WHERE sheet_id = '".$s_id."' AND type = 'toi'";
+        $sql = "SELECT * FROM nodes WHERE map_id = '".$s_id."' AND type = 'toi'";
 
         if ($result = $mysqli->query($sql)) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $data_array[$i] = [
                     "content" => $row["content"],
-                    "sheet_id" => $row["sheet_id"],
+                    "map_id" => $row["map_id"],
                     "id" => $row["id"],
                     "concept_id" => $row["concept_id"]
                 ];
@@ -113,14 +113,14 @@ require "connect_db.php";
         $data_array = array();
         
         for ($i = 0; $i < count($c_array); $i++) { //concept_idの異なるものを取り出す
-            $sql = "SELECT DISTINCT concept_id, content, sheet_id FROM nodes WHERE type = 'toi' AND concept_id <> '.$c_array[$i][3].' AND concept_id <> '0' AND concept_id <> ''  AND CHAR_LENGTH(concept_id) > 6 AND paper_id = $paper_id";
+            $sql = "SELECT DISTINCT concept_id, content, map_id FROM nodes WHERE type = 'toi' AND concept_id <> '.$c_array[$i][3].' AND concept_id <> '0' AND concept_id <> ''  AND CHAR_LENGTH(concept_id) > 6 AND paper_id = $paper_id";
             
             if ($result = $mysqli->query($sql)) {
                 $j = 0;
                 while ($row = mysqli_fetch_assoc($result)) {
                     $data_array[$j] = [
                         "content" => $row["content"],
-                        "sheet_id" => $row["sheet_id"],
+                        "map_id" => $row["map_id"],
                         "id" => $row["id"],
                         "concept_id" => $row["concept_id"]
                         

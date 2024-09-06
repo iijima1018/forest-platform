@@ -50,7 +50,7 @@ function get_question(){
                         var button = document.createElement("button"); // 新しいボタン要素を作成
                         
                         button.innerHTML = questionArray[i]["content"]; // ボタンのテキストを配列の要素に設定
-                        button.setAttribute("data-sheet_id_other", questionArray[i]["sheet_id"]);
+                        button.setAttribute("data-map_id_other", questionArray[i]["map_id"]);
                         button.setAttribute("class", "b_que");
                         concept_id = questionArray[i]["concept_id"];
                         content = questionArray[i]["content"];

@@ -360,7 +360,7 @@
 	}else if($_POST["data"] == "create_sheet"){
 		
 		//sheetの名前を取得
-		$sql_get = "SELECT name FROM sheets WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
+		$sql_get = "SELECT name FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
 		if($result_get = $mysqli->query($sql_get)) {
       		while($row = mysqli_fetch_assoc($result_get)){
 				$name = $row['name'];
@@ -369,36 +369,36 @@
 		$timestamp_2sec = date("Y-m-d H:i:s", strtotime("2 second"));	//Record_rank()と被らないように＋2秒する（よくない）
 
 		//同じ名前,idのsheet作成
-		$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted)
+		$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted)
 		VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$timestamp_2sec."', '$name', '".$timestamp_2sec."','0')";
 		$result = $mysqli->query($sql);
 
 	//資料の内容全削除
 	}else if($_POST["data"] == "delete_document"){
 
-	$sheet_id = $_SESSION["SHEETID"];
+	$map_id = $_SESSION["SHEETID"];
 
 	//スライド
-	$sql_s = "UPDATE document_rank SET updated_at='$timestamp', deleted=1 WHERE sheet_id='$sheet_id' AND deleted=0";
+	$sql_s = "UPDATE document_rank SET updated_at='$timestamp', deleted=1 WHERE map_id='$map_id' AND deleted=0";
 	$result_s = $mysqli->query($sql_s);
 
 	//コンテント
-	$sql_c = "UPDATE document_content_rank SET updated_at='$timestamp', deleted=1 WHERE sheet_id='$sheet_id' AND deleted=0";
+	$sql_c = "UPDATE document_content_rank SET updated_at='$timestamp', deleted=1 WHERE map_id='$map_id' AND deleted=0";
 	$result_c = $mysqli->query($sql_c);
 
 	//スライド関係
-	$sql_sr = "UPDATE document_relation SET updated_at='$timestamp', deleted=1 WHERE sheet_id='$sheet_id' AND deleted=0";
+	$sql_sr = "UPDATE document_relation SET updated_at='$timestamp', deleted=1 WHERE map_id='$map_id' AND deleted=0";
 	$result_sr = $mysqli->query($sql_sr);
 
 	//コンテント関係
-	$sql_cr = "UPDATE document_content_relation SET updated_at='$timestamp', deleted=1 WHERE sheet_id='$sheet_id' AND deleted=0";
+	$sql_cr = "UPDATE document_content_relation SET updated_at='$timestamp', deleted=1 WHERE map_id='$map_id' AND deleted=0";
 	$result_cr = $mysqli->query($sql_cr);
 
 	//このシートに含まれる資料を一覧を取得
 	}else if($_POST["data"] == "get_past_document"){
 
-		//sheetsから資料のタイトルとupdated_at取得
-		$sql_get = "SELECT scenario_title, updated_at FROM sheets WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
+		//mapsから資料のタイトルとupdated_at取得
+		$sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
 		$i = 0;
     	$get_array = array();
 		if($result_get = $mysqli->query($sql_get)) {
@@ -417,7 +417,7 @@
 	}else if($_POST["data"] == "get_document"){
 
 		//h_documentsから資料のデータ取得
-		$sql_get = "SELECT * FROM h_documents WHERE sheet_id = ".$_SESSION['SHEETID'];
+		$sql_get = "SELECT * FROM h_documents WHERE map_id = ".$_SESSION['SHEETID'];
 		$i = 0;
 		$get_array = array();
 		if($result_get = $mysqli->query($sql_get)) {
@@ -435,9 +435,9 @@
 
 		//このシートに含まれる資料を一覧を取得
 		// function GetPastDocument_php(){
-		// //sheetsから資料のタイトルとupdated_at取得
+		// //mapsから資料のタイトルとupdated_at取得
 		// require "connect_db.php";
-		// $sql_get = "SELECT scenario_title, updated_at FROM sheets WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
+		// $sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
 		// $i = 0;
     	// $get_array = array();
 		// if($result_get = $mysqli->query($sql_get)) {
@@ -456,7 +456,7 @@
 
 		$id = rand();
 		$data = $_POST["data"];
-		$sql = "INSERT INTO hatakeyama_logs(id, timestamp, type, user_id, sheet_id)
+		$sql = "INSERT INTO hatakeyama_logs(id, timestamp, type, user_id, map_id)
 		VALUES ($id, '$timestamp', '$data', ".$_SESSION['USERID'].", ".$_SESSION['SHEETID'].")";
 		$result = $mysqli->query($sql);
 
@@ -494,7 +494,7 @@
 
 		
 //header("Content-Type: application/json; charset=utf-8");
-//$json_result = "[{version: '$id', node_id: '$node_id', S: '$timestamp', T: 'null', sheet_id: '$sheet_id', parent_id: '$parent_id'}]";
+//$json_result = "[{version: '$id', node_id: '$node_id', S: '$timestamp', T: 'null', map_id: '$map_id', parent_id: '$parent_id'}]";
 //echo $json_result;
 
 //versions

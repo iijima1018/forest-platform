@@ -745,7 +745,7 @@ function deleteDocument(){
 
 }
 
-//このシートに含まれる過去の資料一覧（タイトル，日付）を取得して返す(sheetsから)
+//このシートに含まれる過去の資料一覧（タイトル，日付）を取得して返す(mapsから)
 function GetPastDocument(){
 
   return $.ajax({

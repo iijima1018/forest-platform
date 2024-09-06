@@ -5,10 +5,10 @@
 	require "connect_db.php";
 
 	if($_POST["val"] == "rationality"){
-		$sheet_id = $_SESSION["SHEETID"];
+		$map_id = $_SESSION["SHEETID"];
 		$rationality_id = $_POST["rationality_id"];
 
-		$sql = "SELECT * FROM rationality_nodes WHERE sheet_id = ".$sheet_id." AND rationality_id = '".$rationality_id."'";
+		$sql = "SELECT * FROM rationality_nodes WHERE map_id = ".$map_id." AND rationality_id = '".$rationality_id."'";
 
 		$i = 0;
 		$node_id_array = array();
@@ -28,10 +28,10 @@
 		echo json_encode($node_id_array);
 
 	}else if($_POST["val"] == "edit_reason"){
-		$sheet_id = $_SESSION["SHEETID"];
+		$map_id = $_SESSION["SHEETID"];
 		$id = $_POST["id"];
 
-		$sql = "SELECT * FROM edit_reason WHERE sheet_id = ".$sheet_id." AND node_id = '".$id."'";
+		$sql = "SELECT * FROM edit_reason WHERE map_id = ".$map_id." AND node_id = '".$id."'";
 
 		$i = 0;
 		$node_id_array = array();
@@ -66,7 +66,7 @@
 
 	}else if($_POST["val"] == "return"){
 
-		$sql = "SELECT * FROM nodes WHERE user_id = ".$_SESSION["USERID"]." AND sheet_id = ".$_SESSION["SHEETID"]." AND updated_at = (select max(updated_at) from nodes)";
+		$sql = "SELECT * FROM nodes WHERE user_id = ".$_SESSION["USERID"]." AND map_id = ".$_SESSION["SHEETID"]." AND updated_at = (select max(updated_at) from nodes)";
 
 		$i = 0;
 		$updated_array = array();
@@ -89,7 +89,7 @@
 
 		$i = 0;
 
-		$sql = "SELECT user_id, content, parent_sheet_id, sheet_id FROM nodes WHERE id = '$node_id'";
+		$sql = "SELECT user_id, content, parent_map_id, map_id FROM nodes WHERE id = '$node_id'";
 		if ($result = $mysqli->query($sql)) {
 
             while ($row = mysqli_fetch_assoc($result)) {
@@ -102,7 +102,7 @@
 					"name" => $row2["name"]
 				);
 
-				$sql3 = "SELECT summary FROM sheets WHERE id ='".$row['parent_sheet_id']."'";
+				$sql3 = "SELECT summary FROM maps WHERE id ='".$row['parent_map_id']."'";
 				$result3 = $mysqli->query($sql3);
 
 				$row3 = mysqli_fetch_assoc($result3);
@@ -111,8 +111,8 @@
 				);
 
                 $data_array[$i] = array(
-					"parent_sheet_id" => $row["parent_sheet_id"],
-					"sheet_id" => $row["sheet_id"],
+					"parent_map_id" => $row["parent_map_id"],
+					"map_id" => $row["map_id"],
                     "content" => $row["content"],
 					"name" => $user_array[0]["name"],
 					"summary" => $summary_array[0]["summary"]

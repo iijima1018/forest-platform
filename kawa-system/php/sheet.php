@@ -4,7 +4,7 @@
 
 		require "connect_db.php";
 
-		$sql = "SELECT * FROM sheets WHERE id = ".$_SESSION["SHEETID"];
+		$sql = "SELECT * FROM maps WHERE id = ".$_SESSION["SHEETID"];
 
 		if($result = $mysqli->query($sql)){
 
@@ -26,7 +26,7 @@
 		require "connect_db.php";
 
 		$id = $_SESSION['USERID'];
-		$sql = "SELECT * FROM sheets WHERE user_id = '$id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
+		$sql = "SELECT * FROM maps WHERE user_id = '$id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
 				echo"<p><label><input type='radio' name='sheet' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
@@ -119,7 +119,7 @@
 	
 		//if($name == ""){
 
-			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, paper_id, self_conversation_activity_mode) 
+			$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted, paper_id, self_conversation_activity_mode) 
 			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id', 'critical_reading')";
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
@@ -159,7 +159,7 @@
 	
 		//if($name == ""){
 
-			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, paper_id, self_conversation_activity_mode) 
+			$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted, paper_id, self_conversation_activity_mode) 
 			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id', 'critical_reading')";
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
@@ -179,7 +179,7 @@
 		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
 		echo $_SESSION['SHEETID'];
-		$sql = "DELETE FROM sheets WHERE id = ".$_SESSION['SHEETID'];
+		$sql = "DELETE FROM maps WHERE id = ".$_SESSION['SHEETID'];
 		$result = $mysqli->query($sql);
 		if (!$result) {
 		     print('Error - SQLSTATE');
@@ -236,13 +236,13 @@ function show_user(){
 	// nishida 実験用後で直す
 	// $paper_id = $_SESSION["PAPERID"];
 	$paper_id = 85692259;
-	$sql = "SELECT * FROM sheets WHERE paper_id = '$paper_id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
+	$sql = "SELECT * FROM maps WHERE paper_id = '$paper_id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
 	$array = array();
 	$result = $mysqli->query($sql);
 	if($result == TRUE){
 		echo" <option value='null'>ユーザを選択してください</option>";
 		while($row = mysqli_fetch_assoc($result)){
-			$sheet_id = $row['id'];
+			$map_id = $row['id'];
 			$user_id = $row['user_id'] ;
 			$user_sql = "SELECT name FROM users WHERE id = $user_id ";
 			$result_user_name = $mysqli->query($user_sql);

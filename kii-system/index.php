@@ -481,59 +481,59 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               </div>
               <!-- マインドマップ編集のサイドメニュー -->
               <div id="mind" class="side">
-               <div id = "make_micro_strat_form">
+                <div id = "make_micro_strat_form">
                 <div id = ref_guidance></div>
                 <div><input type="text" id="ref_text"></div>
                 <button id = "submit_strat_button" onclick="submit_strat()">送信する</button>             
-              </div>
-              
-
-              
-              <button class="button8 other" style="position: center;" onclick="get_question()">
-                    他者の疑問の観点
-              </button>
-
-
-
-              <div class="other_annotation other" id="othercontainer" oncontextmenu="return false;">
-        
-                  <div id="result">ノードを選択してください</div>
-              </div>
-              
-              <button class="button6" id = "comment_button" style="position: center; display: none;" onclick="input_comment();">
-                コメントを反映
-              </button>
-
-
-              
-
-              <!-- <div class="other_annotation ref" id="othercontainer" oncontextmenu="return false;">
-        
-                  <div id="">ノードを選択してください</div>
-              </div> -->
-
-              
-                <!-- <div class="toi_menu">問い一覧</div> -->
-                <div class="toi_list other" style="display: block;">
-                  <input class="button5" type="button" onclick="showGeneration();" value="all">
-                  問い一覧を表示
                 </div>
+              
 
-                <div class="inquiry_area other" style="display: block; resize: vertical">
-                 
+              
+                <button class="button8 other" style="position: center;" onclick="get_question()">
+                      他者の疑問の観点
+                </button>
 
-                  <div>【情報の表出化】</div>
-                  <div id="testxml"></div>
-                  <div id="ont"></div>
 
-                  <div>【理由・目的】</div>
-                  <div id="intention"></div>
+
+                <div class="other_annotation other" id="othercontainer" oncontextmenu="return false;">
+          
+                    <div id="result">ノードを選択してください</div>
+                </div>
+                
+                <button class="button6" id = "comment_button" style="position: center; display: none;" onclick="input_comment();">
+                  コメントを反映
+                </button>
+
+
+              
+
+                <!-- <div class="other_annotation ref" id="othercontainer" oncontextmenu="return false;">
+          
+                    <div id="">ノードを選択してください</div>
+                </div> -->
+
+                
+                  <!-- <div class="toi_menu">問い一覧</div> -->
+                  <div class="toi_list other" style="display: block;">
+                    <input class="button5" type="button" onclick="showGeneration();" value="all">
+                    問い一覧を表示
+                  </div>
+
+                  <div class="inquiry_area other" style="display: block; resize: vertical">
                   
-                  <div>【合理性】</div>
-                  <div id="rationality"></div>
-                  <!-- <div>【言い換え・具体例】</div>
-                  <div id="deep"></div> -->
-                </div>
+
+                    <div>【情報の表出化】</div>
+                    <div id="testxml"></div>
+                    <div id="ont"></div>
+
+                    <div>【理由・目的】</div>
+                    <div id="intention"></div>
+                    
+                    <div>【合理性】</div>
+                    <div id="rationality"></div>
+                    <!-- <div>【言い換え・具体例】</div>
+                    <div id="deep"></div> -->
+                  </div>
               </div>
               
 
