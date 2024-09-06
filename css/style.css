@@ -146,7 +146,7 @@ table[type] {
 /* -------------------- メインの設定 ---------------------- */
 /* タブメニュー */
 .tabnav {
-		width: calc(50vw + 200px);
+		width: calc(50vw + 600px);
 		min-width: 280px;
     padding: 0;
 		float: left;
@@ -186,7 +186,6 @@ table[type] {
 	background: #ffffff;
 	background-color: #FAAE2B;
 	color: #fff;
-	float:right;
 }
 
 /* タブので切り替わる要素 */
@@ -239,6 +238,16 @@ table[type] {
 	vertical-align: middle;
 	margin-top:10px;
 }
+
+.checkbox_mode {
+	display: flex;
+	width: 20%;
+	flex-direction: column;
+	float: right;
+	vertical-align: middle;
+	margin-top:10px;
+}
+
 
 /* 通常のチェックボックスの削除 */
 input[type="checkbox"][name="check"]{
@@ -2528,7 +2537,8 @@ display: none;
 /*  ------- hatakeyama ------  */
 
 .version_reason{
-	/* position:relative */
+	position:relative ;
+	text-align: center;
 }
 /* バージョン更新理由記述の誘導 */
 .comment {

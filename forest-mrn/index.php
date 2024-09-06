@@ -125,7 +125,28 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                  <li class="active"><a href="#tab03" >リフレクション</a></li>
                  <li class="active"><a href="#record_tab" >履歴</a></li> -->
             <li class="active"><a href="#tab04">過去のマインドマップ</a></li>  <!--hatakeyama-->
+
+            <div class="checkbox_mode">
+                <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()"> -->
+                <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick=""> -->
+                <!-- onclick="CheckClick()" -->
+                <!-- <label for="checkbox" data-on-label="" data-off-label=""></label> -->
+                <!-- <span class="checkbox_text">【資料作成】</span> -->
+                <form name="target_mode" action="">
+                    <select class="cp_ipselect2 cp_sl02"name="Select1">
+                        <option>自己内対話モード</option>
+                        <option>資料構成作成モード</option>
+                        <option>資料作成モード</option>
+                        <option>議論内省マップモード</option>
+                    </select>
+                    <input type="button" class="button3" value="実行" onclick="ModeChangeButtonClick();" />
+                </form>
+                            
+            </div>
+
         </ul>
+
+        
         
         <!-- タブメニュー　Finish -->
 
@@ -421,6 +442,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                  <!--サイドメニュー　start-->
                 <div id="side_menu">
                     
+                    <div class="Menu">Menu</div>
+
 
                     <!-- プレゼンモードのサイドメニュー -->
                     <div id="document">
@@ -489,26 +512,9 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                     <!-- マインドマップ編集のサイドメニュー -->
                     
                     <div id="mind">
-                        <div class="Menu">Menu</div>
-
+                        
                         <!--チェックメニュー　Start  -->
-                        <div class="checkbox">
-                            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()"> -->
-                            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick=""> -->
-                            <!-- onclick="CheckClick()" -->
-                            <!-- <label for="checkbox" data-on-label="" data-off-label=""></label> -->
-                            <!-- <span class="checkbox_text">【資料作成】</span> -->
-                            <form name="target_mode" action="">
-                                <select class="cp_ipselect2 cp_sl02"name="Select1">
-                                    <option>自己内対話モード</option>
-                                    <option>資料構成作成モード</option>
-                                    <option>資料作成モード</option>
-                                    <option>議論内省マップモード</option>
-                                </select>
-                                <input type="button" class="button3" value="実行" onclick="ModeChangeButtonClick();" />
-                            </form>
-                            
-                        </div>
+                        
 
                         <!--ここから大槻修正-->
                         <div id = "feedback_area" style="display: none">
@@ -552,45 +558,47 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </div>
                         </div>
 
-                        <div class="inquiry_area">
-                            <div>【情報の表出化】</div>
-                            <div id="testxml"></div>
-                            <div id="ont"></div>
-                            <div>【理由・目的】</div>
-                            <div id="intention"></div>
-                            <div>【合理性】</div>
-                            <div id="rationality"></div>
-                        </div>
-                        <div id="ImageAddContent">
-                            <!-- <form id="ImageForm" method="POST" enctype="multipart/form-data"> -->
-                            <div class="deco-file">
-                                <label>
-                                    画像追加
-                                    <input id="myFile" type="file" name="ImageFile" onchange="handleFileSelect()" accept="image/*" required>
-                                </label>
-                                <p id="FilenameDisplay" class="file-names"></p>
+                        <div id="mind" class="side">
+                            <div class="inquiry_area">
+                                <div>【情報の表出化】</div>
+                                <div id="testxml"></div>
+                                <div id="ont"></div>
+                                <div>【理由・目的】</div>
+                                <div id="intention"></div>
+                                <div>【合理性】</div>
+                                <div id="rationality"></div>
                             </div>
-                            <!-- <button id="ImageSaveButton" type="submit" class="btn btn-primary" name="myFileImage">画像保存</button> -->
-                            <button id="ImageSaveButton" name="myFileImage" hidden>画像保存</button>
-                            <!-- </form> -->
+                            <div id="ImageAddContent">
+                                <!-- <form id="ImageForm" method="POST" enctype="multipart/form-data"> -->
+                                <div class="deco-file">
+                                    <label>
+                                        画像追加
+                                        <input id="myFile" type="file" name="ImageFile" onchange="handleFileSelect()" accept="image/*" required>
+                                    </label>
+                                    <p id="FilenameDisplay" class="file-names"></p>
+                                </div>
+                                <!-- <button id="ImageSaveButton" type="submit" class="btn btn-primary" name="myFileImage">画像保存</button> -->
+                                <button id="ImageSaveButton" name="myFileImage" hidden>画像保存</button>
+                                <!-- </form> -->
+                            </div>
+                            <div id='node_slide'>
+                                <!-- <input id="finish_btn" class="presen-btn" type="button" value="資料作成終了" onclick="macrolevel_xmlLoad();"> -->
+                                <input id="output_file" class="presen-btn" type="button" value="資料構成出力" onclick="OutputFile();">
+                                <button id="input_btn" class="presen-btn">資料構成復元</button>
+                                <input id="input_file" type="file" onclick="InputFile()" >
+                            </div>
+                            <div id='document_slide'>
+                                <input id="finish_btn" class="presen-btn" type="button" value="資料作成終了" onclick="OutputFileS();">
+                            </div>
+                            <!-- <input type="file" id="myFile" style="display: none">
+                                <button class="button4" onclick="selectImage()">画像追加</button> -->
+                            <!-- <div>
+                                <form method="post" enctype="multipart/form-data">
+                                <input type="file" name="image" required>
+                                <button type="submit" name="myFile">保存</button>
+                                </form>
+                                </div> -->
                         </div>
-                        <div id='node_slide'>
-                            <!-- <input id="finish_btn" class="presen-btn" type="button" value="資料作成終了" onclick="macrolevel_xmlLoad();"> -->
-                            <input id="output_file" class="presen-btn" type="button" value="資料構成出力" onclick="OutputFile();">
-                            <button id="input_btn" class="presen-btn">資料構成復元</button>
-                            <input id="input_file" type="file" onclick="InputFile()" >
-                        </div>
-                        <div id='document_slide'>
-                            <input id="finish_btn" class="presen-btn" type="button" value="資料作成終了" onclick="OutputFileS();">
-                        </div>
-                        <!-- <input type="file" id="myFile" style="display: none">
-                            <button class="button4" onclick="selectImage()">画像追加</button> -->
-                        <!-- <div>
-                            <form method="post" enctype="multipart/form-data">
-                            <input type="file" name="image" required>
-                            <button type="submit" name="myFile">保存</button>
-                            </form>
-                            </div> -->
                         
                     </div> <!-- mind fin -->
 
@@ -683,9 +691,10 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
             <!--履歴 yoshioka -->
 
             
-            </div>
+        </div>
 
         </div>    
+        
 
         <!-- メインメニュー　Finish -->
 
