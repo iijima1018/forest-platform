@@ -153,7 +153,7 @@ if(isset($_POST["record"])){
   	     </form>
        </div>
 
-       <div class="select_map">
+       <div class="select_sheet">
           <form method="POST">
   		        <div align="center">
   			          <strong>思考表出マップ リスト</strong>
