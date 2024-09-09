@@ -18,9 +18,9 @@ if (isset($_POST["logout"])) {
 }
 
 //新規作成
-if(isset($_POST["sheetname"])){
+if(isset($_POST["mapname"])){
 
-	if($_POST["sheetname"] != ""){
+	if($_POST["mapname"] != ""){
 
 		createSheet();
     // createDocument();
@@ -34,9 +34,9 @@ if(isset($_POST["sheetname"])){
 }
 
 //シート編集
-if(isset($_POST["sheet"])){
+if(isset($_POST['map'])){
 
-	$_SESSION["SHEETID"] = $_POST["sheet"];
+	$_SESSION["MAPID"] = $_POST['map'];
 
 	if(isset($_POST["edit"])){
 
@@ -153,7 +153,7 @@ if(isset($_POST["record"])){
   	     </form>
        </div>
 
-       <div class="select_sheet">
+       <div class="select_map">
           <form method="POST">
   		        <div align="center">
   			          <strong>思考表出マップ リスト</strong>

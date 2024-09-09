@@ -6,7 +6,7 @@ require("connect_db.php");
 
 // POSTデータの受け取り
 $user_id = $_SESSION['USERID'];      //ユーザID
-$map_id = $_SESSION['SHEETID'];    //シートID
+$map_id = $_SESSION['MAPID'];    //シートID
 
 $purpose = $_POST["purpose"]; // どんなデータを取得したり保存したりするのか（内容．例：発話ノードのXMLからの保存orマップノードの取得）
 
@@ -108,7 +108,7 @@ if($purpose === "record_meeting_utterance") {
     //         $result_argmentnode = $argmentnode->fetch_assoc()['argument'];
     //         if($result_argmentnode == 1){
     //             $mysqli->query("UPDATE document_content_organize SET claim = 1, argument = 2
-    //                        WHERE user_id = '$user_id' AND sheet_1id = '$map_id' AND id = '$doc_con1_id' AND time = $map_renewal_time");
+    //                        WHERE user_id = '$user_id' AND map_1id = '$map_id' AND id = '$doc_con1_id' AND time = $map_renewal_time");
     //         }else{
     //             $mysqli->query("UPDATE document_content_organize SET claim = 1, argument = 3
     //                        WHERE user_id = '$user_id' AND map_id = '$map_id' AND id = '$doc_con1_id' AND time = $map_renewal_time");

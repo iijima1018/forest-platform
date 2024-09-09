@@ -34,12 +34,12 @@
 		$result_nvi = $mysqli->query($sql_nvi);
 
 		//map_versionsをUPDATE
-		$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['SHEETID']." AND disappeared_at IS NULL";
+		$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['MAPID']." AND disappeared_at IS NULL";
 		$result_mvu = $mysqli->query($sql_mvu);
 
 		//map_versionsにINSERT
 		$sql_mvi = $sql_mv = "INSERT INTO map_versions (id, map_id, appeared_at, disappeared_at, type, updated_reason) 
-		VALUES ($map_version, '".$_SESSION['SHEETID']."', '".$timestamp."', NULL, 'system', NULL)";
+		VALUES ($map_version, '".$_SESSION['MAPID']."', '".$timestamp."', NULL, 'system', NULL)";
 		$result_mvi = $mysqli->query($sql_mvi);
 
 	//ノードの編集、移動
@@ -62,7 +62,7 @@
 			$sql_nvu = "UPDATE node_versions SET appeared_at = '".$timestamp."', updated_reason_by_system = '".$updated_reason_by_system."', content = '".$content."', parent_node_id = '".$parent_node_id."' WHERE node_id = '".$node_id."' AND appeared_at = (select max(appeared_at) from (select appeared_at from node_versions) temp)";
 			$result_nvu = $mysqli->query($sql_nvu);
 			//map_versionsも？
-			$sql_mvu = "UPDATE map_versions SET appeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['SHEETID']." AND disappeared_at IS NULL";
+			$sql_mvu = "UPDATE map_versions SET appeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['MAPID']." AND disappeared_at IS NULL";
 			$result_mvu = $mysqli->query($sql_mvu);
 
 
@@ -90,12 +90,12 @@
 			$result_nvi = $mysqli->query($sql_nvi);
 
 			//map_versionsをUPDATE
-			$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['SHEETID']." AND disappeared_at IS NULL";
+			$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['MAPID']." AND disappeared_at IS NULL";
 			$result_mvu = $mysqli->query($sql_mvu);
 
 			//map_versionsにINSERT
 			$sql_mvi = $sql_mv = "INSERT INTO map_versions (id, map_id, appeared_at, disappeared_at, type, updated_reason) 
-			VALUES ($map_version_id, '".$_SESSION['SHEETID']."', '".$timestamp."', NULL, 'system', NULL)";
+			VALUES ($map_version_id, '".$_SESSION['MAPID']."', '".$timestamp."', NULL, 'system', NULL)";
 			$result_mvi = $mysqli->query($sql_mvi);
 
 		}
@@ -121,13 +121,13 @@
 		$result_nvi = $mysqli->query($sql_nvi);
 
 		//map_versionsをUPDATE
-		$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['SHEETID']." AND disappeared_at IS NULL";
+		$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['MAPID']." AND disappeared_at IS NULL";
 		$result_mvu = $mysqli->query($sql_mvu);
 
 		//map_versionsにINSERT
 		$map_version = rand();
 		$sql_mvi = $sql_mv = "INSERT INTO map_versions (id, map_id, appeared_at, disappeared_at, type, updated_reason) 
-		VALUES ($map_version, '".$_SESSION['SHEETID']."', '".$timestamp."', NULL, 'system', NULL)";
+		VALUES ($map_version, '".$_SESSION['MAPID']."', '".$timestamp."', NULL, 'system', NULL)";
 		$result_mvi = $mysqli->query($sql_mvi);
 
 
@@ -135,7 +135,7 @@
 	}else if($_POST["data"] == "relation"){
 		$relation_id = rand();
 		$node_id = $_POST["node_id"];
-		$map_id = $_SESSION['SHEETID'];
+		$map_id = $_SESSION['MAPID'];
 		$map_version_id = $_POST["map_version_id"];
 		$count = $_POST["count"];
 
@@ -173,13 +173,13 @@
 		if($_POST["node_id"] == NULL){
 
 			//map_versionsをUPDATE
-			$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['SHEETID']." AND disappeared_at IS NULL";
+			$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$timestamp."' WHERE map_id = ".$_SESSION['MAPID']." AND disappeared_at IS NULL";
 			$result_mvu = $mysqli->query($sql_mvu);
 
 			//map_versionsにINSERTする
 			$map_version = rand();	//not unique
 			$sql_mvi = "INSERT INTO map_versions(id, map_id, appeared_at, disappeared_at, type, updated_reason)
-			VALUES ($map_version, '".$_SESSION['SHEETID']."', '".$timestamp."', NULL, 'map', NULL)";	//後で理由入れる
+			VALUES ($map_version, '".$_SESSION['MAPID']."', '".$timestamp."', NULL, 'map', NULL)";	//後で理由入れる
 			$result_mvi = $mysqli->query($sql_mvi);
 
 		//ノードからマップ全体に波及させるとき	11/30意味なくないですか？マップver2個できる 壊れそう relationも設定せず置いとこう
@@ -194,13 +194,13 @@
       			}
     		}
 			//ノードに時間を合わせてmap_versionsをUPDATE
-			$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$appeared_at."' WHERE map_id = ".$_SESSION['SHEETID']." AND disappeared_at IS NULL";
+			$sql_mvu = "UPDATE map_versions SET disappeared_at = '".$appeared_at."' WHERE map_id = ".$_SESSION['MAPID']." AND disappeared_at IS NULL";
 			$result_mvu = $mysqli->query($sql_mvu);
 
 			//ノードに時間を合わせてmap_versionsにINSERTする
 			$map_version = rand();	//not unique
 			$sql = "INSERT INTO map_versions(id, map_id, appeared_at, disappeared_at, type, updated_reason)
-			VALUES ($map_version, '".$_SESSION['SHEETID']."', '$appeared_at', NULL, 'spread', NULL)";	//後で理由入れる
+			VALUES ($map_version, '".$_SESSION['MAPID']."', '$appeared_at', NULL, 'spread', NULL)";	//後で理由入れる
 			$result = $mysqli->query($sql);
 		}
 
@@ -252,7 +252,7 @@
 	//ある時間のマップver更新理由を取得
 	}else if($_POST["data"] == "get_map_reason"){
 
-		$map_id = $_SESSION['SHEETID'];
+		$map_id = $_SESSION['MAPID'];
 		$time = $_POST["time"];
 		$sql = "SELECT updated_reason FROM map_versions where map_id = $map_id AND appeared_at <= '$time' AND disappeared_at > '$time'";//大きい方が後
 
@@ -274,7 +274,7 @@
 	//ある時間とその前後のmap_version_idを取得
 	}else if($_POST["data"] == "map_version_at"){
 
-		$map_id = $_SESSION['SHEETID'];
+		$map_id = $_SESSION['MAPID'];
 		$time = $_POST["time"];
 		$sql = "SELECT appeared_at FROM map_versions where map_id = $map_id AND appeared_at <= '$time' ORDER BY appeared_at DESC LIMIT 2";	//timeより前にappeared_atがある最新のもの2つ
 
@@ -316,7 +316,7 @@
 	//map_version_idを最新順(上位30個)で取得する
 	}else if($_POST["data"] == "map_version"){
 
-		$sql = "SELECT * FROM map_versions WHERE map_id = '".$_SESSION['SHEETID']."' ORDER BY appeared_at DESC LIMIT 0, 30";
+		$sql = "SELECT * FROM map_versions WHERE map_id = '".$_SESSION['MAPID']."' ORDER BY appeared_at DESC LIMIT 0, 30";
 
 		$i = 0;
 		$updated_array = array(999 => 'temp');	//最初にこれ入れとかないと何故かindex($i)がついてくれない
@@ -357,10 +357,10 @@
 	
 
 	//資料作成終了ボタンで新しいシート作成
-	}else if($_POST["data"] == "create_sheet"){
+	}else if($_POST["data"] == "create_map"){
 		
-		//sheetの名前を取得
-		$sql_get = "SELECT name FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
+		//mapの名前を取得
+		$sql_get = "SELECT name FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['MAPID'];
 		if($result_get = $mysqli->query($sql_get)) {
       		while($row = mysqli_fetch_assoc($result_get)){
 				$name = $row['name'];
@@ -368,15 +368,15 @@
     	}
 		$timestamp_2sec = date("Y-m-d H:i:s", strtotime("2 second"));	//Record_rank()と被らないように＋2秒する（よくない）
 
-		//同じ名前,idのsheet作成
-		$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted)
-		VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$timestamp_2sec."', '$name', '".$timestamp_2sec."','0')";
+		//同じ名前,idのmap作成
+		$sql = "INSERT INTO maps (map_id, user_id, created_at, name, updated_at, deleted)
+		VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$timestamp_2sec."', '$name', '".$timestamp_2sec."','0')";
 		$result = $mysqli->query($sql);
 
 	//資料の内容全削除
 	}else if($_POST["data"] == "delete_document"){
 
-	$map_id = $_SESSION["SHEETID"];
+	$map_id = $_SESSION["MAPID"];
 
 	//スライド
 	$sql_s = "UPDATE document_rank SET updated_at='$timestamp', deleted=1 WHERE map_id='$map_id' AND deleted=0";
@@ -398,7 +398,7 @@
 	}else if($_POST["data"] == "get_past_document"){
 
 		//mapsから資料のタイトルとupdated_at取得
-		$sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
+		$sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['MAPID'];
 		$i = 0;
     	$get_array = array();
 		if($result_get = $mysqli->query($sql_get)) {
@@ -417,7 +417,7 @@
 	}else if($_POST["data"] == "get_document"){
 
 		//h_documentsから資料のデータ取得
-		$sql_get = "SELECT * FROM h_documents WHERE map_id = ".$_SESSION['SHEETID'];
+		$sql_get = "SELECT * FROM h_documents WHERE map_id = ".$_SESSION['MAPID'];
 		$i = 0;
 		$get_array = array();
 		if($result_get = $mysqli->query($sql_get)) {
@@ -437,7 +437,7 @@
 		// function GetPastDocument_php(){
 		// //mapsから資料のタイトルとupdated_at取得
 		// require "connect_db.php";
-		// $sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['SHEETID'];
+		// $sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['MAPID'];
 		// $i = 0;
     	// $get_array = array();
 		// if($result_get = $mysqli->query($sql_get)) {
@@ -457,7 +457,7 @@
 		$id = rand();
 		$data = $_POST["data"];
 		$sql = "INSERT INTO hatakeyama_logs(id, timestamp, type, user_id, map_id)
-		VALUES ($id, '$timestamp', '$data', ".$_SESSION['USERID'].", ".$_SESSION['SHEETID'].")";
+		VALUES ($id, '$timestamp', '$data', ".$_SESSION['USERID'].", ".$_SESSION['MAPID'].")";
 		$result = $mysqli->query($sql);
 
 

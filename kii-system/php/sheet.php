@@ -4,7 +4,7 @@
 
 		require "connect_db.php";
 
-		$sql = "SELECT * FROM maps WHERE id = ".$_SESSION["SHEETID"];
+		$sql = "SELECT * FROM maps WHERE map_id = ".$_SESSION["MAPID"];
 
 		if($result = $mysqli->query($sql)){
 
@@ -78,7 +78,7 @@
 		require "connect_db.php";
 		date_default_timezone_set('Asia/Tokyo');
 
-		$_SESSION["SHEETID"] = rand();
+		$_SESSION["MAPID"] = rand();
 		$created_at = date("Y-m-d H:i:s");
 		$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
 		$deleted = 0;
@@ -119,8 +119,8 @@
 	
 		//if($name == ""){
 
-			$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted, paper_id) 
-			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
+			$sql = "INSERT INTO maps (map_id, user_id, created_at, name, updated_at, deleted, paper_id) 
+			VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
@@ -149,7 +149,7 @@
 		require "connect_db.php";
 		date_default_timezone_set('Asia/Tokyo');
 
-		$_SESSION["SHEETID"] = rand();
+		$_SESSION["MAPID"] = rand();
 		$created_at = date("Y-m-d H:i:s");
 		$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
 		$deleted = 0;
@@ -159,8 +159,8 @@
 	
 		//if($name == ""){
 
-			$sql = "INSERT INTO maps (id, user_id, created_at, name, updated_at, deleted, paper_id) 
-			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
+			$sql = "INSERT INTO maps (map_id, user_id, created_at, name, updated_at, deleted, paper_id) 
+			VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
@@ -178,8 +178,8 @@
 
 		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
-		echo $_SESSION['SHEETID'];
-		$sql = "DELETE FROM maps WHERE id = ".$_SESSION['SHEETID'];
+		echo $_SESSION['MAPID'];
+		$sql = "DELETE FROM maps WHERE map_id = ".$_SESSION['MAPID'];
 		$result = $mysqli->query($sql);
 		if (!$result) {
 		     print('Error - SQLSTATE');
@@ -244,7 +244,7 @@ function show_user(){
 		while($row = mysqli_fetch_assoc($result)){
 			$map_id = $row['id'];
 			$user_id = $row['user_id'] ;
-			$user_sql = "SELECT name FROM users WHERE id = $user_id ";
+			$user_sql = "SELECT name FROM users WHERE user_id = $user_id ";
 			$result_user_name = $mysqli->query($user_sql);
 			$data_user_name = mysqli_fetch_assoc($result_user_name);
 			$user_name = $data_user_name['name'];

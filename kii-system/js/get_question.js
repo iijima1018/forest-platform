@@ -256,7 +256,7 @@ function add_node2(cid, content){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
     

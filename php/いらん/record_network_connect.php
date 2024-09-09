@@ -12,7 +12,7 @@ date_default_timezone_set('Asia/Tokyo');
 
 //ここ未完成（ノードにもっと情報追加しないといけないかも）
 $user_id = $_SESSION['USERID'];      //ユーザID
-$map_id = $_SESSION['SHEETID'];    //シートID
+$map_id = $_SESSION['MAPID'];    //シートID
 $net_node_id = $_POST["net_nodeid"];             //ノードID
 $mm_node_id = $_POST["mm_nodeid"];              //ラベル
 $timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);

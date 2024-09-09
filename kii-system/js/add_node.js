@@ -316,7 +316,7 @@ function showNode(arr,mode){
 
 }
 
-function getData2(sheetid){
+function getData2(mapid){
 	$("#jsmind_container2").empty();
 	open_empty2();
 
@@ -335,7 +335,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "id",
-				sheetid : sheetid},
+				mapid : mapid},
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -354,7 +354,7 @@ function getData2(sheetid){
 		url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "concept_id" ,
-				sheetid : sheetid},
+				mapid : mapid},
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -375,7 +375,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "content",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -395,7 +395,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "type",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -416,7 +416,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "parent_id",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -437,7 +437,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "class",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -457,7 +457,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "start_char_id",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -477,7 +477,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "end_char_id",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);
@@ -497,7 +497,7 @@ function getData2(sheetid){
 	    url: "php/open_data2.php",
 	    type: "POST",
 	    data: { val : "parent_map_id",
-				sheetid : sheetid },
+				mapid : mapid },
 	    success: function(arr){
 
 	    	var parse = JSON.parse(arr);

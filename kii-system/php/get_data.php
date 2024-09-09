@@ -5,7 +5,7 @@
 	require "connect_db.php";
 
 	if($_POST["val"] == "rationality"){
-		$map_id = $_SESSION["SHEETID"];
+		$map_id = $_SESSION["MAPID"];
 		$rationality_id = $_POST["rationality_id"];
 
 		$sql = "SELECT * FROM rationality_nodes WHERE map_id = ".$map_id." AND rationality_id = '".$rationality_id."'";
@@ -28,7 +28,7 @@
 		echo json_encode($node_id_array);
 
 	}else if($_POST["val"] == "edit_reason"){
-		$map_id = $_SESSION["SHEETID"];
+		$map_id = $_SESSION["MAPID"];
 		$id = $_POST["id"];
 
 		$sql = "SELECT * FROM edit_reason WHERE map_id = ".$map_id." AND node_id = '".$id."'";
@@ -66,7 +66,7 @@
 
 	}else if($_POST["val"] == "return"){
 
-		$sql = "SELECT * FROM nodes WHERE user_id = ".$_SESSION["USERID"]." AND map_id = ".$_SESSION["SHEETID"]." AND updated_at = (select max(updated_at) from nodes)";
+		$sql = "SELECT * FROM nodes WHERE user_id = ".$_SESSION["USERID"]." AND map_id = ".$_SESSION["MAPID"]." AND updated_at = (select max(updated_at) from nodes)";
 
 		$i = 0;
 		$updated_array = array();
@@ -94,7 +94,7 @@
 
             while ($row = mysqli_fetch_assoc($result)) {
 
-				$sql2 = "SELECT name FROM users WHERE id = '".$row['user_id']."'";
+				$sql2 = "SELECT name FROM users WHERE user_id = '".$row['user_id']."'";
 				$result2 = $mysqli->query($sql2);
 
 				$row2 = mysqli_fetch_assoc($result2);
@@ -102,7 +102,7 @@
 					"name" => $row2["name"]
 				);
 
-				$sql3 = "SELECT summary FROM maps WHERE id ='".$row['parent_map_id']."'";
+				$sql3 = "SELECT summary FROM maps WHERE map_id ='".$row['parent_map_id']."'";
 				$result3 = $mysqli->query($sql3);
 
 				$row3 = mysqli_fetch_assoc($result3);

@@ -360,7 +360,7 @@ function add_node(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -452,7 +452,7 @@ function add_Anode_parentid(parent_id){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -532,7 +532,7 @@ function add_Qnode(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
     if (window.getSelection().anchorNode != null){
@@ -638,7 +638,7 @@ function add_Anode(node_class, node_type){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
    
@@ -741,7 +741,7 @@ function add_Pnode(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -837,7 +837,7 @@ function add_Cnode_parentid(parent_id,node_type){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -924,7 +924,7 @@ function add_Cnode(node_type){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
     if (window.getSelection().anchorNode != null){
@@ -993,7 +993,7 @@ function remove_node(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 

@@ -260,7 +260,7 @@ function add_node(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -348,7 +348,7 @@ function add_Qnode(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -465,7 +465,7 @@ function add_Anode(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -579,7 +579,7 @@ function add_Pnode(){//マップへ反映ボタンでノードを追加する
           $.ajax({
               url: "php/update_node.php",
               type: "POST",
-              data: { update : "sheet" }
+              data: { update : "map" }
           });
           dom_target.setAttribute("node_id", nodeid);
           var thread_id = dom_target.parentNode.parentNode.parentNode.id;
@@ -638,7 +638,7 @@ function add_Pnode(){//マップへ反映ボタンでノードを追加する
           $.ajax({
               url: "php/update_node.php",
               type: "POST",
-              data: { update : "sheet" }
+              data: { update : "map" }
           });
   }
   dom_target.setAttribute("node_id", nodeid);
@@ -727,7 +727,7 @@ function remove_node(){
     $.ajax({
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
     });
 
 }

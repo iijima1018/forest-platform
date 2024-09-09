@@ -3,7 +3,7 @@ session_start();
 
 /*ノード情報をDBに格納する際に使用*/
 require("connect_db.php");
-$map_id = $_SESSION["SHEETID"];
+$map_id = $_SESSION["MAPID"];
 $rq =$_POST["rq"];
 $e1s =$_POST["e1Strong"];
 $e1w =$_POST["e1Weak"];

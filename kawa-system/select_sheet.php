@@ -70,11 +70,11 @@ if(isset($_POST["sheetname"])){
 
 
 //シート編集
-if(isset($_POST["sheet"])){
+if(isset($_POST['map'])){
 
-  $_SESSION["SHEETID"] = $_POST["sheet"];
+  $_SESSION["MAPID"] = $_POST['map'];
   // get_paper_id();  
-  // paper_idを選ばれたsheetidから求めてsessionに指定しないと, 他者のマップ選択する際に
+  // paper_idを選ばれたmapidから求めてsessionに指定しないと, 他者のマップ選択する際に
 
 	if(isset($_POST["edit"])){
 

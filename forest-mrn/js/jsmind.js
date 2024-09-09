@@ -470,7 +470,7 @@
 
                 url: "php/update_node.php",
                 type: "POST",
-                data: { update : "sheet" }
+                data: { update : "map" }
 
             });
 
@@ -1692,7 +1692,7 @@
 
                 url: "php/update_node.php",
                 type: "POST",
-                data: { update : "sheet" }
+                data: { update : "map" }
 
             });
 
@@ -2724,7 +2724,7 @@
 
                 url: "php/update_node.php",
                 type: "POST",
-                data: { update : "sheet" }
+                data: { update : "map" }
 
             });
 
@@ -3138,7 +3138,7 @@
 
                     url: "php/update_node.php",
                     type: "POST",
-                    data: { update : "sheet" }
+                    data: { update : "map" }
 
                 });
 
@@ -3267,7 +3267,7 @@
 
                 url: "php/update_node.php",
                 type: "POST",
-                data: { update : "sheet" }
+                data: { update : "map" }
 
             });
 

@@ -6,7 +6,7 @@
 	require("connect_db.php");
 	date_default_timezone_set('Asia/Tokyo');
 	$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
-	$map_id = $_SESSION['SHEETID'];    //シートID
+	$map_id = $_SESSION['MAPID'];    //シートID
 	
 	$send_annotation_id = $_POST["id"]; //nishida
 	$start_char_id = $_POST["start_char_id"]; //nishida

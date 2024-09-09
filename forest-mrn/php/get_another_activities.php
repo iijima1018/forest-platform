@@ -5,7 +5,7 @@ session_start();
 require("connect_db.php");
 
 $user_id = $_SESSION["USERID"];
-$map_id = $_SESSION["SHEETID"];
+$map_id = $_SESSION["MAPID"];
 
 //タイムゾーンの設定
 date_default_timezone_set('Asia/Tokyo');

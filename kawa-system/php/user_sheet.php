@@ -11,7 +11,7 @@
 
   $user = $_POST["user"];
   $user_id = $_SESSION["USERID"];
-  $map_id = $_SESSION["SHEETID"];
+  $map_id = $_SESSION["MAPID"];
   // $user = filter_input(INPUT_POST, 'user');
 
   // // 下記の「3」はファイル出力する指定

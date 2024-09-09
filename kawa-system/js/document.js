@@ -256,7 +256,7 @@ function AddOriginalNode(data1, data2){
   $.ajax({
     url: "php/update_node.php",
     type: "POST",
-    data: { update : "sheet" }
+    data: { update : "map" }
   });
 }
 

@@ -4,7 +4,7 @@ session_start();
 require("connect_db.php");
 
 $user_id = $_SESSION['USERID'];      //ユーザID
-$map_id = $_SESSION['SHEETID'];    //シートID
+$map_id = $_SESSION['MAPID'];    //シートID
 $st_time = $_POST["time"]; 
 
 $result = $mysqli->query("SELECT edge_start, edge_end FROM network_edges_activity

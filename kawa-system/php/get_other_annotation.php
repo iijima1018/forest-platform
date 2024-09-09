@@ -2,7 +2,7 @@
 session_start();
 require "connect_db.php";
 
-    $map_id = $_SESSION["SHEETID"];
+    $map_id = $_SESSION["MAPID"];
     $paper_id = $_SESSION["PAPERID"]; 
 
 	if($_POST["val"] == "get_conceptid"){
@@ -33,8 +33,8 @@ require "connect_db.php";
 
         $id = $_POST["id"];   
         $i = 0;
-        $data_array = array(); // contentとsheetidを格納する配列 
-        $map_id = $_SESSION["SHEETID"];
+        $data_array = array(); // contentとmapidを格納する配列 
+        $map_id = $_SESSION["MAPID"];
         $paper_id = $_SESSION["PAPERID"]; 
         $sql = "SELECT * FROM nodes WHERE concept_id = '".$id."' AND type = 'predict' AND deleted = '0' AND content NOT LIKE '＊あなたの解釈' AND content NOT LIKE '＊あなたの予測' AND map_id != '".$map_id."' AND (paper_id = '".$paper_id."')";
 
@@ -57,7 +57,7 @@ require "connect_db.php";
     else if ($_POST["val"] == "judge_annotation") {
         $start_char_id = $_POST["start_char_id"];
         $end_char_id = $_POST["end_char_id"];
-        $data_array = array(); // contentとsheetidを格納する配列
+        $data_array = array(); // contentとmapidを格納する配列
     
         // SQLクエリを構築
         $sql = "SELECT * FROM annotations WHERE ";

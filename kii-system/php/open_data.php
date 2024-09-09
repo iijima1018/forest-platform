@@ -8,7 +8,7 @@
 
 	if($_POST["val"] == "id"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id."  ORDER BY created_at asc";
 
@@ -35,7 +35,7 @@
 
 	}else if($_POST["val"] == "concept_id"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -62,7 +62,7 @@
 
 	}else if($_POST["val"] == "content"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -89,7 +89,7 @@
 
 	}else if($_POST["val"] == "type"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -116,7 +116,7 @@
 
 	}else if($_POST["val"] == "parent_id"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -143,7 +143,7 @@
 
 	}else if($_POST["val"] == "class"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -171,7 +171,7 @@
 	}
 	else if($_POST["val"] == "start_char_id"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -199,7 +199,7 @@
 	}
 	else if($_POST["val"] == "end_char_id"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." ORDER BY created_at asc";
 
@@ -230,7 +230,7 @@
 	
 	else if($_POST["val"] == "root"){
 
-		$id = $_SESSION["SHEETID"];
+		$id = $_SESSION["MAPID"];
 
 		$sql = "SELECT * FROM nodes WHERE map_id = ".$id." AND type = 'root'";
 

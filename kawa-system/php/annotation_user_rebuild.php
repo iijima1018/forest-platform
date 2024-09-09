@@ -11,7 +11,7 @@ require("connect_db.php");
 //タイムゾーンの設定
 date_default_timezone_set('Asia/Tokyo');
 $today_date = date("Y-m-d");
-$map_id = $_POST['sheet'];    //シートID
+$map_id = $_POST['map'];    //シートID
 
 if($_POST["val"] == "all"){
   $sql = "SELECT id, start_char_id, end_char_id, type, content, node_id  FROM annotations 

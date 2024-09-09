@@ -7,6 +7,7 @@ $mt_time_message = "";
 
 // ログイン状態のチェック
 if (!isset($_SESSION["USERID"])) {
+  echo 2;
   header("Location: logout.php");
   exit;
 }

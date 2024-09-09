@@ -422,7 +422,7 @@ function add_Qnode2(){
 
       url: "php/update_node.php",
       type: "POST",
-      data: { update : "sheet" }
+      data: { update : "map" }
 
   });
     if(window.getSelection().toString().length != 0){
@@ -485,7 +485,7 @@ function add_Qnode2(){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
 
@@ -578,7 +578,7 @@ function add_Anode2(node_type){
 
       url: "php/update_node.php",
       type: "POST",
-      data: { update : "sheet" }
+      data: { update : "map" }
 
   });
 

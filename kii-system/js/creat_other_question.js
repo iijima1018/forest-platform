@@ -191,7 +191,7 @@ function add_Anode_from_other(node_class, node_type){
 
         url: "php/update_node.php",
         type: "POST",
-        data: { update : "sheet" }
+        data: { update : "map" }
 
     });
     var element = document.querySelectorAll("[nodeid='"+nodeid+"']");
@@ -387,12 +387,12 @@ function change_othermode(mode) {
             //                 text = "この問いを思いつくためにはどのようなことを考えながら読めば良いでしょうか"
             //                 // text = "あなたは<br><br><div id='ref_area' class='border-radius' >"+result[0]["content"]+"</div><br><br>という解釈を参考にしました．<br><br>このような読解を行なった学習者は，この論文に対して，<div id='summary_area'>"+result[0]["summary"]+"</div><br>という要約をしています．もう一度この要約やマインドマップを見て，この解釈について，<br><br>何故自分が思いつけなかったのか<br><br>どうすればこの解釈ができるか<br><br>に着目して考えてみましょう"
             //                 // document.getElementById("ref_text").innerHTML = text;
-            //                 // sheetid = result[0]["parent_map_id"];
+            //                 // mapid = result[0]["parent_map_id"];
             //                 // show_selected_sheet("on");
             //                 // $("mindmap_tab").css("display: none;");
 
                             
-            //                 // getData2(sheetid);
+            //                 // getData2(mapid);
             //             },
             //             error: function(xhr, status, error) {
             //                 console.error("Error:", error);

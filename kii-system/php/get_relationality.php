@@ -4,7 +4,7 @@ session_start();
 require "connect_db.php";
 
 
-$map_id = $_SESSION["SHEETID"];
+$map_id = $_SESSION["MAPID"];
 $rationality_id = $_POST["rationality_id"];
 
 		$sql = "SELECT * FROM rationality_nodes WHERE map_id = ".$map_id." AND rationality_id = '".$rationality_id."'";

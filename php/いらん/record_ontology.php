@@ -12,7 +12,7 @@ date_default_timezone_set('Asia/Tokyo');
 
 //ここ未完成（ノードにもっと情報追加しないといけないかも）
 $user_id = $_SESSION['USERID'];      //ユーザID
-$map_id = $_SESSION['SHEETID'];    //シートID
+$map_id = $_SESSION['MAPID'];    //シートID
 $node_id = $_POST["node_id"];             //ノードID
 $ontology_id = $_POST["ontology_id"];   //オントロジーのノードID
 $label = $_POST["label"];              //ラベル

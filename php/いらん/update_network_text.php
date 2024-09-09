@@ -6,7 +6,7 @@
 	date_default_timezone_set('Asia/Tokyo');
 
 	$user_id = $_SESSION['USERID'];      //ユーザID
-    $map_id = $_SESSION['SHEETID'];    //シートID
+    $map_id = $_SESSION['MAPID'];    //シートID
 	$sttime = $_POST['sttime'];
 	$remain_id = $_POST['remain_id'];
 	$delete_id = $_POST['delete_id'];

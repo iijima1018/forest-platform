@@ -9,7 +9,7 @@
   }
 
   $user_id = $_SESSION["USERID"];
-  $map_id = $_SESSION["SHEETID"];
+  $map_id = $_SESSION["MAPID"];
   $mttime = null;
   // $last_mttime = $_SESSION["last_mttime"];
   // // 下記の「3」はファイル出力する指定

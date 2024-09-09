@@ -71,7 +71,7 @@ $('#user_list').change(function() { // セレクトボックスから選ばれ�
 
 
 // なぜかarea_idを引数にしとかないと狂う
-function Rebuild_paper2(area_id,sheet){
+function Rebuild_paper2(area_id,map){
   $.ajax({
       url: "php/paper_rebuild.php",
       type: "POST",
@@ -83,14 +83,14 @@ function Rebuild_paper2(area_id,sheet){
           span.innerHTML = paper; //html要素に変換   
           area.append(span); //bodyに追加
 
-          console.log(sheet);
+          console.log(map);
           $.ajax({
                          
             url: "php/annotation_user_rebuild.php",
             type: "POST",
             data: { 
               val : "all",
-              sheet : sheet,
+              map : map,
             },
             success:function(annotation){
         
@@ -112,7 +112,7 @@ function Rebuild_paper2(area_id,sheet){
   });
 }
 
-function Rebuild_paper3(area_id,sheet, parent_id){
+function Rebuild_paper3(area_id,map, parent_id){
   $.ajax({
       url: "php/paper_rebuild.php",
       type: "POST",
@@ -124,14 +124,14 @@ function Rebuild_paper3(area_id,sheet, parent_id){
           span.innerHTML = paper; //html要素に変換   
           area.append(span); //bodyに追加
 
-          console.log(sheet);
+          console.log(map);
           $.ajax({
                          
             url: "php/annotation_user_rebuild.php",
             type: "POST",
             data: { 
               val : "one",
-              sheet : sheet,
+              map : map,
               parent_id : parent_id
             },
             success:function(annotation){

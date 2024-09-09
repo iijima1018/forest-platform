@@ -5,7 +5,7 @@ session_start();
 require("connect_db.php");
 
 // $user_id = $_SESSION["USERID"];//"26943"; //
-$map_id = $_SESSION["SHEETID"];//"102774749"; //
+$map_id = $_SESSION["MAPID"];//"102774749"; //
 // $node_id = $_GET["node_id"];
 $node_id = $_POST["node_id"];
 //追記
@@ -14,7 +14,7 @@ $node1_id = $_POST["node1_id"];
 //タイムゾーンの設定
 date_default_timezone_set('Asia/Tokyo');
 
-// $sql = "SELECT scenario_title FROM maps WHERE id='$map_id'";
+// $sql = "SELECT scenario_title FROM maps WHERE map_id='$map_id'";
 $sql = "SELECT * FROM document_content_relation WHERE map_id='$map_id' AND deleted='0' AND node1_id='$node_id'";
 
 $data = array();
