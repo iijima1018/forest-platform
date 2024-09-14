@@ -311,20 +311,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                 <div id="layout">
                     <div id="jsmind_nav">
                         <div style="text-align: left">
-                            <!-- 鍵谷お試し -->
-                            <button class="button4" onclick="add_Qnode();">
-                                合理性ノード追加
-                            </button>
-                            <button class="button4" onclick="add_Anode();">
-                                根拠ノード追加
-                            </button>
-                            <!-- <li><button onclick="horisage();">掘り下げる</button></li>
-                                 horisage()関数は現在存在しない-->
-                            <button class="button4" onclick="remove_node();">
-                                ノードの削除
-                            </button>
-                            <!--鍵谷お試し-->
-
                             <!-- 【Edit】 -->
                             <button class="button4" onclick="add_Qnode();">
                                 問いノード追加
@@ -351,6 +337,14 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             <button class="button4" id="map-snapshot-button" onclick="MapSnapShot();RecordRelation();">
                                 マップver更新 <!--hatakeyama-->
                             </button>
+
+                             <!--kagitani-->
+                            <button class="button4" onclick="remove_node();">
+                                研究内容の反映
+                            </button>
+                             <!--kagitani-->
+
+
                             <!-- 【Reason】
                                  <button class="button4" onclick="add_edit_reason();">
                                  修正理由の追加
@@ -452,6 +446,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                                 <li><a href="javascript:void(0);" onClick="ItemAddDocument()">項目として追加する</a></li>
                                 <li><a href="javascript:void(0);" onClick="NodeAppendLogic()">内容として追加する</a></li>
                                 <li><a href="javascript:void(0);" onClick="VersionSpread();RecordRelation()">ノードの更新をマップ全体に波及させる</a></li><!--hatakeyama-->
+                                <li><a href="javascript:void(0);" onClick="LinkWithOthers()">他の情報と紐づける</a></li>
                             </ul>
                         </div>
                     </div>
