@@ -100,9 +100,11 @@
     };
 
     // ============= static object =============================================
-    jm.direction = {left:-1,center:0,right:1};
-    jm.event_type = {show:1,resize:2,edit:3,select:4};
+    jm.direction = {left:-1,center:0,right:1};//マインドマップの方向やイベントの種類に関する静的な定義
+    jm.event_type = {show:1,resize:2,edit:3,select:4};//マインドマップに関連するイベントの種類
 
+    //マインドマップの個々のノードを表すオブジェクト.
+    //ノードのID、トピック（ノードの内容）、親ノードとの関係、方向などの情報が含まれまれる．
     jm.node = function(sId,iIndex,sTopic,oData,bIsRoot,oParent,eDirection,bExpanded){
         if(!sId){logger.error('invalid nodeid');return;}
         if(typeof iIndex != 'number'){logger.error('invalid node index');return;}
@@ -119,6 +121,7 @@
         this._data = {};
     };
 
+    //2つのノードのインデックスを比較し，順序を決定するために使用される．ノードが並び替えられる際に役立つ．
     jm.node.compare=function(node1,node2){
         // '-1' is alwary the last
         var r = 0;
@@ -139,6 +142,7 @@
         return r;
     };
 
+    //あるノードが別のノードの子孫であるかどうかをチェックするメソッド.
     jm.node.inherited=function(pnode,node){
         if(!!pnode && !!node){
             if(pnode.id === node.id){
