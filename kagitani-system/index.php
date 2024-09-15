@@ -70,6 +70,10 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         <link rel="stylesheet" type="text/css" href="css/ui.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
 
+        <!--kagitani-->
+        <link rel="stylesheet" type="text/css" href="css/displayResearchContent.css">
+        <!--kagitani-->
+
         <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jsmind.js"></script>
@@ -339,8 +343,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </button>
 
                              <!--kagitani-->
-                            <button class="button4" onclick="remove_node();">
-                                研究内容の反映
+                            <button class="button4" onclick="displayResearchContent();">
+                                研究内容を表示
                             </button>
                              <!--kagitani-->
 
@@ -723,7 +727,10 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" /> -->
         <script type="text/javascript" src="./js/network.js"></script>  
         <script type="text/javascript" src="./js/readxmldata.js"></script>  
-        
         <!--  ここまで大槻修正　-->
+
+        <!-- kagitani-->
+        <script type="text/javascript" src="js/displayResearchContent.js"></script>
+        <!-- kagitani-->
     </body>
 </html>
