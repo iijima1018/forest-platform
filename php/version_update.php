@@ -369,9 +369,13 @@
 		$timestamp_2sec = date("Y-m-d H:i:s", strtotime("2 second"));	//Record_rank()と被らないように＋2秒する（よくない）
 
 		//同じ名前,idのmap作成
-		$sql = "INSERT INTO maps (map_id, user_id, created_at, name, updated_at, deleted)
-		VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$timestamp_2sec."', '$name', '".$timestamp_2sec."','0')";
-		$result = $mysqli->query($sql);
+		//同じ名前,idのmap作成
+		$sql1 = "INSERT INTO maps (map_id, user_id, name, created_at, updated_at, deleted) 
+			VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$name."', '".$timestamp_2sec."', '".$timestamp_2sec."','0')";
+		$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
+
+		$result = $mysqli->query($sql1);
+		$result = $mysqli->query($sql2);
 
 	//資料の内容全削除
 	}else if($_POST["data"] == "delete_document"){

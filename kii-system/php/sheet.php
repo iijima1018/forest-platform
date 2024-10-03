@@ -83,6 +83,8 @@
 		$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
 		$deleted = 0;
 		$paper_id = rand();
+		$map_node_link = rand();
+		$mode_id = 2; //論文読解モード
 		
 		// $paper_content = "asdgan"; //nishida
 		$paper_content = $_SESSION["paper_content"]; //nishida
@@ -119,12 +121,19 @@
 	
 		//if($name == ""){
 
-			$sql = "INSERT INTO maps (map_id, user_id, created_at, name, updated_at, deleted, paper_id) 
-			VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
-			if (!$result = $mysqli->query($sql)) {
+			$sql1 = "INSERT INTO maps (map_id, user_id, name, paper_id, created_at, updated_at, deleted) 
+				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['sheetname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
+			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
+
+			
+			if (!$result = $mysqli->query($sql1)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
 		    }
+			if (!$result = $mysqli->query($sql2)) {
+				print('Error - SQLSTATE'. mysqli_error($link));
+				exit();
+			}
 
 			header("Location: index.php");
 
@@ -155,16 +164,25 @@
 		$deleted = 0;
 		$paper_id = $_SESSION["PAPERID"];	
 		$paper_content = $_SESSION["paper_content"]; //nishida
+		$map_node_link = rand();
+		$mode_id = 2; //論文読解モード
 
 	
 		//if($name == ""){
 
-			$sql = "INSERT INTO maps (map_id, user_id, created_at, name, updated_at, deleted, paper_id) 
-			VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
-			if (!$result = $mysqli->query($sql)) {
+			$sql1 = "INSERT INTO maps (map_id, user_id, name, paper_id, created_at, updated_at, deleted) 
+				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['sheetname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
+			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
+
+			
+			if (!$result = $mysqli->query($sql1)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
 		    }
+			if (!$result = $mysqli->query($sql2)) {
+				print('Error - SQLSTATE'. mysqli_error($link));
+				exit();
+			}
 
 			header("Location: index.php");
 
