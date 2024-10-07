@@ -8,12 +8,12 @@ $mt_time_message = "";
 
 // ログイン状態のチェック
 if (!isset($_SESSION["USERID"])) {
-  header("../logout.php");
+  header("Location: ../logout.php");
   exit;
 }
 
 if (isset($_POST["logout"])) {
-  header("../logout.php");
+  header("Location: ../logout.php");
   exit;
 }
 
@@ -30,8 +30,8 @@ if(isset($_POST["paper"])){
     // $_SESSION["paper_content"] = $_POST["paper_content"]; //nishida
 
     // show_paper_preview();
-    if(isset($_POST["sheetname"])){
-      if($_POST["sheetname"] != "" ){
+    if(isset($_POST["mapname"])){
+      if($_POST["mapname"] != "" ){
         createSheet_selectedPaper();
     
       }else{
@@ -52,13 +52,13 @@ if(isset($_POST["paper"])){
 
 
 //新規作成
-if(isset($_POST["sheetname"])){
+if(isset($_POST["mapname"])){
 
-	// if($_POST["sheetname"] != "" & $_POST["paper_title"] != ""){
+	// if($_POST["mapname"] != "" & $_POST["paper_title"] != ""){
 	// 	createSheet();
 
   // }else
-  if($_POST["sheetname"] != "" & $_SESSION["PAPERID"] != ""){
+  if($_POST["mapname"] != "" & $_SESSION["PAPERID"] != ""){
     createSheet_selectedPaper();
   }
   else{
@@ -152,12 +152,12 @@ if(isset($_POST['map'])){
     <div id="main_menu">
     <h3>思考表出マップ</h3>
 
-       <div class="newsheet">
+       <div class="newmap">
   	     <form method="POST">
            <div>
 	           <p><strong>思考表出マップ<br>新規作成</strong></p>
              <p><strong>マップ名を記入してください</strong></p>
-    	       <p><input type="text" name="sheetname" placeholder="マップ名"></p>
+    	       <p><input type="text" name="mapname" placeholder="マップ名"></p>
              <!-- <strong><strong>論文を選択してください</strong></p> -->
              <!-- <p><input type="file" value="【テキストファイルを選択】" onclick="InputFile()" id="input_file"></p> -->
     	       <!-- <p><input type="text" name="paper_title" placeholder="論文のタイトル"></p> -->
@@ -172,7 +172,7 @@ if(isset($_POST['map'])){
                  <?php echo $_SESSION["PAPERID"]; ?>
               </p>
     	       <!-- <p><input class="button2"  name="paper" value="登録済みの論文" onclick="CreateSheet()" id="create_sheet"></p> -->
-    	       <p><input class="button" type="submit" name="newsheet" value="新規作成"  id="create_sheet"></p>
+    	       <p><input class="button" type="submit" name="newmap" value="新規作成"  id="create_sheet"></p>
            </div>
   	     </form>
        </div>

@@ -8,12 +8,12 @@ $mt_time_message = "";
 
 // ログイン状態のチェック
 if (!isset($_SESSION["USERID"])) {
-  header("Location: ./../logout.php");
+  header("Location: ../logout.php");
   exit;
 }
 
 if (isset($_POST["logout"])) {
-  header("Location: ./../logout.php");
+  header("Location: ../logout.php");
   exit;
 }
 
@@ -142,13 +142,13 @@ if(isset($_POST["record"])){
     <div id="main_menu">
     <h3>思考表出マップ</h3>
 
-       <div class="newsheet">
+       <div class="newmap">
   	     <form method="POST">
            <div>
 	           <p><strong>思考表出マップ<br>新規作成</strong></p>
              <p><strong>マップ名を記入してください</strong></p>
-    	       <p><input type="text" name="sheetname" placeholder="マップ名"></p>
-    	       <p><input class="button" type="submit" name="newsheet" value="新規作成"></p>
+    	       <p><input type="text" name="mapname" placeholder="マップ名"></p>
+    	       <p><input class="button" type="submit" name="newmap" value="新規作成"></p>
            </div>
   	     </form>
        </div>

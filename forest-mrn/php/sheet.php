@@ -11,7 +11,7 @@
 			while($row = mysqli_fetch_assoc($result)){
 
 				echo $row["name"];
-				$_SESSION["SHEETNAME"] = $row["name"];
+				$_SESSION["mapname"] = $row["name"];
 
 
 			}
@@ -27,12 +27,11 @@
 
 		$id = $_SESSION['USERID'];
 
-		$sql = "SELECT * FROM maps WHERE user_id = '$id' AND self_conversation_activity_mode = 'self_research' ORDER BY updated_at DESC";
+		$sql = "SELECT * FROM map_mode_link WHERE user_id = '$id' AND mode_id = 1 ORDER BY updated_at DESC";
 
-		$sql = "SELECT * FROM maps WHERE user_id = '$id' AND self_conversation_activity_mode = 'self_research' ORDER BY updated_at DESC";
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
-				echo"<p><label><input type='radio' name='sheet' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
+				echo"<p><label><input type='radio' name='map' value='".$row['map_id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
 			}
 
 		}
@@ -47,7 +46,7 @@
 
 		$_SESSION["MAPID"] = rand(); //ここでセッションが定義されているらしい
 		$map_version = rand();	
-		$map_node_link = rand();
+		$map_mode_link = rand();
 		$created_at = date("Y-m-d H:i:s");
 		$deleted = 0;
 		$mode_id = 1; //自己内対話モード
@@ -59,11 +58,11 @@
 			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
 			
 			if (!$result = $mysqli->query($sql1)) {
-		      print('Error - SQLSTATE'. mysqli_error($link));
+		      print('Error - SQLSTATE'. mysqli_error($mysqli));
 		      exit();
 		    }
 			if (!$result = $mysqli->query($sql2)) {
-				print('Error - SQLSTATE'. mysqli_error($link));
+				print('Error - SQLSTATE'. mysqli_error($mysqli));
 				exit();
 			}
 
@@ -76,7 +75,7 @@
 			 
 			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['sheetname']."', '".$created_at."', NULL)";
 			if (!$result = $mysqli->query($sql_mv)) {
-		      print('Error - SQLSTATE'. mysqli_error($link));
+		      print('Error - SQLSTATE'. mysqli_error($mysqli));
 		      exit();
 		    }
 
@@ -93,6 +92,7 @@
 
 	/*select_sheet.phpからシートを新規作成する*/
 	//2022-11-24 shimizu
+	//2024-10-07 使用なし
 	function createDocument(){
 
 		require "connect_db.php";

@@ -369,7 +369,7 @@
 		$timestamp_2sec = date("Y-m-d H:i:s", strtotime("2 second"));	//Record_rank()と被らないように＋2秒する（よくない）
 
 		$mode_id = 1; //自己内対話モード
-		$map_node_link = rand();
+		$map_mode_link = rand();
 	
 		//同じ名前,idのmap作成
 		$sql1 = "INSERT INTO maps (map_id, user_id, name, created_at, updated_at, deleted) 

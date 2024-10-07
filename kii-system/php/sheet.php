@@ -11,7 +11,7 @@
 			while($row = mysqli_fetch_assoc($result)){
 
 				echo $row["name"];
-				$_SESSION["SHEETNAME"] = $row["name"];
+				$_SESSION["mapname"] = $row["name"];
 
 
 			}
@@ -29,7 +29,7 @@
 		$sql = "SELECT * FROM maps WHERE user_id = '$id' ORDER BY updated_at DESC";
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
-				echo"<p><label><input type='radio' name='sheet' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
+				echo"<p><label><input type='radio' name='map' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
 			}
 
 		}
@@ -83,7 +83,7 @@
 		$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
 		$deleted = 0;
 		$paper_id = rand();
-		$map_node_link = rand();
+		$map_mode_link = rand();
 		$mode_id = 2; //論文読解モード
 		
 		// $paper_content = "asdgan"; //nishida
@@ -164,7 +164,7 @@
 		$deleted = 0;
 		$paper_id = $_SESSION["PAPERID"];	
 		$paper_content = $_SESSION["paper_content"]; //nishida
-		$map_node_link = rand();
+		$map_mode_link = rand();
 		$mode_id = 2; //論文読解モード
 
 	
