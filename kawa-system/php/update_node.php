@@ -39,8 +39,7 @@
 	}
 	else if($_POST["update"] == "map"){
 
-		// $sql = "UPDATE maps SET updated_at = '".$updated_at."' WHERE id = '".$_POST['id']."'";
-		$sql = "UPDATE maps SET updated_at = '".$updated_at."' WHERE map_id = '".$_SESSION['MAPID']."' AND self_conversation_activity_mode = 'critical_reading'";
+		$sql = "UPDATE maps SET updated_at = '".$updated_at."' WHERE map_id = '".$_SESSION['MAPID']."' AND 1 IN (SELECT mode_id FROM map_mode_links WHERE map_id = '".$_SESSION['MAPID']."' ) ";
 		$result = $mysqli->query($sql);
 
 	}else if($_POST["update"] == "edit_reason"){

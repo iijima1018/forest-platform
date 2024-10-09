@@ -26,10 +26,10 @@
 		require "connect_db.php";
 
 		$id = $_SESSION['USERID'];
-		$sql = "SELECT * FROM maps WHERE user_id = '$id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
+		$sql = "SELECT * FROM map_mode_link WHERE user_id = '$id' AND mode_id = 2 ORDER BY updated_at DESC";
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
-				echo"<p><label><input type='radio' name='map' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
+				echo"<p><label><input type='radio' name='map' value='".$row['map_id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
 			}
 
 		}
@@ -202,12 +202,23 @@
 		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
 		echo $_SESSION['MAPID'];
-		$sql = "DELETE FROM maps WHERE map_id = ".$_SESSION['MAPID'];
+
+		//mapsのdeletedを1(削除されたもの)に
+		$sql = "UPDATE maps SET deleted = 1 WHERE map_id = '".$_SESSION['MAPID']."' ";
 		$result = $mysqli->query($sql);
 		if (!$result) {
 		     print('Error - SQLSTATE');
 		     exit();
 		 }
+
+		//map_versionのdisappraedに入力
+		$sql_mvd = "UPDATE map_versions SET disappeared_at = '".$updated_at."' WHERE map_id = ".$_SESSION['MAPID']." AND appeared_at = (select max(appeared_at) from (select appeared_at from map_versions) temp)";
+		$result_mvd = $mysqli->query($sql_mvd);
+		if (!$result_mvd) {
+			print('Error - SQLSTATE');
+			exit();
+		}
+
 		 header("Location: select_sheet_forest_cr.php");
 
 	}
@@ -259,7 +270,7 @@ function show_user(){
 	// nishida 実験用後で直す
 	// $paper_id = $_SESSION["PAPERID"];
 	$paper_id = 85692259;
-	$sql = "SELECT * FROM maps WHERE paper_id = '$paper_id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
+	$sql = "SELECT * FROM map_mode_link WHERE paper_id = '$paper_id' AND mode_id = 2 ORDER BY updated_at DESC";
 	$array = array();
 	$result = $mysqli->query($sql);
 	if($result == TRUE){

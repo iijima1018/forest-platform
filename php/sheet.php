@@ -131,22 +131,22 @@
 		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
 		echo $_SESSION['MAPID'];
-		$sql = "DELETE FROM maps WHERE map_id = ".$_SESSION['MAPID'];
+		//mapsのdeletedを1(削除されたもの)に
+		$sql = "UPDATE maps SET deleted = 1 WHERE map_id = '".$_SESSION['MAPID']."' ";
 		$result = $mysqli->query($sql);
 		if (!$result) {
 		     print('Error - SQLSTATE');
 		     exit();
 		 }
 
-		//hatakeyama mapsの削除（deleted_atに値を入れる）
-		$sql_md = "UPDATE maps SET deleted_at = '".$updated_at."' WHERE map_id = ".$_SESSION['MAPID'];
-		$result_md = $mysqli->query($sql_md);
-
-		//hatakeyama map_versionsの削除（deleted_atに値を入れる）
+		//map_versionのdisappraedに入力
 		$sql_mvd = "UPDATE map_versions SET disappeared_at = '".$updated_at."' WHERE map_id = ".$_SESSION['MAPID']." AND appeared_at = (select max(appeared_at) from (select appeared_at from map_versions) temp)";
 		$result_mvd = $mysqli->query($sql_mvd);
+		if (!$result_mvd) {
+			print('Error - SQLSTATE');
+			exit();
+		}
 
-		 header("Location: select_sheet.php");
 
 	}
 

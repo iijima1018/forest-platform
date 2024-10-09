@@ -78,6 +78,7 @@
 
 	else if ($_POST["update"] == "summary") {
 		echo "ok";
+		//2024 kawa_check
 		$sql = "UPDATE maps SET summary = '".$_POST["summary"]."' WHERE map_id = '".$_SESSION["MAPID"]."'";
 		$result = $mysqli->query($sql);
 		echo $sql;

@@ -404,7 +404,7 @@
 	}else if($_POST["data"] == "get_past_document"){
 
 		//mapsから資料のタイトルとupdated_at取得
-		$sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['MAPID'];
+		$sql_get = "SELECT scenario_title, updated_at FROM maps WHERE user_id = ".$_SESSION['USERID']." AND map_id = ".$_SESSION['MAPID'];
 		$i = 0;
     	$get_array = array();
 		if($result_get = $mysqli->query($sql_get)) {

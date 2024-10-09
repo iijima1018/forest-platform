@@ -12,7 +12,7 @@ require("connect_db.php");
 date_default_timezone_set('Asia/Tokyo');
 $today_date = date("Y-m-d");
 $map_id = $_SESSION['MAPID'];    //シートID
-$paper_id_sql = "SELECT paper_id FROM maps WHERE map_id=$map_id AND self_conversation_activity_mode = 'critical_reading'";
+$paper_id_sql = "SELECT paper_id FROM map_mode_link WHERE map_id = $map_id AND mode_id = 2";
 
 $result_paper_id = $mysqli->query($paper_id_sql);
 $data_paper_id = mysqli_fetch_assoc($result_paper_id);

@@ -10,7 +10,7 @@ $user_name = $_SESSION["USERNAME"];//"26943"; //
 // //タイムゾーンの設定
 // date_default_timezone_set('Asia/Tokyo');
 
-// // $sql = "SELECT scenario_title FROM maps WHERE map_id='$map_id'";
+// // $sql = "SELECT scenario_title FROM maps WHERE id='$map_id'";
 // $sql = "SELECT * FROM docum WHERE map_id='$map_id' AND deleted='0'";
 
 // $data = array();

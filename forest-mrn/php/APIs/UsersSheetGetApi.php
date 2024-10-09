@@ -22,7 +22,7 @@ $user_id = $_GET["user_id"];
 
 // $sql = "SELECT * FROM nodes WHERE map_id='".$map_id."' and id='".$node_id."'";
 // $sql = "SELECT * FROM nodes WHERE map_id='".$map_id."'";
-$sql = "SELECT * FROM maps WHERE user_id = '".$user_id."' AND self_conversation_activity_mode ='self_research'";
+$sql = "SELECT * FROM map_mode_link WHERE user_id = '".$user_id."' AND mode_id =1 ";
 
 $data = array();
 if($result = $mysqli->query($sql)){ 
