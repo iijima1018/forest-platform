@@ -1149,6 +1149,7 @@ function ModeChangeButtonClick() {
   
     $('.inquiry_area').css('height', '25vw');
     $('#jsmind_container').css('width','40vw');//横幅を全体の40％で表示？
+    $('#jsmind_nav').css('width','40vw');
   }else if (num == 1 ){
 
     $('#jsmind_container').show();
