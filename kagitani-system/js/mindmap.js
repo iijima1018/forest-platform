@@ -1133,13 +1133,23 @@ function CheckClick(){
 function ModeChangeButtonClick() {
   const selindex = document.target_mode.Select1;
   const num = selindex.selectedIndex;
-  var ModeLabel = ["自己内対話モード","資料構成作成モード","資料作成モード","議論内省マップモード"]
+  var ModeLabel = ["目標設定モード","自己内対話モード","資料構成作成モード","資料作成モード","議論内省マップモード"]
 
   console.log(num);
   console.log(ModeLabel);
   target = document.getElementById("output");
 
-  if (num == 0 ){
+  if(num == 0){
+    $('.content_delete').css('visibility', 'visible');
+    $('.simple_btn').css('visibility', 'visible');
+    $('.cspan').css('font-size', '15');
+    $('.cspan').css('border', 'White');
+    $('.cspan').css('margin-bottom', '5');
+    $('.tspan').css('font-size', '20');
+  
+    $('.inquiry_area').css('height', '25vw');
+    $('#jsmind_container').css('width','40vw');//横幅を全体の40％で表示？
+  }else if (num == 1 ){
 
     $('#jsmind_container').show();
     $('#jsmind_container').css('width','calc(100vw - 350px)');
@@ -1172,7 +1182,7 @@ function ModeChangeButtonClick() {
     showGeneration();
     BeforeSelectModeNumber = 0;
 
-  }else if(num == 1){
+  }else if(num == 2){
 
     $('.content_delete').css('visibility', 'visible');
     $('.simple_btn').css('visibility', 'visible');
@@ -1233,7 +1243,7 @@ function ModeChangeButtonClick() {
     BeforeSelectModeNumber = 1;
     AddAOI_on_ImageArea();
     MoveAndExpensionImageArea();
-  }else if(num == 2 ){
+  }else if(num == 3 ){
     var text2 = document.getElementsByClassName("cspan");
     // console.log(text2);
     for (var i = 0; i < text2.length; i++){
@@ -1289,7 +1299,7 @@ function ModeChangeButtonClick() {
 
     BeforeSelectModeNumber = 2;
     MoveAndExpensionImageArea();
-  }else if(num == 3){
+  }else if(num == 4){
     document.getElementById('feedback_area').style.display = "block";
     document.getElementById('xml_upload_area').style.display = "block";
     $('#network_container').toggle('fast');

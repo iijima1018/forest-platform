@@ -99,7 +99,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
             <form name="return" method="POST">
                 <span class="title_name">Forest</span>
                 <span><input class="button2" type="submit" name="logout" value="ログアウト"></span>
-                <span><input class="button1" type="submit" name="sheetbtn" value="シート選択画面に戻る"></span>
+                <span><input class="button1" type="submit" name="sheetbtn" value="シート選択画面へ"></span>
             </form>
         </div>
         <!-- <form name="return" method="POST">
@@ -128,7 +128,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         </ul>
         <!-- タブメニュー　Finish -->
         
-        <div class="Menu">Menu
+        <div class="Menu">--Menu--
             <!--サイドメニュー　start-->
             <div id="side_menu">
                 <!-- プレゼンモードのサイドメニュー -->
@@ -294,6 +294,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
             <!-- <span class="checkbox_text">【資料作成】</span> -->
             <form name="target_mode" action="">
                 <select class="cp_ipselect2 cp_sl02"name="Select1">
+                    <option>目標管理モード</option>
                     <option>自己内対話モード</option>
                     <option>資料構成作成モード</option>
                     <option>資料作成モード</option>

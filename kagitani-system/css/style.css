@@ -43,7 +43,7 @@ table[type] {
 #main_title {
 	width: 99vw;
 	min-width: 765px;
-	height: 80px;
+	height: 40px;
 	color: #fff;
 	background-color: #1B4383; /* forestgreen */
 
@@ -58,9 +58,9 @@ table[type] {
 	text-align: left;
 	font-style: oblique; /* 斜体に */
 	font-family:cursive; /* フォント変更 */
-	font-size: 50px;
+	font-size: 30px;
 	margin-left:10px;
-	margin-top: 0;
+	margin-top: -20px; /* 上の余白を狭くするためにマイナス値を設定 */
 	margin-bottom: 0;
 	padding: 0;
 	color: #EFE7C3;
@@ -145,8 +145,8 @@ table[type] {
 .tabnav {
 		width: calc(30vw + 200px);
 		min-width: 280px;
-		height: 44px;
-    padding: 0;
+		height: 0px;
+    	padding: 0;
 		float: left;
 		margin-top: 10px;
 		margin-bottom:0;
@@ -159,8 +159,8 @@ table[type] {
 .tabnav li a{
     display: inline-block;
     background: #ddd;
-		color: #333;
-    padding: 10px;
+	color: #333;
+	padding: 5px 10px; /* 上下のパディングを5pxに変更 */
     border-radius: 5px 5px 0 0;
     text-decoration: none;
 }
@@ -177,14 +177,14 @@ table[type] {
 /* Menu見出し */
 .Menu {
 	width: 280px;
-	height:40px;
+	height:20px;
 	/* font-size 1em=16pxなら25.6px */
-	font-size: 1.6em; 
+	font-size: 1.0em; 
 	text-align: center;
 	/* padding 25.6✖️0.3＝7.68px */
 	padding: 0.3em 0;
 	background: #ffffff;
-	background-color: #69a7ff;
+	background-color: #F0F0F0;
 	color: rgb(0, 0, 0);
 	float:right;
 	/* margin-right: 1vw; */
@@ -645,7 +645,7 @@ h3 {
 #side_menu{
 	width: 280px;
 	/* height: 75vh; */
-	height: 100%;
+	height: 50%;
 	min-height: 450px;
 	float:right;
   background: #F0F0F0;
@@ -662,7 +662,7 @@ h3 {
 	text-transform: capitalize;
 	text-align: center;
 	margin-bottom: 10px;
-	font-size: 20px;
+	font-size: 15px;
 	/* float: right; */
 }
 
@@ -1452,9 +1452,9 @@ select[name="mttime_list"] {
 
 /* シート選択画面に戻るボタン */
 .button1 {
-	width:140px;
-	height: 80px;
-	font-size: 0.5vw;
+	width:170px;
+	height: 40px;
+	font-size: 1vw;
 	color: #fff;
 	background-color: #800000;
 	float: right;
@@ -1470,8 +1470,8 @@ select[name="mttime_list"] {
 /* ログアウトボタン */
 .button2 {
 	width:140px;
-	height: 80px;
-	font-size: 0.6vw;
+	height: 40px;
+	font-size: 1vw;
 	color: #fff;
 	background-color: #a9a9a9;
 	float: right;
