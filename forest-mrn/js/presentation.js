@@ -3874,7 +3874,6 @@ function Rebuild_title(){
 	    url: "php/title_rebuild.php",
 	    type: "POST",
 	    success: function(title){
-        console.log(title);
         var parse = JSON.parse(title);
         var scenario_title = parse[0].scenario_title;
         const title_value = document.getElementById("scenario_title");

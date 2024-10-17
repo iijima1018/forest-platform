@@ -16,7 +16,7 @@ function NodeInsert(nodeVERSION, nodeID, parentID, nodeTEXT, reasonLEARNER, reas
               },
   
         success: function (res) {
-          console.log("node_versionsに保存成功");
+          // console.log("node_versionsに保存成功");
         },
         error: function () {
           console.log("node_versionsに保存失敗");
@@ -40,7 +40,7 @@ function NodeEdit(nodeVERSION, nodeID, parentID, nodeTEXT, reasonLEARNER, reason
               },
   
         success: function (res) {
-          console.log("node_versionsに保存成功");
+          // console.log("node_versionsに保存成功");
            //shimizu ここに資料との対応があれば記載していく
            //console.log(nodeID)
            GetPairNodeId_ContentRelationTable(nodeID)

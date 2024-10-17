@@ -197,24 +197,28 @@
         },
 
         set_root:function(nodeid, topic, data){
+            
+            console.log("set_root");
+
             if(this.root == null){
                 this.root = new jm.node(nodeid, 0, topic, data, true);
                 this._put_node(this.root);
 
-                var newId　= jm.util.uuid.newid();
+                var newId = jm.util.uuid.newid();
 
-                $.ajax({
+                $.ajax({     
 
                     url: "php/insert_node.php",
                     type: "POST",
                     data: { insert : "node",
                             id : newId,
-                            type : "root",
+                            type : 0, //root
                             concept_id : null,
                             x : "380.5px",
                             y : "187px",
                             content : "★",
-                            class : "root" },
+                            class : "root", 
+                            from_mode : null},
 
                 });
 
@@ -1208,14 +1212,14 @@
 
                 //shiftキーを押しながらじゃなかったら，答えノードはピンクに，問いノードはそのままで
                 if(event.shiftKey == false){//シフトキーを押していない時
-                    console.log(1);
+                    // console.log(1);
                     for(i=0; i<jmnode.length; i++){
                         //console.log(jmnode);
                         if(jmnode[i].getAttribute("type") == "answer"){//答えノードの時
 
                             if(jmnode[i].getAttribute("nodeid") == thisId){//回ってきたidが選択中ノードの時
 
-                                console.log(thisId);
+                                // console.log(thisId);
                                 jmnode[i].style.backgroundColor = "#ff69b4";
                                 jmnode[i].style.border = "5px solid #9fd94f";
 
@@ -1287,7 +1291,7 @@
                     }
 
                 }
-                console.log(thisId);
+                // console.log(thisId);
                 // ノードクリック時既に修正理由記述してあれば表示する
                 //ここから大槻修正
                 $("#reason").html("");
@@ -3031,6 +3035,10 @@
         },
 
         handle_addchild: function(_jm,e){
+
+            console.log("handle_addchild");
+
+            var n_type = 0;
             var selected_node = _jm.get_selected_node();
             if(!!selected_node){
                 var nodeid = jm.util.uuid.newid();
@@ -3056,16 +3064,16 @@
 
                 if(p_type == "toi"){
 
-                    var n_type = "answer";
+                    var n_type_name = "answer";
 
                 }else{
 
-                    var n_type = "toi";
+                    var n_type_name = "toi";
 
                 }
 
                 //生成したのが答えノードなら親ノードのconcept_idを取得
-                if(n_type == "answer"){
+                if(n_type_name == "answer"){
 
                     var n_concept = p_concept;
 
@@ -3074,6 +3082,25 @@
                     var n_concept = "";
 
                 }
+
+
+                console.log("n_type_name");
+
+                $.ajax({
+
+                    url: "php/get_Typeid.php",
+                    type: "POST",
+                    data: { class : "",
+                            type : n_type_name },
+                    success: function(arr){
+                        var parse = JSON.parse(arr);
+                        n_type = parse[0];
+                        
+                    },
+                    error:function(){
+                      console.log("エラーです");
+                    }
+                });
 
                 for(var j=0; j<jmnode.length; j++){
 
@@ -3148,6 +3175,7 @@
 
 
         handle_addbrother:function(_jm,e){
+            var n_type = 0;
             var selected_node = _jm.get_selected_node();
             if(!!selected_node && !selected_node.isroot){
                 var nodeid = jm.util.uuid.newid();
@@ -3184,16 +3212,16 @@
 
                 if(p_type == "toi"){
 
-                    var n_type = "answer";
+                    var n_type_name = "answer";
 
                 }else{
 
-                    var n_type = "toi";
+                    var n_type_name = "toi";
 
                 }
 
                 //生成したのが答えノードなら親ノードのconcept_idを取得
-                if(n_type == "answer"){
+                if(n_type_name == "answer"){
 
                     var n_concept = p_concept;
 
@@ -3202,6 +3230,22 @@
                     var n_concept = "";
 
                 }
+
+                $.ajax({
+
+                    url: "php/get_Typeid.php",
+                    type: "POST",
+                    data: { class : "",
+                            type : n_type_name },
+                    success: function(arr){
+                        var parse = JSON.parse(arr);
+                        n_type = parse[0];
+                        
+                    },
+                    error:function(){
+                      console.log("エラーです");
+                    }
+                });
 
                 for(var j=0; j<jmnode.length; j++){
 
