@@ -12,6 +12,9 @@
 		$created_at = date("Y-m-d H:i:s");
 		$deleted = 0;
 
+		$node_v_id = uniqid(rand(0,64));
+		$node_h_id = uniqid(rand(0,64));
+
 		if($_POST["type"] == "root"){
 
 			$id = $_SESSION["MAPID"];
@@ -30,9 +33,24 @@
 
 			if(count($root) === 0){
 
-				$node_sql = "INSERT INTO nodes (id, user_id, created_at, updated_at, type, concept_id, content, x, y, deleted, map_id, parent_id, class)
-				VALUES ('".$_POST['id']."','".$_SESSION['USERID']."','".$created_at."','".$created_at."','".$_POST['type']."','".$_POST['concept_id']."','".$_POST['content']."','".$_POST['x']."','".$_POST['y']."','".$deleted."','".$_SESSION['MAPID']."','".$_POST['parent_id']."','".$_POST['class']."')";
+				$node_sql = "INSERT INTO nodes (node_id, user_id, type_id, from_mode, deleted )
+					VALUES ('".$_POST['id']."','".$_SESSION['USERID']."','".$_POST['type']."', '".$_POST['from_mode']."', '".$deleted."')";
+				
+				$node_v_sql = "INSERT INTO node_versions (node_version_id, node_id, parent_id, type_id, appeared_at, disappeared_at, content, concept_id, x, y)
+					VALUES ('".$node_v_id."', '".$_POST['id']."','".$_POST['parent_id']."','".$_POST['type']."', '".$created_at."','".$created_at."','".$_POST['content']."','".$_POST['concept_id']."','".$_POST['x']."','".$_POST['y']."')";
+				
+				$node_h_sql = "INSERT INTO node_histories (node_history_id, node_version_id, parent_id, type_id, appeared_at, disappeared_at, content, concept_id, x, y)
+					VALUES ('".$node_h_id."', '".$node_v_id."','".$_POST['parent_id']."','".$_POST['type']."', '".$created_at."','".$created_at."','".$_POST['content']."','".$_POST['concept_id']."','".$_POST['x']."','".$_POST['y']."')";
+
 				$n_result = $mysqli->query($node_sql);
+				if(!$n_result){
+					echo "error";
+				}
+				$n_v_result = $mysqli->query($node_v_sql);
+				if(!$n_result){
+					echo "error";
+				}
+				$n_h_result = $mysqli->query($node_h_sql);
 				if(!$n_result){
 					echo "error";
 				}
@@ -40,29 +58,31 @@
 			}
 
 		}else{
-			$send_node_id = $_POST["id"]; //yoshioka
-			$send_type = $_POST["type"]; //yoshioka
-			$send_concept_id = $_POST["concept_id"]; //yoshioka
-			$send_content = $_POST["content"]; //yoshioka
-			$send_x = $_POST["x"]; //yoshioka
-			$send_y = $_POST["y"]; //yoshioka
-			$send_parent_id = $_POST["parent_id"]; //yoshioka
-			$send_class = $_POST["class"]; //yoshioka
+			
 			$created_at = date("Y-m-d H:i:s");
 			$deleted = 0;
-			$edit_mode = 0;
 
-			$sql = "INSERT INTO nodes (id, user_id, created_at, updated_at, type, concept_id, content, x, y, deleted, map_id, parent_id, class, edit_mode)
-			VALUES ('$send_node_id', '".$_SESSION['USERID']."','$created_at', '$created_at','$send_type','$send_concept_id','$send_content','$send_x','$send_y','$deleted', '".$_SESSION['MAPID']."','$send_parent_id','$send_class','$edit_mode')";
-			$result = $mysqli->query($sql);
-			if($result == TRUE){
 
-				echo "true";
+			$node_sql = "INSERT INTO nodes (node_id, user_id, type_id, from_mode, deleted )
+					VALUES ('".$_POST['id']."','".$_SESSION['USERID']."','".$_POST['type']."', '".$_POST['from_mode']."', '".$deleted."')";
+				
+			$node_v_sql = "INSERT INTO node_versions (node_version_id, node_id, parent_id, type_id, appeared_at, disappeared_at, content, concept_id, x, y)
+				VALUES ('".$node_v_id."', '".$_POST['id']."','".$_POST['parent_id']."','".$_POST['type']."', '".$created_at."','".$created_at."','".$_POST['content']."','".$_POST['concept_id']."','".$_POST['x']."','".$_POST['y']."')";
+				
+			$node_h_sql = "INSERT INTO node_histories (node_history_id, node_version_id, parent_id, type_id, appeared_at, disappeared_at, content, concept_id, x, y)
+				VALUES ('".$node_h_id."', '".$node_v_id."','".$_POST['parent_id']."','".$_POST['type']."', '".$created_at."','".$created_at."','".$_POST['content']."','".$_POST['concept_id']."','".$_POST['x']."','".$_POST['y']."')";
 
-			}else if($result == FALSE){
-
-				echo "error";
-
+			$n_result = $mysqli->query($node_sql);
+			if(!$n_result){
+				echo "error1";
+			}
+			$n_v_result = $mysqli->query($node_v_sql);
+			if(!$n_v_result){
+				echo "error2";
+			}
+			$n_h_result = $mysqli->query($node_h_sql);
+			if(!$n_v_result){
+				echo "error3";
 			}
 
 		}
