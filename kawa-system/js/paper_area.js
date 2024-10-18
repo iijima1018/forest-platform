@@ -1,49 +1,25 @@
 var zoom = 1;
     
-function getcssVal(area, style){
-  // 要素を取得
-var Container = document.getElementById(area);
-
-// 要素のスタイルを取得
-var computedStyle = getComputedStyle(Container);
-
-// padding-top スタイル値を取得
-var Value = computedStyle.getPropertyValue(style);
-
-return Value;
-
-}
-
 
 // nishida　あとで書き足す
 // page-containerは独自
 
 function zoomIn_paper(){
   zoom *= 1.1;
-  valtop = getcssVal('page-container', 'padding-top');
-  valleft = getcssVal('page-container', 'padding-left');
   $('#page-container').css('transform', 'scale(' + zoom + ')');
-  $('#page-container').css('padding-top', valtop * zoom);
-  $('#page-container').css('padding-left',  valtop * zoom);}
+}
 
 function zoomOut_paper(){
-  zoom *= 0.9
-
-  valtop = getcssVal('page-container', 'padding-top');
-  valleft = getcssVal('page-container', 'padding-left');
+  
+  zoom *= 0.9;
   $('#page-container').css('transform', 'scale(' + zoom + ')');
   
-  $('#page-container').css('padding-top', valtop * zoom);
-  $('#page-container').css('padding-left',  valtop * zoom);
+  
 }
 
 function zoomInit_paper(){
   zoom = 1;
-  valtop = getcssVal('page-container', 'padding-top');
-  valleft = getcssVal('page-container', 'padding-left');
   $('#page-container').css('transform', 'scale(' + zoom + ')');
-  $('#page-container').css('padding-top', valtop * zoom);
-  $('#page-container').css('padding-left',  valtop * zoom);
 }
 
 

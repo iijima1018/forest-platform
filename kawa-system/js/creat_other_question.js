@@ -41,11 +41,8 @@ function get_other_nodeid(){
                     var oq_menu = document.getElementById('other_conmenu');
                     temp = "answer_button0";
 
-                    
-
                     for (var i = 0; i < Array.length; i++) {
                         
-
                         var button = document.createElement("button"); // 新しいボタン要素を作成
                         if (i == 0){
                             button.setAttribute("id", "selected");
@@ -179,42 +176,52 @@ function add_Anode_from_other(node_class, node_type){
 
 }
 
-function show_selected_sheet(onoff){
-
-    if (onoff == "on"){
-        $('#jsmind_container').css('height','calc(50% - 42.5px)');
-        $('#jsmind_container2').css('height','calc(50% - 42.5px)');
-        $('#jsmind_container2').css('display','flex');
-        $('#jsmind_container2_menu').css('display','block');
-    }
-    else{
-        reset_annotation();
-
-        $('#jsmind_container').css('height','100%');
-        $('#jsmind_container2').css('height','100%');
-        $('#jsmind_container2').css('display','none');
-        $('#jsmind_container2_menu').css('display','none');
-    }
+function show_selected_sheet(){
+    $('#jsmind_container').css('height','calc(50% - 42.5px)');
+    $('#jsmind_container2').css('height','calc(50% - 42.5px)');
+    $('#jsmind_container2').css('display','flex');
+    $('#jsmind_container2_menu').css('display','flex');
 }
 
-function reset_annotation(){
-    var elements = document.querySelectorAll('[type="user_s"]');
 
+
+function show_other_mindmap(button, sheet_id){
+
+    //button = document.getElementById("selected");
+    //console.log(button)
+    //sheet_id = button.dataset.sheet_id;
+
+    // a = document.getElementById("concept_content");
+   // content = a.getAttribute("content");
+
+    var elements = document.querySelectorAll('[type="user_s"]');
+    // var elements_selected = document.querySelectorAll('[type="selected_node"]');
+        
     // 見つかった要素を削除
     elements.forEach(function(element) {
         element.removeAttribute("type");
     });
-}
+    /*
+    elements_selected.forEach(function(elements_selected) {
+        elements_selected.removeAttribute("type");
+    });
+    */
 
+<<<<<<< Updated upstream
 function show_other_mindmap(button, sheet_id, parent_id=null){
     reset_annotation();
+=======
+>>>>>>> Stashed changes
     if(sheet_id == "null"){
       return;
     }
   else{
+<<<<<<< Updated upstream
     var button = document.getElementById("all_annotation");
     button.setAttribute("onClick", "show_other_mindmap(this, "+sheet_id+")");
 
+=======
+>>>>>>> Stashed changes
     $.ajax({
       
       url: "php/user_sheet.php",
@@ -229,7 +236,7 @@ function show_other_mindmap(button, sheet_id, parent_id=null){
         if(obj['user'] == ""){
           // alert("ユーザの取得に失敗しました．");
         }else{
-            show_selected_sheet("on");
+            show_selected_sheet();
             // console.log("取得日時", obj['time']);
 
             // 配列に変換
@@ -239,12 +246,21 @@ function show_other_mindmap(button, sheet_id, parent_id=null){
 
             // 表示する関数に受け渡す
             OpenPastSheet(node_array);
+
+            console.log("呼び出されてるよー");
+            // var node_info = document.querySelectorAll('[content="'+content+'"]');
+            // console.log(node_info);
+            //.setAttribute("status", "select");
+
+
+
         }
       },
       error : function(msg, status){
         alert('通信ができない状態です。');
       }
     })
+<<<<<<< Updated upstream
 
     if (parent_id != null){
         Rebuild_paper3("paper_area",sheet_id, parent_id);  
@@ -252,6 +268,11 @@ function show_other_mindmap(button, sheet_id, parent_id=null){
     else{
         Rebuild_paper2("paper_area",sheet_id);
     }
+=======
+    
+   //  Rebuild_paper2("paper_area", $_SESSION["SHEETID"]);
+    Rebuild_paper2("paper_area",sheet_id);  
+>>>>>>> Stashed changes
   }
 }
 
@@ -287,7 +308,6 @@ function test_show_other_mindmap(){
                 success: function(question){
                     result = JSON.parse(question);
                     var Array = result;
-                    console.log(Array);
                     create_mindmapbutton(Array, "node");
                 }
             });

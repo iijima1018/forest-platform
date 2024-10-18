@@ -743,10 +743,10 @@ function add_Cnode_parentid(parent_id,node_type){
 
 
 //答えノード追加ボタンで答えノードを追加する
-function add_Cnode(node_type,topic){
+function add_Cnode(node_type){
 
     var selected_node = _jm.get_selected_node();
-
+    var topic = 'あなたの批評';
     for(key in selected_node){
 
         if(key == "id"){
@@ -1314,20 +1314,12 @@ window.onload = function(){
   var doc_menu = document.getElementById('document_conmenu');  //独自コンテキストメニュー
   var doc_area = document.getElementById('document_area');     //対象エリア
 
-  var mm_menu = document.getElementById('mindmap_conmenu');
-  var mm_menu_other = document.getElementById('mindmap_conmenu');   //独自コンテキストメニュー
+  var mm_menu = document.getElementById('mindmap_conmenu');  //独自コンテキストメニュー
   var mm_menu2 = document.getElementById('mindmap_conmenu2');  //独自コンテキストメニュー
-  var mm_area = document.getElementById('jsmind_container');  
-  var mm_area2 = document.getElementById('jsmind_container2');   //対象エリア
+  var mm_area = document.getElementById('jsmind_container');     //対象エリア
   var body = document.body;                       //bodyエリア
   
   // 文書化エリアで右クリック時に独自コンテキストメニューを表示する
-  doc_area.addEventListener('contextmenu',function(e){
-    doc_menu.style.left = (e.pageX - document.body.scrollLeft - 10) + 'px';
-    doc_menu.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
-    doc_menu.classList.add('on');
-  });
-
   doc_area.addEventListener('contextmenu',function(e){
     doc_menu.style.left = (e.pageX - document.body.scrollLeft - 10) + 'px';
     doc_menu.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
@@ -1353,12 +1345,6 @@ function isTextSelected() {
     if(mm_menu2.classList.contains('on')){
     mm_menu2.classList.remove('on');
     }
-  });
-
-  mm_area2.addEventListener('contextmenu',function(e){
-    mm_menu_other.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';
-    mm_menu_other.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
-    mm_menu_other.classList.add('on');
   });
 
   // 左クリック時に独自コンテキストメニューを非表示にする
@@ -1400,14 +1386,13 @@ function isTextSelected() {
     mm_menu_s.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';
     mm_menu_s.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
     mm_menu_s.classList.add('on');
-    console.log("click");
 
   });
   // 自分のマインドマップ上で右クリック時に独自コンテキストメニューを表示する
-  mm_area_s.addEventListener('contextmenu',function(e){
-    mm_menu_s.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';
-    mm_menu_s.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
-    mm_menu_s.classList.add('on');
+  mm_area_m.addEventListener('contextmenu',function(e){
+    mm_menu_m.style.left = (e.pageX - document.body.scrollLeft + 10) + 'px';
+    mm_menu_m.style.top = (e.pageY - document.body.scrollTop + 10) + 'px';
+    mm_menu_m.classList.add('on');
 
   });
   // kii 追加

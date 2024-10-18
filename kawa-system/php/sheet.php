@@ -26,7 +26,11 @@
 		require "connect_db.php";
 
 		$id = $_SESSION['USERID'];
+<<<<<<< Updated upstream
 		$sql = "SELECT * FROM sheets WHERE user_id = '$id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
+=======
+		$sql = "SELECT * FROM sheets WHERE user_id = '$id' ORDER BY updated_at DESC";
+>>>>>>> Stashed changes
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
 				echo"<p><label><input type='radio' name='sheet' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
@@ -119,8 +123,13 @@
 	
 		//if($name == ""){
 
+<<<<<<< Updated upstream
 			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, paper_id, self_conversation_activity_mode) 
 			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id', 'critical_reading')";
+=======
+			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, paper_id) 
+			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
+>>>>>>> Stashed changes
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
@@ -159,8 +168,13 @@
 	
 		//if($name == ""){
 
+<<<<<<< Updated upstream
 			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, paper_id, self_conversation_activity_mode) 
 			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id', 'critical_reading')";
+=======
+			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted, paper_id) 
+			VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."','$paper_id')";
+>>>>>>> Stashed changes
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();
@@ -185,7 +199,11 @@
 		     print('Error - SQLSTATE');
 		     exit();
 		 }
+<<<<<<< Updated upstream
 		 header("Location: select_sheet_forest_cr.php");
+=======
+		 header("Location: select_sheet.php");
+>>>>>>> Stashed changes
 
 	}
 
@@ -236,7 +254,11 @@ function show_user(){
 	// nishida 実験用後で直す
 	// $paper_id = $_SESSION["PAPERID"];
 	$paper_id = 85692259;
+<<<<<<< Updated upstream
 	$sql = "SELECT * FROM sheets WHERE paper_id = '$paper_id' AND self_conversation_activity_mode = 'critical_reading' ORDER BY updated_at DESC";
+=======
+	$sql = "SELECT * FROM sheets WHERE paper_id = '$paper_id' ORDER BY updated_at DESC";
+>>>>>>> Stashed changes
 	$array = array();
 	$result = $mysqli->query($sql);
 	if($result == TRUE){

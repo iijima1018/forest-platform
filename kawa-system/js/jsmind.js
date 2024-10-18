@@ -1213,17 +1213,15 @@
          //全てのノードの枠リセット
          for(var i=0; i<jmnode.length; i++){
 
-            /*
              if(jmnode[i].getAttribute("type") == "toi"){
                 //  ジャンプした際についたやつ消す
                 jmnode[i].style.border = "5px dashed #FFE15D";
                 continue;
 
              }
-            */
                     
              rationality_mode = false;
-             //　jmnode[i].style.border = "0px solid #000";
+             jmnode[i].style.border = "0px solid #000";
             //  console.log(jmnode[i].type);
  
             }
@@ -2936,9 +2934,9 @@
             /*logger.debug('view.show');*/
             this.expand_size();
             this._show();
-            if(!!keep_center){
-                this._center_root();
-            }
+            // if(!!keep_center){
+            //     this._center_root();
+            // }
         },
 
         relayout:function(){

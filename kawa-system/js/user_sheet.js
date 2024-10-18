@@ -89,7 +89,11 @@ function Rebuild_paper2(area_id,sheet){
             url: "php/annotation_user_rebuild.php",
             type: "POST",
             data: { 
+<<<<<<< Updated upstream
               val : "all",
+=======
+              // val : "user",
+>>>>>>> Stashed changes
               sheet : sheet,
             },
             success:function(annotation){
@@ -112,6 +116,7 @@ function Rebuild_paper2(area_id,sheet){
   });
 }
 
+<<<<<<< Updated upstream
 function Rebuild_paper3(area_id,sheet, parent_id){
   $.ajax({
       url: "php/paper_rebuild.php",
@@ -155,6 +160,8 @@ function Rebuild_paper3(area_id,sheet, parent_id){
   });
 }
 
+=======
+>>>>>>> Stashed changes
 let addHightlightChar2 = (char_object_id,type) => {
   // ある文字にハイライトを反映する関数
   //const object_elm = document.getElementById(char_object_id)

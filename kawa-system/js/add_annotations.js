@@ -43,10 +43,10 @@ let addHightlightChar = (char_object_id, type) => {
     // ある文字にハイライトを反映する関数
     //const object_elm = document.getElementById(char_object_id)
     const object_elm = $("span[char_id='"+char_object_id+"']");
-    console.log(object_elm);
+    //console.log(object_elm);
 
     if(object_elm !== null){
-        console.log(object_elm);
+        //console.log(object_elm);
         object_elm.attr('type', type);
     }
 };
@@ -208,7 +208,7 @@ function add_annotation(type_fromNode, node_id){
         }
 
     }else{
-        alert('論文のテキストを先に選択してください')
+        //alert('論文のテキストを先に選択してください')
     }
 
   
@@ -319,6 +319,9 @@ function add_Qnode2(){
 
   var nodeid = jsMind.util.uuid.newid();//idの生成
   var topic = window.getSelection().toString();
+  if(topic == ''){
+    var topic = 'New Node';
+  }
   var parent = document.getElementById("document_area");
 
   var node = _jm.add_node(parent_node, nodeid, topic);
@@ -333,7 +336,7 @@ function add_Qnode2(){
       if(nodeid == jmnode[i].getAttribute("nodeid")){
 
           jmnode[i].setAttribute("concept_id","");
-          jmnode[i].setAttribute("type","konkyo");
+          jmnode[i].setAttribute("type","toi");
           jmnode[i].setAttribute("parent_id",parent_id);
           jmnode[i].className = "";
 
@@ -345,7 +348,7 @@ function add_Qnode2(){
               data: { insert : "node",
                       id : nodeid,
                       parent_id : parent_id,
-                      type : "konkyo",
+                      type : "toi",
                       concept_id : "",
                       x : jmnode[i].style.left,
                       y : jmnode[i].style.top,
@@ -380,7 +383,7 @@ function add_Qnode2(){
   });
 
 
-  add_annotation("konkyo", nodeid);
+  add_annotation("toi", nodeid);
 
 
 
@@ -406,7 +409,10 @@ function add_Anode2(node_type){
 
   var nodeid = jsMind.util.uuid.newid();//idの生成
 
-  var topic = window.getSelection().toString();;
+  var topic = window.getSelection().toString();
+  if(topic == ''){
+    var topic = 'New Node';
+  }
   var node = _jm.add_node(selected_node, nodeid, topic);
 
   var jmnode = document.getElementsByTagName("jmnode");

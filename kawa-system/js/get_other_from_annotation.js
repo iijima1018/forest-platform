@@ -87,7 +87,6 @@ function judge_charid(callback) {
 // judge は annotation か node
 function create_mindmapbutton(sheet_id_Array, judge){
     $('#mindmap_tab').empty();
-    show_selected_sheet("on");
     var arrayDisplay = document.getElementById("mindmap_tab");
     jm2_menu = document.createElement("span");
     jm3_menu = document.createElement("div");
@@ -102,9 +101,14 @@ function create_mindmapbutton(sheet_id_Array, judge){
     }
     else if (judge == "annotation"){
         jm2_menu.innerHTML = "選択中 : 論文内文章    ";
+        jm3_menu.innerHTML = '<label for="pet-select">表示形式:</label><select name="pets" id="pet-select"><option value="">--Please choose an option--</option><option value="dog">Dog</option><option value="cat">Cat</option><option value="hamster">Hamster</option><option value="parrot">Parrot</option><option value="spider">Spider</option><option value="goldfish">Goldfish</option></select>';
+
+
         arrayDisplay.appendChild(jm2_menu);
+        arrayDisplay.appendChild(jm3_menu);
 
     }
+<<<<<<< Updated upstream
     console.log(sheet_id_Array);
     var n = 0;
 
@@ -124,24 +128,27 @@ function create_mindmapbutton(sheet_id_Array, judge){
             arrayDisplay.appendChild(button); // ボタンを表示用の要素に追加
             n++;
         }       
+=======
+    for (var i = 0; i < sheet_id_Array.length; i++) {
+    
+        var button = document.createElement("button"); // 新しいボタン要素を作成
+        button.innerHTML = i + 1; // ボタンのテキストを配列の要素に設定
+        sheet_id = sheet_id_Array[i]["sheet_id"];
+
+        button.setAttribute("data-sheet_id", sheet_id);
+        button.setAttribute("data-content", sheet_id_Array[i]["content"]);
+        button.setAttribute("class", "button10");
+        button.setAttribute("onClick", "show_other_mindmap(this, "+sheet_id+");");
+        console.log("届いてるよー");
+
+        show_selected_sheet();
+        arrayDisplay.appendChild(button); // ボタンを表示用の要素に追加
+>>>>>>> Stashed changes
     }
-
-        var allbutton = document.createElement("button");
-        allbutton.setAttribute("id", "all_annotation");
-        allbutton.innerHTML = "全アノテーション参照";
-        allbutton.setAttribute("class", "button10");
-        arrayDisplay.appendChild(allbutton);
-
-        var closebutton = document.createElement("button");
-        closebutton.setAttribute("id", "close_button");
-        closebutton.innerHTML = "閉じる";
-        closebutton.setAttribute("class", "button10");
-        closebutton.setAttribute("onClick", "show_selected_sheet('off');")
-        arrayDisplay.appendChild(closebutton);
-
-
+   
 }
 
+<<<<<<< Updated upstream
 function hasSheetId(sheet_id) {
     var elements = document.querySelectorAll('[data-sheet_id]');
   
@@ -156,6 +163,8 @@ function hasSheetId(sheet_id) {
     return false;
   }
 
+=======
+>>>>>>> Stashed changes
 
 
 
