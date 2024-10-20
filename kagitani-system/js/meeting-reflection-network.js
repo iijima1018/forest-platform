@@ -419,6 +419,11 @@ class ForestMRN { // forestMRN: forest Meeting Reflection Network
         this.addNode(this.generateUniqueNumberText(), "newNode", "self-summary", this.latest_selected_node_info.x, this.latest_selected_node_info.y);
     }
 
+    addNewStep() {
+        this.addNode(this.generateUniqueNumberText(), "newNode", "self-summary", this.latest_selected_node_info.x, this.latest_selected_node_info.y);
+    }
+
+
     addmaterialNode(node_id, node_label){
         this.addNode(node_id, node_label, "material-content", this.latest_selected_node_info.x, this.latest_selected_node_info.y);
         console.log(this.latest_selected_node_info.x,this.latest_selected_node_info.y)
@@ -1553,6 +1558,10 @@ window.addEventListener('load', () => {
     $(`#mrnb_addNode`).on("click", e => {
         console.log("aaa");
         defaultForestMRN.addNewNode();
+    });
+    $(`#mrnb_addStep`).on("click", e => {
+        console.log("bbb");
+        defaultForestMRN.addNewStep();
     });
     $(`#mrnb_removeNode`).on("click", e => {
         defaultForestMRN.deleteNode();
