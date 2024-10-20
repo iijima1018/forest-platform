@@ -503,6 +503,58 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                         <input id="DecideLogicRelationButton" type="button" value="決定" onclick="DecideSlideLogicRelation_Click();">
                         <input id="DecideLogicRelationButton" type="button" value="キャンセル" onclick="CancelButton_Click('document_area_conmenu4')">
                     </div>
+                    <!--  kagitani　-->
+                    <div id="network_container" oncontextmenu="return false;" >
+                        <div id="utterance_area">
+                            <div id="rclick2">
+                                <div id="timedisplay"></div>
+                                <div id="rclick"></div>
+                            </div>
+                            <div id="utterance_area2">
+                            </div>
+                        </div>
+                        <div id="mynetwork2">
+                            <div id="buttoncluster">
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_addNode" value="目標追加" />
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_addStep" value="手順追加" />
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_removeNode" value="ノード削除" />
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_startEditEdge" value="エッジ追加" />
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_removeEdge" value="エッジ削除" />
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_ZoomIn" value="拡大" />
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_ZoomOut" value="縮小" />
+                            </div>
+                            <div id="network_conmenu">
+                                <ul>
+                                    <li><a href="javascript:void(0);" id="net_conmenu1">概念をつける</a></li>
+                                    <li><a href="javascript:void(0);" id="net_conmenu2">マインドマップと対応付ける</a></li>
+                                    <li><a href="javascript:void(0);" id="net_conmenu3" style="display:none">採用/棄却をつける</a></li>
+                                    <li><a href="javascript:void(0);" id="net_conmenu4">キャンセル</a></li>
+                                </ul>
+                            </div>
+                            <div id="labelselect">
+                                <select id="selectionlist" size="3">
+                                    <!-- いるやつあれば追加やけど未実装（研究活動オントロジー読み込みかな？） -->
+                                </select>
+                                <input type="button" value="選択完了" id="ontology_select">
+                            </div>
+                            <div id="recruitselect">
+                                <select id="recruitselectionlist">
+                                    <option value="採用">採用</option>
+                                    <option value="棄却">棄却</option>
+                                </select>
+                                <input type="button" value="選択完了" id="recruit_select">
+                            </div>
+                            <div id="mynetwork"></div>
+                        </div>
+                    </div>
+                    <!--  kagitani　-->
                     <!--  ここから大槻修正　-->
                     <div id="network_container" oncontextmenu="return false;" >
                         <div id="utterance_area">
@@ -552,8 +604,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             <div id="mynetwork"></div>
                         </div>
                     </div>
-                    <!--  ここから大槻修正　-->
-                    
                     <!--  ここまで大槻修正　-->
                 </div>
             </div><!--layout fin-->

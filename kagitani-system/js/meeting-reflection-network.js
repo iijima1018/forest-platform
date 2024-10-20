@@ -1520,6 +1520,7 @@ window.addEventListener('load', () => {
         defaultForestMRN = new ForestMRN("mynetwork", "load");
         uploadMeetingUtteranceXML();
         $('#mrnb_addNode').off('click');
+        $('#mrnb_addStep').off('click');
         $('#mrnb_removeNode').off('click');
         $('#mrnb_startEditEdge').off('click');
         $('#mrnb_removeEdge').off('click');
@@ -1527,6 +1528,9 @@ window.addEventListener('load', () => {
         $('#mrnb_ZoomOut').off('click');
         $(`#mrnb_addNode`).on("click", e => {
             defaultForestMRN.addNewNode();
+        });
+        $(`#mrnb_addStep`).on("click", e => {
+            defaultForestMRN.addNewStep();
         });
         $(`#mrnb_removeNode`).on("click", e => {
             defaultForestMRN.deleteNode();
