@@ -171,7 +171,7 @@ function show_node2(id,pid,str,cid,type,cname, sid, eid, psid){
 }
 
 //type_idを取得する関数
-async function get_typeid(class_name, type_name) {
+async function get_Typeid(class_name, type_name) {
     return new Promise((resolve, reject) => {
       $.ajax({
         url: "php/get_Typeid.php",
@@ -272,7 +272,7 @@ async function add_node(){
             try {
                 var type_name = "toi";
                 // get_typeid の非同期処理が完了するまで待つ
-                var type_id = await get_typeid("", type_name);
+                var type_id = await get_Typeid("", type_name);
             } catch (error) {
                 console.log("エラーが発生しました:", error);
             }
@@ -357,7 +357,7 @@ async function add_node(){
             try {
                 var type_name = "predict";
                 // get_typeid の非同期処理が完了するまで待つ
-                var type_id = await get_typeid("", type_name);
+                var type_id = await get_Typeid("", type_name);
             } catch (error) {
                 console.log("エラーが発生しました:", error);
             }
@@ -440,7 +440,7 @@ async function add_Anode_parentid(parent_id){
     try {
         var type_name = "answer";
         // get_typeid の非同期処理が完了するまで待つ
-        var type_id = await get_typeid("", type_name);
+        var type_id = await get_Typeid("", type_name);
     } catch (error) {
         console.log("エラーが発生しました:", error);
     }
@@ -551,7 +551,7 @@ async function add_Qnode(){
     try {
         var type_name = "toi";
         // get_typeid の非同期処理が完了するまで待つ
-        var type_id = await get_typeid("", type_name);
+        var type_id = await get_Typeid("", type_name);
       } catch (error) {
         console.log("エラーが発生しました:", error);
       }
@@ -660,7 +660,7 @@ async function add_Anode(node_class, node_type){
     //ノードのtype_idを取得
     try {
         // get_typeid の非同期処理が完了するまで待つ
-        var type_id = await get_typeid(node_class, node_type);
+        var type_id = await get_Typeid(node_class, node_type);
       } catch (error) {
         console.log("エラーが発生しました:", error);
       }
@@ -778,7 +778,7 @@ async function add_Pnode(){
     try {
         var type_name = "predict";
         // get_typeid の非同期処理が完了するまで待つ
-        var type_id = await get_typeid("", type_name);
+        var type_id = await get_Typeid("", type_name);
     } catch (error) {
         console.log("エラーが発生しました:", error);
     }
@@ -874,7 +874,7 @@ async function add_Cnode_parentid(parent_id,node_type){
 
     try {
         // get_typeid の非同期処理が完了するまで待つ
-        var type_id = await get_typeid("criticism", node_type);
+        var type_id = await get_Typeid("criticism", node_type);
       } catch (error) {
         console.log("エラーが発生しました:", error);
       }
@@ -964,7 +964,7 @@ async function add_Cnode(node_type){
 
     try {
         // get_typeid の非同期処理が完了するまで待つ
-        var type_id = await get_typeid("criticism", node_type);
+        var type_id = await get_Typeid("criticism", node_type);
       } catch (error) {
         console.log("エラーが発生しました:", error);
       }

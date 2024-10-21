@@ -96,7 +96,7 @@ function get_other_nodeid(){
 
 
 
-function add_Anode_from_other(node_class, node_type){
+async function add_Anode_from_other(node_class, node_type){
 
     var selected_node = _jm.get_selected_node();
 
@@ -136,6 +136,30 @@ function add_Anode_from_other(node_class, node_type){
             jmnode[j].setAttribute("type",node_type);
             jmnode[j].setAttribute("parent_id",parent_id);
 
+            try {
+                var type_name = async function() {
+                  return new Promise((resolve, reject) => {
+                    $.ajax({
+                      url: "php/get_Typeid.php",
+                      type: "POST",
+                      data: { class: node_class, type: node_type },
+                      success: function(response) {
+                        const result = JSON.parse(response);
+                        resolve(result); 
+                      },
+                      error: function(error) {
+                        console.log("エラー:", error);
+                        reject(error);
+                      }
+                    });
+                  });
+                };
+                // get_typeid の非同期処理が完了するまで待つ
+                var type_id = await get_Typeid("", type_name);
+              } catch (error) {
+                console.log("エラーが発生しました:", error);
+              }
+
             $.ajax({
 
                 url: "php/insert_node.php",
@@ -143,12 +167,12 @@ function add_Anode_from_other(node_class, node_type){
                 data: { insert : "node",
                         id : nodeid,
                         parent_id : parent_id,
-                        type : node_type,
+                        type : type_id['type_id'],
                         concept_id : p_concept,
                         x : jmnode[j].style.left,
                         y : jmnode[j].style.top,
                         content : jmnode[j].innerHTML,
-                        class : node_class },
+                    },
 
             });
 

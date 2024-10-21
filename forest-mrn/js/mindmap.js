@@ -120,7 +120,7 @@ function show_node(id,pid,str,cid,type,cname){
 
 
 //type_idを取得する関数
-async function get_typeid(class_name, type_name) {
+async function get_Typeid(class_name, type_name) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: "php/get_Typeid.php",
@@ -176,7 +176,7 @@ async function add_node(){
     try {
       var type_name = "toi";
       // get_typeid の非同期処理が完了するまで待つ
-      var type_id = await get_typeid("", type_name);
+      var type_id = await get_Typeid("", type_name);
     } catch (error) {
       console.log("エラーが発生しました:", error);
     }
@@ -325,7 +325,7 @@ async function add_Qnode(){
     try {
       var type_name = "toi";
       // get_typeid の非同期処理が完了するまで待つ
-      var type_id = await get_typeid("", type_name);
+      var type_id = await get_Typeid("", type_name);
     } catch (error) {
       console.log("エラーが発生しました:", error);
     }
@@ -445,7 +445,7 @@ async function add_Anode(){
     try {
       var type_name = "answer";
       // get_typeid の非同期処理が完了するまで待つ
-      var type_id = await get_typeid("", type_name);
+      var type_id = await get_Typeid("", type_name);
     } catch (error) {
       console.log("エラーが発生しました:", error);
     }
@@ -593,7 +593,7 @@ async function add_Pnode(){//マップへ反映ボタンでノードを追加す
   try {
     var type_name = p_type;
     // get_typeid の非同期処理が完了するまで待つ
-    var type_id = await get_typeid("", type_name);
+    var type_id = await get_Typeid("", type_name);
   } catch (error) {
     console.log("エラーが発生しました:", error);
   }
