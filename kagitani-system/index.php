@@ -517,8 +517,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             <div id="buttoncluster">
                                 <input type="button" class="meeting_reflectin_network_button"
                                        id="mrnb_addNode" value="目標追加" />
-                                <input type="button" class="meeting_reflectin_network_button"
-                                       id="mrnb_addStep" value="手順追加" />
+                                <!-- <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_addStep" value="手順追加" /> -->
                                 <input type="button" class="meeting_reflectin_network_button"
                                        id="mrnb_removeNode" value="ノード削除" />
                                 <input type="button" class="meeting_reflectin_network_button"
@@ -556,7 +556,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                     </div>
                     <!--  kagitani　-->
                     <!--  ここから大槻修正　-->
-                    <div id="network_container" oncontextmenu="return false;" >
+                    <!-- <div id="network_container" oncontextmenu="return false;" >
                         <div id="utterance_area">
                             <div id="rclick2">
                                 <div id="timedisplay"></div>
@@ -590,7 +590,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </div>
                             <div id="labelselect">
                                 <select id="selectionlist" size="3">
-                                    <!-- いるやつあれば追加やけど未実装（研究活動オントロジー読み込みかな？） -->
+                                    <!-- いるやつあれば追加やけど未実装（研究活動オントロジー読み込みかな？） 
                                 </select>
                                 <input type="button" value="選択完了" id="ontology_select">
                             </div>
@@ -603,7 +603,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </div>
                             <div id="mynetwork"></div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--  ここまで大槻修正　-->
                 </div>
             </div><!--layout fin-->

@@ -419,9 +419,9 @@ class ForestMRN { // forestMRN: forest Meeting Reflection Network
         this.addNode(this.generateUniqueNumberText(), "newNode", "self-summary", this.latest_selected_node_info.x, this.latest_selected_node_info.y);
     }
 
-    addNewStep() {
-        this.addNode(this.generateUniqueNumberText(), "newNode", "self-summary", this.latest_selected_node_info.x, this.latest_selected_node_info.y);
-    }
+    // addNewStep() {
+    //     this.addStep(this.generateUniqueNumberText(), "newNode", "self-summary", this.latest_selected_node_info.x, this.latest_selected_node_info.y);
+    // }
 
 
     addmaterialNode(node_id, node_label){
@@ -1525,7 +1525,7 @@ window.addEventListener('load', () => {
         defaultForestMRN = new ForestMRN("mynetwork", "load");
         uploadMeetingUtteranceXML();
         $('#mrnb_addNode').off('click');
-        $('#mrnb_addStep').off('click');
+        //$('#mrnb_addStep').off('click');
         $('#mrnb_removeNode').off('click');
         $('#mrnb_startEditEdge').off('click');
         $('#mrnb_removeEdge').off('click');
@@ -1534,9 +1534,9 @@ window.addEventListener('load', () => {
         $(`#mrnb_addNode`).on("click", e => {
             defaultForestMRN.addNewNode();
         });
-        $(`#mrnb_addStep`).on("click", e => {
-            defaultForestMRN.addNewStep();
-        });
+        // $(`#mrnb_addStep`).on("click", e => {
+        //     defaultForestMRN.addNewStep();
+        // });
         $(`#mrnb_removeNode`).on("click", e => {
             defaultForestMRN.deleteNode();
         });
@@ -1556,13 +1556,13 @@ window.addEventListener('load', () => {
     displayDiscussionMapData("utterance_area2", null); // 最新の議論内省マップの発話リストを表示
     // 内省マップ編集ボタンにイベント付与
     $(`#mrnb_addNode`).on("click", e => {
-        console.log("aaa");
+        console.log("aa");
         defaultForestMRN.addNewNode();
     });
-    $(`#mrnb_addStep`).on("click", e => {
-        console.log("bbb");
-        defaultForestMRN.addNewStep();
-    });
+    // $(`#mrnb_addStep`).on("click", e => {
+    //     console.log("bbb");
+    //     defaultForestMRN.addNewStep();
+    // });
     $(`#mrnb_removeNode`).on("click", e => {
         defaultForestMRN.deleteNode();
     });
