@@ -11,7 +11,7 @@ document.getElementById("selectmodebutton").addEventListener('click', function()
             window.location.href = "kii-system/select_sheet.php";
           }else if(selectmodeoption[i].value === "3"){
             // ここ変える必要あり
-            window.location.href = "kii-system/select_sheet.php";
+            window.location.href = "fujinaka-system/select_sheet.php";
           }
           return;
         }
