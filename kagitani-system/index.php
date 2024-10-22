@@ -503,6 +503,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                         <input id="DecideLogicRelationButton" type="button" value="決定" onclick="DecideSlideLogicRelation_Click();">
                         <input id="DecideLogicRelationButton" type="button" value="キャンセル" onclick="CancelButton_Click('document_area_conmenu4')">
                     </div>
+<<<<<<< HEAD
                     <!--  kagitani　-->
                     <div id="network_container" oncontextmenu="return false;" >
                         <div id="utterance_area">
@@ -555,6 +556,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                         </div>
                     </div>
                     <!--  kagitani　-->
+=======
+>>>>>>> parent of 19253be (手段ボタンを追加したいけど，ノードが追加されない)
                     <!--  ここから大槻修正　-->
                     <!-- <div id="network_container" oncontextmenu="return false;" >
                         <div id="utterance_area">
@@ -603,7 +606,13 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </div>
                             <div id="mynetwork"></div>
                         </div>
+<<<<<<< HEAD
                     </div> -->
+=======
+                    </div>
+                    <!--  ここから大槻修正　-->
+                    
+>>>>>>> parent of 19253be (手段ボタンを追加したいけど，ノードが追加されない)
                     <!--  ここまで大槻修正　-->
                 </div>
             </div><!--layout fin-->
