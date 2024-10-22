@@ -1147,26 +1147,27 @@ function ModeChangeButtonClick() {
     $('#document').hide();
     // $('#mind').show();\
   }else if (num == 1 ){
-
     $('#jsmind_container').show();
     $('#jsmind_container').css('width','calc(100vw - 350px)');
     $('#mind').css('height','90%');
     $('#document').hide();
     // $('#mind').show();
-    if(BeforeSelectModeNumber == 1){
+    if(BeforeSelectModeNumber == 0){
+      document.getElementById('network_container').style.display = "none";
+    }else if(BeforeSelectModeNumber == 2){
       $('#document_area').toggle('fast');
       $('#node_slide').toggle('fast');
       $('#ImageAddContent').toggle('fast');
       $('#presen_menu').toggle('fast');
       // $('#node_slide').toggle('fast');  
-    }else if(BeforeSelectModeNumber == 2){
+    }else if(BeforeSelectModeNumber == 3){
       $('#document_area').toggle('fast');
       $('#node_slide').toggle('fast');
       $('#ImageAddContent').toggle('fast');
       $('#presen_menu').toggle('fast');
       $('#document_slide').toggle('fast');
       //ここから大槻変更
-    }else if(BeforeSelectModeNumber == 3){
+    }else if(BeforeSelectModeNumber == 4){
       $('#network_container').toggle('fast');
       document.getElementById('feedback_area').style.display = "none";
       document.getElementById('xml_upload_area').style.display = "none";
@@ -1205,15 +1206,15 @@ function ModeChangeButtonClick() {
 
     // $('#document_area').css('width','620px');
     console.log(BeforeSelectModeNumber);
-    if(BeforeSelectModeNumber == 0){
+    if(BeforeSelectModeNumber == 1){
       $('#document_area').toggle('fast'); //資料作成箇所を表示
       $('#node_slide').toggle('fast');  //
       $('#ImageAddContent').toggle('fast');
       $('#presen_menu').toggle('fast'); //資料作成用のボタン
-    }else if(BeforeSelectModeNumber == 2){
+    }else if(BeforeSelectModeNumber == 3){
       $('#document_slide').toggle('fast');
       //ここから大槻変更
-    }else if(BeforeSelectModeNumber == 3){
+    }else if(BeforeSelectModeNumber == 4){
       $('#document_area').toggle('fast'); //資料作成箇所を表示
       $('#node_slide').toggle('fast');  //
       $('#ImageAddContent').toggle('fast');
@@ -1258,14 +1259,14 @@ function ModeChangeButtonClick() {
     $('.cspan').css('margin-bottom', '0');
     $('.tspan').css('margin-bottom', '0');
     $('.tspan').css('font-size', '20');
-    if(BeforeSelectModeNumber == 1){
+    if(BeforeSelectModeNumber == 2){
       $('#document_slide').toggle('fast');
     }else if(BeforeSelectModeNumber == 0){
       $('#document_area').toggle('fast'); //資料作成箇所を表示
       $('#node_slide').toggle('fast');  //
       $('#ImageAddContent').toggle('fast');
       //ここから大槻変更
-    }else if(BeforeSelectModeNumber == 3){
+    }else if(BeforeSelectModeNumber == 4){
       $('#document_area').toggle('fast'); //資料作成箇所を表示
       $('#node_slide').toggle('fast');  //
       $('#ImageAddContent').toggle('fast');

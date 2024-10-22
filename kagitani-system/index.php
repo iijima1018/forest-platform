@@ -517,8 +517,8 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             <div id="buttoncluster">
                                 <input type="button" class="meeting_reflectin_network_button"
                                        id="mrnb_addNode" value="目標追加" />
-                                <!-- <input type="button" class="meeting_reflectin_network_button"
-                                       id="mrnb_addStep" value="手順追加" /> -->
+                                <input type="button" class="meeting_reflectin_network_button"
+                                       id="mrnb_addNode" value="手順追加" /> 
                                 <input type="button" class="meeting_reflectin_network_button"
                                        id="mrnb_removeNode" value="ノード削除" />
                                 <input type="button" class="meeting_reflectin_network_button"
