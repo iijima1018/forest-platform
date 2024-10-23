@@ -26,7 +26,9 @@
 		require "connect_db.php";
 
 		$id = $_SESSION['USERID'];
-		$sql = "SELECT * FROM maps WHERE user_id = '$id' ORDER BY updated_at DESC";
+
+		$sql = "SELECT * FROM map_mode_link WHERE user_id = '$id' AND mode_id = 2 ORDER BY updated_at DESC";
+
 		if($result = $mysqli->query($sql)){
 			while($row = mysqli_fetch_assoc($result)){
 				echo"<p><label><input type='radio' name='map' value='".$row['id']."'>"  .$row['updated_at'].  "  "  .$row['name'].  "</label></p>";
@@ -67,9 +69,6 @@
 
 	// }　　なんで？
 		
-	function createSheet_Paper(){
-
-	}
 	/*select_sheet.phpからシートを新規作成する*/
 	function createSheet(){
 		
@@ -107,12 +106,12 @@
 			// error_log('paper_$sql不明なエラーです', 0);
 		}
 	
-	//php($result)のエラー処理
-	if($result2 == TRUE){
+		//php($result)のエラー処理
+		if($result2 == TRUE){
 			echo "true";
 			error_log('$result成功しています！'.$timestamp, 0);
 		}else if($result2 == FALSE){
-	  echo "false";
+	  		echo "false";
 			error_log($result2.'$result失敗です'.$mysqli->error, "3", "error_log.txt");
 			// error_log('失敗しました。'.mysqli_error($link), 0);
 		}else{
@@ -197,12 +196,20 @@
 		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
 		echo $_SESSION['MAPID'];
-		$sql = "DELETE FROM maps WHERE map_id = ".$_SESSION['MAPID'];
+		$sql = "UPDATE maps SET delete = 1 WHERE map_id = ".$_SESSION['MAPID']." ";
 		$result = $mysqli->query($sql);
 		if (!$result) {
 		     print('Error - SQLSTATE');
 		     exit();
 		 }
+
+		 $sql_mvd = "UPDATE map_versions SET disappeared_at = '".$updated_at."' WHERE map_id = ".$_SESSION['MAPID']." AND appeared_at = (select max(appeared_at) from (select appeared_at from map_versions) temp)";
+		$result_mvd = $mysqli->query($sql_mvd);
+		if (!$result_mvd) {
+			print('Error - SQLSTATE');
+			exit();
+		}
+
 		 header("Location: select_sheet.php");
 
 	}
@@ -211,7 +218,6 @@
 	function deletePaper(){
 		require "connect_db.php";
 
-		$deleted = 0;
 		$updated_at = date("Y-m-d H:i:s");
 		echo $_SESSION['PAPERID'];
 		$sql = "DELETE FROM papers WHERE id = ".$_SESSION['PAPERID'];
@@ -254,13 +260,13 @@ function show_user(){
 	// nishida 実験用後で直す
 	// $paper_id = $_SESSION["PAPERID"];
 	$paper_id = 15161151;
-	$sql = "SELECT * FROM maps WHERE paper_id = '$paper_id' ORDER BY updated_at DESC";
+	$sql = "SELECT * FROM map_mode_link WHERE paper_id = '$paper_id' AND mode_id = 2 ORDER BY updated_at DESC";
 	$array = array();
 	$result = $mysqli->query($sql);
 	if($result == TRUE){
 		echo" <option value='null'>ユーザを選択してください</option>";
 		while($row = mysqli_fetch_assoc($result)){
-			$map_id = $row['id'];
+			$map_id = $row['map_id'];
 			$user_id = $row['user_id'] ;
 			$user_sql = "SELECT name FROM users WHERE user_id = $user_id ";
 			$result_user_name = $mysqli->query($user_sql);

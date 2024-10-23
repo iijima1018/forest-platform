@@ -277,6 +277,8 @@ async function add_node(){
                 console.log("エラーが発生しました:", error);
             }
 
+            console.log(type_id);
+
             $.ajax({
 
                 url: "php/insert_node.php",
@@ -291,7 +293,7 @@ async function add_node(){
                         content : jmnode[i].innerHTML
                       },
                       success:function(result){
-                        console.log(result);
+                        console.log(jmnode[i].innerHTML);
                       },
                       error: function(error) {
                         console.log("エラー:", error);
@@ -375,7 +377,7 @@ async function add_node(){
                         content : jmnode[j].innerHTML
                       },
                       success:function(result){
-                        console.log(result);
+                        // console.log(result);
                       },
                       error: function(error) {
                         console.log("エラー:", error);

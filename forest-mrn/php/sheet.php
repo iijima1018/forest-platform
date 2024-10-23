@@ -150,15 +150,7 @@
 			exit();
 		}
 
-		// //hatakeyama mapsの削除（deleted_atに値を入れる）
-		// $sql_md = "UPDATE maps SET deleted_at = '".$updated_at."' WHERE map_id = ".$_SESSION['MAPID'];
-		// $result_md = $mysqli->query($sql_md);
-
-		// //hatakeyama map_versionsの削除（deleted_atに値を入れる）
-		// $sql_mvd = "UPDATE map_versions SET disappeared_at = '".$updated_at."' WHERE map_id = ".$_SESSION['MAPID']." AND appeared_at = (select max(appeared_at) from (select appeared_at from map_versions) temp)";
-		// $result_mvd = $mysqli->query($sql_mvd);
-
-		//  header("Location: select_sheet.php");
+		header("Location: select_sheet.php");
 
 	}
 
