@@ -121,7 +121,7 @@
 		//if($name == ""){
 
 			$sql1 = "INSERT INTO maps (map_id, user_id, name, paper_id, created_at, updated_at, deleted) 
-				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['sheetname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
+				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['mapname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
 			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
 
 			
@@ -170,7 +170,7 @@
 		//if($name == ""){
 
 			$sql1 = "INSERT INTO maps (map_id, user_id, name, paper_id, created_at, updated_at, deleted) 
-				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['sheetname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
+				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['mapname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
 			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
 
 			

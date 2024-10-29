@@ -48,7 +48,7 @@
 
 		//if($name == ""){
 
-			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted) VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."')";
+			$sql = "INSERT INTO sheets (id, user_id, created_at, name, updated_at, deleted) VALUES (".$_SESSION['SHEETID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['mapname']."', '".$created_at."','".$deleted."')";
 			if (!$result = $mysqli->query($sql)) {
 		      print('Error - SQLSTATE'. mysqli_error($link));
 		      exit();

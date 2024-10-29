@@ -54,7 +54,7 @@
 		//if($name == ""){
 
 			$sql1 = "INSERT INTO maps (map_id, user_id, name, created_at, updated_at, deleted) 
-				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['sheetname']."', '".$created_at."', '".$created_at."','".$deleted."')";			
+				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['mapname']."', '".$created_at."', '".$created_at."','".$deleted."')";			
 			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
 			
 			if (!$result = $mysqli->query($sql1)) {
@@ -67,13 +67,13 @@
 			}
 
 			// //hatakeyama mapsにINSERTする.
-			// $sql_m = "INSERT INTO maps (map_id, name, created_at, deleted_at, user_id) VALUES (".$_SESSION['MAPID'].", '".$_POST['sheetname']."', '".$created_at."', NULL, ".$_SESSION['USERID'].")";
+			// $sql_m = "INSERT INTO maps (map_id, name, created_at, deleted_at, user_id) VALUES (".$_SESSION['MAPID'].", '".$_POST['mapname']."', '".$created_at."', NULL, ".$_SESSION['USERID'].")";
 			// if (!$result = $mysqli->query($sql_m)) {
 		    //   print('Error - SQLSTATE'. mysqli_error($link));
 		    //   exit();
 		    // }
 			 
-			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['sheetname']."', '".$created_at."', NULL)";
+			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['mapname']."', '".$created_at."', NULL)";
 			if (!$result = $mysqli->query($sql_mv)) {
 		      print('Error - SQLSTATE'. mysqli_error($mysqli));
 		      exit();
@@ -102,14 +102,14 @@
 		$created_at = date("Y-m-d H:i:s");
 		$deleted = 0;
 
-		$sql = "INSERT INTO documents (id, user_id, created_at, name, updated_at, deleted) VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['sheetname']."', '".$created_at."','".$deleted."')";
+		$sql = "INSERT INTO documents (id, user_id, created_at, name, updated_at, deleted) VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$created_at."', '".$_POST['mapname']."', '".$created_at."','".$deleted."')";
 		if (!$result = $mysqli->query($sql)) {
 			print('Error - SQLSTATE'. mysqli_error($link));
 			exit();
 		}
 		
 		// //hatakeyama mapsにINSERTする.
-		// $sql_m = "INSERT INTO maps (map_id, name, created_at, deleted_at, user_id) VALUES (".$_SESSION['MAPID'].", '".$_POST['sheetname']."', '".$created_at."', NULL, ".$_SESSION['USERID'].")";
+		// $sql_m = "INSERT INTO maps (map_id, name, created_at, deleted_at, user_id) VALUES (".$_SESSION['MAPID'].", '".$_POST['mapname']."', '".$created_at."', NULL, ".$_SESSION['USERID'].")";
 		// if (!$result = $mysqli->query($sql_m)) {
 		//   print('Error - SQLSTATE'. mysqli_error($link));
 		//   exit();
