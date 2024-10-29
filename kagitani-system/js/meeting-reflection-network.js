@@ -1525,10 +1525,7 @@ window.addEventListener('load', () => {
         defaultForestMRN = new ForestMRN("mynetwork", "load");
         uploadMeetingUtteranceXML();
         $('#mrnb_addNode').off('click');
-<<<<<<< HEAD
         //$('#mrnb_addStep').off('click');
-=======
->>>>>>> parent of 19253be (手段ボタンを追加したいけど，ノードが追加されない)
         $('#mrnb_removeNode').off('click');
         $('#mrnb_startEditEdge').off('click');
         $('#mrnb_removeEdge').off('click');
@@ -1537,12 +1534,9 @@ window.addEventListener('load', () => {
         $(`#mrnb_addNode`).on("click", e => {
             defaultForestMRN.addNewNode();
         });
-<<<<<<< HEAD
         // $(`#mrnb_addStep`).on("click", e => {
         //     defaultForestMRN.addNewStep();
         // });
-=======
->>>>>>> parent of 19253be (手段ボタンを追加したいけど，ノードが追加されない)
         $(`#mrnb_removeNode`).on("click", e => {
             defaultForestMRN.deleteNode();
         });

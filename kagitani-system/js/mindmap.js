@@ -1140,16 +1140,12 @@ function ModeChangeButtonClick() {
   target = document.getElementById("output");
 
   if(num == 0){
-    $('.content_delete').css('visibility', 'visible');
-    $('.simple_btn').css('visibility', 'visible');
-    $('.cspan').css('font-size', '15');
-    $('.cspan').css('border', 'White');
-    $('.cspan').css('margin-bottom', '5');
-    $('.tspan').css('font-size', '20');
-  
-    $('.inquiry_area').css('height', '25vw');
-    $('#jsmind_container').css('width','40vw');//横幅を全体の40％で表示？
-    $('#jsmind_nav').css('width','40vw');
+    $('#network_container').toggle('fast');
+    $('#network_container').css('display','flex');
+    $('#jsmind_container').css('width','calc((100vw - 350px)*0.4)');
+    $('#mind').css('height','90%');
+    $('#document').hide();
+    // $('#mind').show();\
   }else if (num == 1 ){
     $('#jsmind_container').show();
     $('#jsmind_container').css('width','calc(100vw - 350px)');
