@@ -357,7 +357,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             <div id="utterance_area2">
                             </div>
                         </div>
-                        <div id="mynetwork2">
+                        <div id="myobject">
                             <div id="buttoncluster">
                                 <input type="button" class="meeting_reflectin_network_button"
                                        id="mrnb_addNode" value="目標追加" />

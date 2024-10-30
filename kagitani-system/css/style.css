@@ -1107,6 +1107,17 @@ select[name="mttime_list"] {
 	float:left;
 	display: none;
 }
+#myobject{
+	width: calc((100vw - 350px)*0.45);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 5px #c5c3c3;
+	background:#fff;
+	overflow: auto;
+}
+
 /*ネットワーク*/
 #network_container{
 	width: calc((100vw - 350px)*0.6);

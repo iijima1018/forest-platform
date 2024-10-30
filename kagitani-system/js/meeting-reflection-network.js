@@ -506,7 +506,8 @@ class ForestMRN { // forestMRN: forest Meeting Reflection Network
             this.selectId = params.nodes[0];
             const pointerX = params.pointer.DOM.x;
             const pointerY = params.pointer.DOM.y;
-            const mynetPosition = document.getElementById("mynetwork2").getBoundingClientRect();
+            //const mynetPosition = document.getElementById("mynetwork2").getBoundingClientRect();
+            const mynetPosition = document.getElementById("myobject").getBoundingClientRect();
             this.BoxDisplay.x = pointerX + mynetPosition.left + 20;
             this.BoxDisplay.y = pointerY + mynetPosition.top + 20;
             NetworkMenu.style.left = this.BoxDisplay.x;
