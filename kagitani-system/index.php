@@ -88,10 +88,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         <script type="text/javascript">
         window.onbeforeunload = function(e) {e.returnValue = "ページを離れようとしています。よろしいですか？";}
         </script>
-
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-
     </head>
     <body id="all">
         <!---        タイトルメニューStart                 -->
@@ -102,20 +98,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                 <span><input class="button1" type="submit" name="sheetbtn" value="シート選択画面へ"></span>
             </form>
         </div>
-        <!-- <form name="return" method="POST">
-             <div id="session">
-             <span class="session_php">
-             <?php //echo("ユーザ名：");
-             //echo($_SESSION["USERNAME"]);
-             //echo("  　シート名：");
-             //getSheetname();?>
-             </span>
-             <span>
-             <a href="" class="modal"><input type="button" id="js-show-popup" class="button9"  onclick="OperateDescription();" value="操作確認"></a>
-             <input class="button7" type="button" onclick="save_node();" value="DBの接続確認">
-             </span>
-             </div>
-             </form> -->
         <!---          タイトルメニューFinish              -->
 
         <!--      タブメニュー Start        -->
@@ -134,63 +116,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                 <!-- プレゼンモードのサイドメニュー -->
                 <div id="document">
                     <div id="advice_frame" class="searchFrame">
-                        <!-- 事前設定 -->
-                        <!-- <div id='pre_set' style="margin-top: 120px;">
-                             <center><input type="button" value="事前設定" onclick="ShowModel()" style="width:100px; height:50px; background-color:#FFDBE1;"></center>
-                             </div> -->
-                        <!-- 発表の場の選択 -->
-                        <!-- <div id='set_audience'>
-                             <h2>発表の場の選択</h2>
-                             <form name="form1">
-                             <input type="radio" class="aradio" value="1" opt="卒業論文発表" checked>卒業論文発表<br>
-                             <input type="radio" class="aradio" value="2" opt="修士論文発表">修士論文発表<br> -->
-                        <!-- <input type="radio" class="aradio" value="1" opt="夏季成果報告会（学士/未システム）" checked>夏季成果報告会（学士/未システム）<br>
-                             <input type="radio" class="aradio" value="2" opt="夏季成果報告会（学士/システム）">夏季成果報告会（学士/システム）<br>
-                             <input type="radio" class="aradio" value="3" opt="夏季成果報告会（修士1年）">夏季成果報告会（修士1年）<br>
-                             <input type="radio" class="aradio" value="4" opt="夏季成果報告会（修士2年）">夏季成果報告会（修士2年）<br>
-                             <input type="radio" class="aradio" value="5" opt="夏季成果報告会（博士）">夏季成果報告会（博士）<br> -->
-                        <!-- <input class="simple_btn" type="button" name="set" value="NEXT" onclick="audience_xmlLoad()"/> -->
-                        <!-- <input class="simple_btn" type="button" name="set" value="NEXT" onclick="SetAudience()"/> -->
-                        <!-- </form>
-                             </div> -->
-                        <!-- 学習者による聴衆モデルの選択 -->
-                        <!-- <div id='set_model'>
-                             <h2>目標の設定</h2>
-                             <form name="form1">
-                             <div id="set_perspective">
-                             </div>
-
-
-                             <div id="input_pluralBox"> -->
-                        <!-- <div id="input_plural">
-                             <input type="text" class="form-control" placeholder="〇〇は述べられているか">
-                             <input type="button" value="－" class="del pluralBtn">
-                             </div> -->
-                        <!-- </div>
-                             <input class="add pluralBtn" class="simple_btn" type="button" value="＋"><br> -->
-                        <!-- その他 -->
-                        <!-- 折りたたみ展開ボタン -->
-                        <!-- <div onclick="obj=document.getElementById('menu1').style; obj.display=(obj.display=='none')?'block':'none';">
-                             <a style="cursor:pointer;">▼ その他(クリックで展開)</a>
-                             </div> -->
-                        <!--// 折りたたみ展開ボタン -->
-                        <!-- ここから先を折りたたむ -->
-                        <!-- <div id="menu1" style="display:none;clear:both;">
-                             </div> -->
-                        <!--// ここまでを折りたたむ -->
-
-                        <!-- <input class="simple_btn" type="button" name="set" value="OK" onclick="SetModel();" style="margin-top: 20px"/>
-                             <input class="simple_btn" type="button" name="set" value="発表の場の選択に戻る" onclick="Back_Select()" style="margin-top: 20px"/>
-                             </form>
-                             </div> -->
-                        <!-- 選択中の聴衆モデル-->
-                        <!-- <div id='set_final'>
-                             <h2>設定目標</h2>
-                             </div>
-                             <div id='edit_model'>
-                             <input class="simple_btn" type="button" value="目標の設定に戻る" onclick="Edit_Model();"/>
-                             </div> -->
-                        <!-- shimizu 論理関係確認用 -->
                         <p id=now_logic_relation> </p>
                     </div>
                 </div><!--document fin -->
@@ -270,15 +195,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                     <div id='document_slide'>
                         <input id="finish_btn" class="presen-btn" type="button" value="資料作成終了" onclick="OutputFileS();">
                     </div>
-                    <!-- <input type="file" id="myFile" style="display: none">
-                         <button class="button4" onclick="selectImage()">画像追加</button> -->
-                    <!-- <div>
-                         <form method="post" enctype="multipart/form-data">
-                         <input type="file" name="image" required>
-                         <button type="submit" name="myFile">保存</button>
-                         </form>
-                         </div> -->
-                    
                 </div> <!-- mind fin -->
 
                 <!--サイドメニュー　finish-->
@@ -287,11 +203,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         </div>
 
         <div class="checkbox">
-            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick="CheckClick()"> -->
-            <!-- <input type="checkbox" id="checkbox" class="checkbox" name="check" onclick=""> -->
-            <!-- onclick="CheckClick()" -->
-            <!-- <label for="checkbox" data-on-label="" data-off-label=""></label> -->
-            <!-- <span class="checkbox_text">【資料作成】</span> -->
             <form name="target_mode" action="">
                 <select class="cp_ipselect2 cp_sl02"name="Select1">
                     <option>目標管理モード</option>
@@ -356,86 +267,19 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
 
                             <!-- ここから清水さん１ -->
                             <div id ="presen_menu">
-                                <!-- 【Slide】 -->
-                                <!-- <button class="button4" onclick="MakeSlide();">スライド追加</button> -->
-                                <!-- <button class="button4" onclick="MakeNewPage();">ページ追加</button> -->
-                                <!-- <button class="button4" onclick="AddImage();">画像追加</button> -->
-                                <!-- <input type="file" id="myFile" style="display: none">
-                                     <button class="button4" onclick="selectImage()">画像追加</button> -->
-                                <!-- <button class="button4" type="submit" name="selectImage">画像追加</button> -->
-
                                 <button class="button4" onclick="NewContent_Append('問い')">問いノード追加</button>
                                 <button class="button4" onclick="NewContent_Append('答え')">答えノード追加</button>
                                 <button class="button4" onclick="add_Confirm();">マップ側へ反映</button>
                                 <button class="button4" onclick="Unreflected_node();">未反映ノード</button>
                                 <!-- <button class="button4" onclick="CheckNodeAllLogicRelation();">関係性の一覧</button> -->
                                 <button class="button4" onclick="DeleteLogicRelation();">関係性の解消</button>
-                                <!-- <button class="button4" id="input_file" onclick="InputFile();">
-                                     資料再現
-                                     </button> -->
-                                <!-- <button class="button4" onclick="Get_SlideRank();Get_ContentRank();Get_SlideTitle();">
-                                     スライド保存
-                                     </button> -->
-                                <!-- 【Export】
-                                     <button class="button4" onclick="OutputScenario();">
-                                     test
-                                     </button> -->
-                                <!-- <button class="button4" onclick="OutputFile()">
-                                     test
-                                     </button> -->
                             </div> <!-- presen_menu fin -->
-                            <!--  <div id ="presen_menu"> -->
-                            <!-- 【Slide】 -->
-                            <!-- <button class="button4" onclick="MakeSlide();">
-                                 スライド追加
-                                 </button> -->
-                            <!-- <button class="button4" onclick="MakeNewPage();">
-                                 ページ追加
-                                 </button> -->
-                            <!-- <button class="button4" onclick="NewContent_Append('問い')">
-                                 問いノード追加
-                                 </button>
-                                 <button class="button4" onclick="NewContent_Append('答え')">
-                                 答えノード追加
-                                 </button>
-                                 <button class="button4" onclick="add_Confirm();">
-                                 マップ側へ反映
-                                 </button> -->
-                            <!-- <button class="button4" id="input_file" onclick="InputFile();">
-                                 資料再現
-                                 </button> -->
-                            <!-- <button class="button4" onclick="Get_SlideRank();Get_ContentRank();Get_SlideTitle();">
-                                 スライド保存
-                                 </button> -->
-                            <!-- <button class="button4" onclick="Unreflected_node();">
-                                 未反映ノード
-                                 </button>
-                                 <button class="button4" onclick="CheckAllLogicRelation();">
-                                 関係性の一覧
-                                 </button>
-                                 <button class="button4" onclick="DeleteLogicRelation();">
-                                 関係性の解消
-                                 </button>-->
-                            <!-- <button class="button4" onclick="recommend_xmlLoad();">
-                                 test
-                                 </button> -->
-                            <!-- 【Export】
-                                 <button class="button4" onclick="OutputScenario();">
-                                 test
-                                 </button> -->
-                            <!-- <button class="button4" onclick="OutputFile()">
-                                 test
-                                 </button> -->
-                            <!--</div>  presen_menu fin-->
                         </div>
                     </div><!--jsmind_nav fin-->
 
-                    <!-- <div class="Menu">Menu</div> -->
                     <div id="jsmind_container" oncontextmenu="return false;">
                         <div id="mindmap_conmenu">
                             <ul>
-                                <!-- <li><a href="javascript:void(0);" onClick="SetPurpose()">スライドを作成する</a></li> -->
-                                <!-- <li><a href="javascript:void(0);" onClick="NodeAppend()">資料に追加する</a></li> -->
                                 <li><a href="javascript:void(0);" onClick="ItemAddDocument()">項目として追加する</a></li>
                                 <li><a href="javascript:void(0);" onClick="NodeAppendLogic()">内容として追加する</a></li>
                                 <li><a href="javascript:void(0);" onClick="VersionSpread();RecordRelation()">ノードの更新をマップ全体に波及させる</a></li><!--hatakeyama-->
@@ -540,7 +384,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </div>
                             <div id="labelselect">
                                 <select id="selectionlist" size="3">
-                                    <!-- いるやつあれば追加やけど未実装（研究活動オントロジー読み込みかな？） -->
                                 </select>
                                 <input type="button" value="選択完了" id="ontology_select">
                             </div>
@@ -590,7 +433,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                             </div>
                             <div id="labelselect">
                                 <select id="selectionlist" size="3">
-                                    <!-- いるやつあれば追加やけど未実装（研究活動オントロジー読み込みかな？） 
+                                     いるやつあれば追加やけど未実装（研究活動オントロジー読み込みかな？） 
                                 </select>
                                 <input type="button" value="選択完了" id="ontology_select">
                             </div>
@@ -607,30 +450,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                     <!--  ここまで大槻修正　-->
                 </div>
             </div><!--layout fin-->
-            <!--tab01 fin-->
-
-            <!-- 　　　tab02メニュー　　　　　-->
-            <!--  過去のマインドマップを表示する　-->
-            <!-- <div id="tab02">
-                 <div id="layout">
-                 <div id="jsmind_nav2">
-                 <div class ="mt_timing">
-                 <select name="mttime_list" id="mttime_list"> -->
-            <!-- ログイン中のユーザのMT時間を取得する -->
-            <!--  -->
-            <!-- </select>
-                 <input type="button" class="ShowCurrentMapButton" onClick="ShowCurrentMap();" value="現在のマップを表示">
-                 <input type="button" class="HideCurrentMapButton" onClick="HideCurrentMap();" value="現在のマップを隠す">
-                 </div>
-                 </div> -->
-            <!-- 過去のマインドマップを表示する部分 -->
-            <!-- <div id="jsmind_container2"> -->
-            <!-- <div>過去のオントロジー</div> -->
-            <!-- </div> -->
-            <!-- 現在のマインドマップのコピー
-                 <div id="jsmind_container3"></div>
-                 </div>
-                 </div> -->
 
             <!--  tab04メニュー　　hatakeyama　　-->
             <div id="tab04">
@@ -644,13 +463,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                                 </select>
                                 <input id="past_time_select_button" type="button" value="選択完了">
                             </div>
-                            
-                            <!-- <form id ="reco_peri" class="ref_peri" method="post" acion="">
-                                <input id="od" name="start_date" type="datetime-local"/>
-                                <span><input id="pastmap_btn" type="button" onclick="GetPastMap($('#reco_period').val());" value="過去のマップを表示" /></span>
-                                <input type="button" class="ShowCurrentMapButton" onClick="ShowCurrentMap();" value="現在のマップを表示">
-                                <input type="button" class="HideCurrentMapButton" onClick="HideCurrentMap();" value="現在のマップを隠す">
-                            </form> -->
                             <!-- ここまで大槻修正 -->
                         </div>
                     </div>
@@ -719,19 +531,6 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
         <!-- メインメニュー　Finish -->
 
         <div id="macro_feedback_area">
-            <!-- <h3>【聴衆モデルによる助言】</h3>
-                 <p>「学術的な意義が述べられているか」を主題の一つとして選択していますが，「どのような新規性がありますか？」の問いには，答える必要はありませんか？</p>
-                 <textarea placeholder='回答' style='width:300px; height:100px;'></textarea>
-                 </br></br></br>
-                 <p>今回の発表では分野外の聴衆から理解を得る必要があります．「学術的な意義が述べられているか」を主題に設定する必要はありませんか？</p>
-                 <input type="button" value="必要ある"><input type="button" value="必要ない">
-                 <br>
-                 <p>「どのような新規性がありますか？」の問いには，答える必要はありませんか？</p>
-                 <textarea placeholder='回答' style='width:300px; height:100px;'></textarea>
-                 <br><br></br>
-                 <button>終了</button>
-                 <p>　</p> -->
-
         </div>
 
 
