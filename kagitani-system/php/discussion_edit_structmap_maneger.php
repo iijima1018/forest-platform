@@ -10,8 +10,8 @@
 	$purpose = $_POST['purpose'];  //記録(record)か，更新(update)か，削除(delete)か
 
 	$result_struct_start_time = $mysqli->query("SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC");
-	echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC";
-	echo ",  ";
+	// echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC";
+	// echo ",  ";
 
 	if ($result_struct_start_time) {
 		$row = $result_struct_start_time->fetch_assoc();
@@ -23,8 +23,8 @@
 
     $struct_start_time = $row['MAX(start_time)'];  //更新するときの議論内省開始時間
 
-	echo ",                       ";
-	echo "PHP,";
+	// echo ",                       ";
+	// echo "PHP,";
 
 	if($purpose === 'record'){
 		$record_thing = $_POST['record_thing'];  //nodeか，edgeか，ネットワークとマインドマップの繋がり(connection)，オントロジーとのつながり(ontology)，採用不採用(recruit)

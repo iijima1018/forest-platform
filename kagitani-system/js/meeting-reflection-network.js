@@ -1530,12 +1530,20 @@ window.addEventListener('load', () => {
         defaultForestMRN = new ForestMRN("mynetwork", "load");
         uploadMeetingUtteranceXML();
         $('#mrnb_addNode').off('click');
+        $('#mrnb_addGoal').off('click');
+        $('#mrnb_addStep').off('click');
         $('#mrnb_removeNode').off('click');
         $('#mrnb_startEditEdge').off('click');
         $('#mrnb_removeEdge').off('click');
         $('#mrnb_ZoomIn').off('click');
         $('#mrnb_ZoomOut').off('click');
         $(`#mrnb_addNode`).on("click", e => {
+            defaultForestMRN.addNewNode();
+        });
+        $(`#mrnb_addGoal`).on("click", e => {
+            defaultForestMRN.addNewNode();
+        });
+        $(`#mrnb_addStep`).on("click", e => {
             defaultForestMRN.addNewNode();
         });
         $(`#mrnb_removeNode`).on("click", e => {
@@ -1558,6 +1566,14 @@ window.addEventListener('load', () => {
     // 内省マップ編集ボタンにイベント付与
     $(`#mrnb_addNode`).on("click", e => {
         console.log("aaa");
+        defaultForestMRN.addNewNode();
+    });
+    $(`#mrnb_addGoal`).on("click", e => {
+        console.log("goal追加できた");
+        defaultForestMRN.addNewNode();
+    });
+    $(`#mrnb_addStep`).on("click", e => {
+        console.log("step追加できた");
         defaultForestMRN.addNewNode();
     });
     $(`#mrnb_removeNode`).on("click", e => {

@@ -10,5 +10,8 @@ utterance_area→sl_area
 
 mynetworkは議事録エリアらしい．
 
+mrnb_addNodeを使って，mrnb_addStep追加．
+mrnb_addNode→mrnb_addGoal
+
 ２画面になった時の挙動を変えたい．
 自己内対話モードを全て左側に移動させて，目標管理画面を右側に新しく作りたい．
