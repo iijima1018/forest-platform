@@ -10,8 +10,21 @@
 	$purpose = $_POST['purpose'];  //記録(record)か，更新(update)か，削除(delete)か
 
 	$result_struct_start_time = $mysqli->query("SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC");
-	$row = $result_struct_start_time->fetch_assoc();
+	echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC";
+	echo ",  ";
+
+	if ($result_struct_start_time) {
+		$row = $result_struct_start_time->fetch_assoc();
+		$struct_start_time = $row['MAX(start_time)'];
+		echo $struct_start_time;  // 正しい値を出力
+	} else {
+		echo "Error: " . $mysqli->error;  // エラーがある場合のメッセージ
+	}
+
     $struct_start_time = $row['MAX(start_time)'];  //更新するときの議論内省開始時間
+
+	echo ",                       ";
+	echo "PHP,";
 
 	if($purpose === 'record'){
 		$record_thing = $_POST['record_thing'];  //nodeか，edgeか，ネットワークとマインドマップの繋がり(connection)，オントロジーとのつながり(ontology)，採用不採用(recruit)
@@ -75,11 +88,11 @@
 			if($select_update === 'point'){
 				$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
 				$mysqli->query("UPDATE network_nodes_activity SET node_x = '$node_update_thing1', node_y = '$node_update_thing2', updated_time = '$timestamp' 
-				                WHERE user_id = '$user_id' AND sheet_id = '$sheet_id' AND node_id = '$node_id' AND updated_time >= '$struct_start_time'");
+				                WHERE user_id = '$user_id' AND sheet_id = '$sheet_id' AND node_id = '$node_id' ");
 			}else if($select_update === 'label'){
 				$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
 				$mysqli->query("UPDATE network_nodes_activity SET label = '$node_update_thing1', updated_time = '$timestamp' 
-				WHERE user_id = '$user_id' AND sheet_id = '$sheet_id' AND node_id = '$node_id' AND updated_time >= '$struct_start_time'");
+				WHERE user_id = '$user_id' AND sheet_id = '$sheet_id' AND node_id = '$node_id' ");
 			}
 		}
 
@@ -87,7 +100,7 @@
 		$delete_thing = $_POST['delete_thing'];
 		if($delete_thing === 'node'){
 			$node_id = $_POST["node_id"];
-			$mysqli->query("DELETE FROM network_nodes_activity WHERE user_id = '$user_id' AND sheet_id = '$sheet_id' AND node_id = '$node_id' AND updated_time >= '$struct_start_time'");
+			$mysqli->query("DELETE FROM network_nodes_activity WHERE user_id = '$user_id' AND sheet_id = '$sheet_id' AND node_id = '$node_id' ");
 		}else if($delete_thing === 'edge'){
 			$edge_start = $_POST["edge_start"];          //エッジ開始
 			$edge_end = $_POST["edge_end"]; 

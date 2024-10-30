@@ -1005,7 +1005,15 @@ class RecordForestMRN{
                 update_thing : 'node',
                 node_update_thing1 : node_update_thing1,
                 node_update_thing2: node_update_thing2},
+            success: function(a){
+                console.log(a);
+                console.log("owari");
+            },
+            error: function(e){
+                console.log(e);
+            }
         });
+        
     }
 
     //ノードの削除(完了)
