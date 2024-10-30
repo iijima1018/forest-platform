@@ -1517,7 +1517,8 @@ const recordMeetingUtteranceNodes = (utterances) => {
 window.addEventListener('load', () => {
 
     // 初期表示時点でいくつかのオブジェクトを非表示にする
-    document.getElementById("network_container").style.display="none";
+    // document.getElementById("network_container").style.display="none";
+    document.getElementById("object_container").style.display="none";
     defaultForestMRN = new ForestMRN("mynetwork", "load");
     setUploadedXMLData("meetingUtteranceXmlFileUploader", "uploaded_meeting_utterance_xml_concent_display_area");
     $("#discussion_log_xml_file_upload_button").on("click", () => {

@@ -5,7 +5,7 @@ mindmap.js...目標管理シートの画面
 meeting-reflection-network.js...ノードとかの管理画面．
 
 mynetwork2→goal_tab
-network_container→goal_container
+network_container→object_container
 utterance_area→sl_area
 
 ２画面になった時の挙動を変えたい．

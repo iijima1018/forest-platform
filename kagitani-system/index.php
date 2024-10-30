@@ -348,7 +348,7 @@ if(isset($_POST["myFileImage"])){ //imageFileImage
                         <input id="DecideLogicRelationButton" type="button" value="キャンセル" onclick="CancelButton_Click('document_area_conmenu4')">
                     </div>
                     <!--  kagitani　-->
-                    <div id="network_container" oncontextmenu="return false;" >
+                    <div id="object_container" oncontextmenu="return false;" >
                         <div id="utterance_area">
                             <div id="rclick2">
                                 <div id="timedisplay"></div>

@@ -1094,7 +1094,19 @@ select[name="mttime_list"] {
 	overflow: auto;
 	float:left;
 }
-
+/*kagitani*/
+#object_container{
+	width: calc((100vw - 350px)*0.6);
+	min-width: 300px;
+	height:70vh;
+	min-height: 450px;
+	margin-bottom:2vh;
+	border:solid 5px #c5c3c3;
+	background:#fff;
+	overflow: hidden;
+	float:left;
+	display: none;
+}
 /*ネットワーク*/
 #network_container{
 	width: calc((100vw - 350px)*0.6);

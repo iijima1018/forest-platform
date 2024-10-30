@@ -1140,8 +1140,8 @@ function ModeChangeButtonClick() {
   target = document.getElementById("output");
 
   if(num == 0){
-    $('#network_container').toggle('fast');
-    $('#network_container').css('display','flex');
+    $('#object_container').toggle('fast');
+    $('#object_container').css('display','flex');
     $('#jsmind_container').css('width','calc((100vw - 350px)*0.4)');
     $('#mind').css('height','90%');
     $('#document').hide();
