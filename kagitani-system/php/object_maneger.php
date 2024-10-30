@@ -5,24 +5,13 @@
 	require("connect_db.php");
 	date_default_timezone_set('Asia/Tokyo');
 
-	if (!isset($_SESSION['USERID'])) {
-		die("Error: USERID is not set in the session.");
-	}
-	
-	if (!isset($_SESSION['SHEETID'])) {
-		die("Error: SHEETID is not set in the session.");
-	}
-
 	$user_id = $_SESSION['USERID'];      //ユーザID
-    $sheet_id = $_SESSION['SHEETID'];    //シートID
+    $object_map_id = $_SESSION['SHEETID'];    //シートID
 	$purpose = $_POST['purpose'];  //記録(record)か，更新(update)か，削除(delete)か
 
-
-	echo "Sheet ID: " . htmlspecialchars($sheet_id) . "<br>";
-
-	$result_struct_start_time = $mysqli->query("SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND object_map_id= $sheet_id");
-	// echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC";
-	// echo ",  ";
+	$result_struct_start_time = $mysqli->query("SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND object_map_id = $sheet_id ");
+	echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND object_map_id = $sheet_id ORDER BY start_time DESC";
+	echo ",  ";
 
 	if ($result_struct_start_time) {
 		$row = $result_struct_start_time->fetch_assoc();
@@ -39,16 +28,22 @@
 
 	if($purpose === 'record'){
 		$record_thing = $_POST['record_thing'];  //nodeか，edgeか，ネットワークとマインドマップの繋がり(connection)，オントロジーとのつながり(ontology)，採用不採用(recruit)
-		//ノードの記録
+		//目標ノードの記録
 		if($record_thing === 'node'){
-			$node_id = $_POST["node_id"]; //ノードID
-			$label = $_POST["label"];    //ラベル
+			$object_node_id = $_POST["node_id"]; //ノードID
+			//$label = $_POST["label"];    //ラベル
 			$x = $_POST["x"];  //x座標
 			$y = $_POST["y"];  //y座標
-			$node_type = $_POST["node_type"];
+			$object_nodes_type_id = 0;
 			$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
-			$mysqli->query("INSERT INTO object_nodes(object_node_id, object_map_id, x, y, object_nodes_type_id, created_at, updated_at, deleted) 
-                VALUES ('$object_node_id', '$object_map_id', '$x', '$y', '$object_nodes_type_id', '$timestamp','$timestamp', 0)");
+			$mysqli->query("INSERT INTO object_nodes(object_node_id, object_map_id, label, x, y, object_nodes_type_id, created_at, updated_at, deleted) 
+                VALUES ('$object_node_id', '$object_map_id', '$x', '$y', 'NewNodes', '$object_nodes_type_id', '$timestamp','$timestamp', 0)");
+            echo $sql; // 生成されたSQL文を表示
+            if ($mysqli->query($sql)) {
+                echo "PHP, 目標ノード追加成功"; // 成功メッセージ
+            } else {
+                echo "エラー: " . $mysqli->error; // エラーメッセージ
+            }
 		}else if($record_thing === 'edge'){
 			//エッジの記録
 			$edge_start = $_POST["edge_start"];          //エッジ開始
