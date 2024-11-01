@@ -6,20 +6,20 @@
 	date_default_timezone_set('Asia/Tokyo');
 
 	$user_id = $_SESSION['USERID'];      //ユーザID
-    $object_map_id = $_SESSION['SHEETID'];    //シートID
+    $sheet_id = $_SESSION['SHEETID'];    //シートID
 	$purpose = $_POST['purpose'];  //記録(record)か，更新(update)か，削除(delete)か
 
-	$result_struct_start_time = $mysqli->query("SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND object_map_id = $sheet_id ");
-	echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND object_map_id = $sheet_id ORDER BY start_time DESC";
+	$result_struct_start_time = $mysqli->query("SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC");
+	echo "SELECT MAX(start_time) FROM network_sturuct_activity WHERE user_id = $user_id AND sheet_id = $sheet_id ORDER BY start_time DESC";
 	echo ",  ";
 
 	if ($result_struct_start_time) {
-		$row = $result_struct_start_time->fetch_assoc();
-		$struct_start_time = $row['MAX(start_time)'];
-		echo $struct_start_time;  // 正しい値を出力
-	} else {
-		echo "Error: " . $mysqli->error;  // エラーがある場合のメッセージ
-	}
+        $row = $result_struct_start_time->fetch_assoc();
+        $struct_start_time = $row['MAX(start_time)'];
+        echo $struct_start_time;
+    } else {
+        echo "Error: " . $mysqli->error;
+    }
 
     $struct_start_time = $row['MAX(start_time)'];  //更新するときの議論内省開始時間
 
@@ -36,9 +36,13 @@
 			$y = $_POST["y"];  //y座標
 			$object_nodes_type_id = 0;
 			$timestamp = date("Y-m-d H:i:s") . "." . substr(explode(".", (microtime(true) . ""))[1], 0, 3);
-			$mysqli->query("INSERT INTO object_nodes(object_node_id, object_map_id, label, x, y, object_nodes_type_id, created_at, updated_at, deleted) 
-                VALUES ('$object_node_id', '$object_map_id', '$x', '$y', 'NewNodes', '$object_nodes_type_id', '$timestamp','$timestamp', 0)");
+			// SQLクエリを定義し、$sqlに代入
+            $sql = "INSERT INTO object_nodes(object_node_id, object_map_id, label, x, y, object_nodes_type_id, created_at, updated_at, deleted) 
+                    VALUES ('$object_node_id', '$sheet_id', 'NewNodes', '$x', '$y', '$object_nodes_type_id', '$timestamp', '$timestamp', 0)";
+
             echo $sql; // 生成されたSQL文を表示
+
+            // クエリを実行
             if ($mysqli->query($sql)) {
                 echo "PHP, 目標ノード追加成功"; // 成功メッセージ
             } else {
