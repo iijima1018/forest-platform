@@ -239,7 +239,7 @@ async function add_node(){
                         content : jmnode[i].innerHTML
                       },
                       success:function(result){
-                        console.log(result);
+                        if(result){ console.log(result);}
                       },
                       error: function(error) {
                         console.log("エラー:", error);
@@ -345,7 +345,7 @@ async function add_Qnode(){
               url: "php/insert_node.php",
               type: "POST",
               data: { insert : "node",
-                      id : thisId,
+                      id : nodeid,
                       parent_id : parent_id,
                       type : type_id['type_id'],
                       concept_id : jmnode[i].getAttribute("concept_id"),
@@ -353,13 +353,13 @@ async function add_Qnode(){
                       y : jmnode[i].style.top,
                       content : jmnode[i].innerHTML
                     },
-                    success:function(result){
-                      console.log(result);
-                    },
-                    error: function(error) {
-                      console.log("エラー:", error);
-                      reject(error);
-                    }
+              success:function(result){
+                if(result){ console.log(result);}
+              },
+              error: function(error) {
+                console.log("エラー:", error);
+                reject(error);
+              }
             });
 
             // hatakeyama 「問いノード追加」ボタン
@@ -439,8 +439,6 @@ async function add_Anode(){
     var topic = 'New Node';
     var node = _jm.add_node(selected_node, nodeid, topic);
 
-    var jmnode = document.getElementsByTagName("jmnode");
-
     //ノードのtype_idを取得
     try {
       var type_name = "answer";
@@ -449,6 +447,8 @@ async function add_Anode(){
     } catch (error) {
       console.log("エラーが発生しました:", error);
     }
+
+    var jmnode = document.getElementsByTagName("jmnode");
 
     for(var i=0; i<jmnode.length; i++){
 
@@ -472,7 +472,7 @@ async function add_Anode(){
               url: "php/insert_node.php",
               type: "POST",
               data: { insert : "node",
-                      id : thisId,
+                      id : nodeid,
                       parent_id : parent_id,
                       type : type_id['type_id'],
                       concept_id : p_concept,
@@ -481,7 +481,7 @@ async function add_Anode(){
                       content : jmnode[j].innerHTML
                     },
                     success:function(result){
-                      console.log(result);
+                      if(result){ console.log(result);}
                     },
                     error: function(error) {
                       console.log("エラー:", error);
@@ -601,6 +601,7 @@ async function add_Pnode(){//マップへ反映ボタンでノードを追加す
 
   if(p_type == 'answer'){//答えの場合
           var selected_node = _jm.get_selected_node();
+
           for(key in selected_node){
               if(key == "id"){
                   var parent_id = selected_node[key];
@@ -620,14 +621,16 @@ async function add_Pnode(){//マップへ反映ボタンでノードを追加す
           }
           for(var j=0; j<jmnode.length; j++){
               if(nodeid == jmnode[j].getAttribute("nodeid")){
+
                   jmnode[j].setAttribute("concept_id",p_concept);
                   jmnode[j].setAttribute("type","answer");
                   jmnode[j].setAttribute("parent_id",parent_id);
+
                   $.ajax({
                     url: "php/insert_node.php",
                     type: "POST",
                     data: { insert : "node",
-                            id : thisId,
+                            id : nodeid,
                             parent_id : parent_id,
                             type : type_id['type_id'],
                             concept_id : p_concept,
@@ -635,13 +638,13 @@ async function add_Pnode(){//マップへ反映ボタンでノードを追加す
                             y : jmnode[j].style.top,
                             content : jmnode[j].innerHTML
                           },
-                          success:function(result){
-                            console.log(result);
-                          },
-                          error: function(error) {
-                            console.log("エラー:", error);
-                            reject(error);
-                          }
+                    success:function(result){
+                      if(result){ console.log(result);}
+                    },
+                    error: function(error) {
+                      console.log("エラー:", error);
+                      reject(error);
+                    }
                   });
                   //yoshioka登録　追加ボタンより答えを追加したこと
                   //渡す情報（ノードID，親ノードID，操作，テキスト，法造コンセプトID，タイプ，primary）
@@ -693,7 +696,7 @@ async function add_Pnode(){//マップへ反映ボタンでノードを追加す
                     url: "php/insert_node.php",
                     type: "POST",
                     data: { insert : "node",
-                            id : thisId,
+                            id : nodeid,
                             parent_id : parent_id,
                             type : type_id['type_id'],
                             concept_id : p_concept_id,
@@ -701,13 +704,13 @@ async function add_Pnode(){//マップへ反映ボタンでノードを追加す
                             y : jmnode[i].style.top,
                             content : jmnode[i].innerHTML
                           },
-                          success:function(result){
-                            console.log(result);
-                          },
-                          error: function(error) {
-                            console.log("エラー:", error);
-                            reject(error);
-                          }
+                    success:function(result){
+                      if(result){ console.log(result);}
+                    },
+                    error: function(error) {
+                      console.log("エラー:", error);
+                      reject(error);
+                    }
                   });
                   //yoshioka登録　追加ボタンより自作の問いを追加したこと
                   //渡す情報（ノードID，親ノードID，操作，テキスト，法造コンセプトID，タイプ，primary）

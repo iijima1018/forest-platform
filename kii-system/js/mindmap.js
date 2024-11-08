@@ -183,7 +183,6 @@ async function get_Typeid(class_name, type_name) {
         },
         error: function(error) {
           console.log("エラー:", error);
-          reject(error);
         }
       });
     });
@@ -211,11 +210,11 @@ async function add_node(){
 
     //マップ上に新しく追加した問いノードの内容取得
     var toiId = document.getElementById(this.id);
-    var topic = toiId.innerHTML;
+    var topic_toi = toiId.innerHTML;
 
     //マップ上に問いノード追加
     //jsmind.jsのadd_node関数
-    var node = _jm.add_node(parent_node, thisId, topic);
+    var node = _jm.add_node(parent_node, thisId, topic_toi);
 
     //問い一覧から選択した問いの概念ID取得
     parent_concept_id = this.parentNode.className;
@@ -268,6 +267,10 @@ async function add_node(){
 
         if(thisId == jmnode[i].getAttribute("nodeid")){
 
+            var concept_id = jmnode[i].getAttribute("concept_id");
+            var x = jmnode[i].style.left;
+            var y = jmnode[i].style.top;
+            
             //ノードのtype_idを取得
             try {
                 var type_name = "toi";
@@ -277,8 +280,6 @@ async function add_node(){
                 console.log("エラーが発生しました:", error);
             }
 
-            console.log(type_id);
-
             $.ajax({
 
                 url: "php/insert_node.php",
@@ -287,17 +288,16 @@ async function add_node(){
                         id : thisId,
                         parent_id : parent_id,
                         type : type_id['type_id'],
-                        concept_id : jmnode[i].getAttribute("concept_id"),
-                        x : jmnode[i].style.left,
-                        y : jmnode[i].style.top,
-                        content : jmnode[i].innerHTML
+                        concept_id : concept_id,
+                        x : x,
+                        y : y,
+                        content : topic_toi
                       },
                       success:function(result){
-                        console.log(jmnode[i].innerHTML);
+                        if(result){ console.log(result);}
                       },
                       error: function(error) {
                         console.log("エラー:", error);
-                        reject(error);
                       }
             });
 
@@ -308,7 +308,7 @@ async function add_node(){
                               parent_id,
                               "add",
                               "New Node",
-                              jmnode[i].getAttribute("concept_id"),
+                              concept_id,
                               "toi",
                               jsMind.util.uuid.newid()
                              );
@@ -316,8 +316,8 @@ async function add_node(){
              Record_activities(thisId,
                                 parent_id,
                                 "edit",
-                                jmnode[i].innerHTML,
-                                jmnode[i].getAttribute("concept_id"),
+                                topic_toi,
+                                concept_id,
                                 "toi",
                                 jsMind.util.uuid.newid()
                                );
@@ -340,8 +340,8 @@ async function add_node(){
     // 以下，子ノードとして予測ノード追加 nishida
     var parent_id = thisId; //追加した問いノード
     var nodeid = jsMind.util.uuid.newid();//idの生成
-    var topic = '＊あなたの解釈';
-    var node = _jm.add_node(parent_id, nodeid, topic);
+    var topic_pre = '＊あなたの解釈';
+    var node = _jm.add_node(parent_id, nodeid, topic_pre);
 
     var jmnode = document.getElementsByTagName("jmnode");
 	var p_concept = parent_concept_id;
@@ -354,6 +354,9 @@ async function add_node(){
             jmnode[j].setAttribute("concept_id",p_concept);
             jmnode[j].setAttribute("type","predict");
             jmnode[j].setAttribute("parent_id",parent_id);
+
+            var x = jmnode[j].style.left;
+            var y = jmnode[j].style.top;
 
             //ノードのtype_idを取得
             try {
@@ -372,25 +375,24 @@ async function add_node(){
                         parent_id : parent_id,
                         type : type_id['type_id'],
                         concept_id : p_concept,
-                        x : jmnode[j].style.left,
-                        y : jmnode[j].style.top,
-                        content : jmnode[j].innerHTML
+                        x : x,
+                        y : y,
+                        content : topic_pre
                       },
                       success:function(result){
-                        // console.log(result);
+                        if(result){ console.log(result);}
                       },
                       error: function(error) {
                         console.log("エラー:", error);
-                        reject(error);
                       }
-              });
+            });
 
             //yoshioka登録　追加ボタンより答えを追加したこと
             //渡す情報（ノードID，親ノードID，操作，テキスト，法造コンセプトID，タイプ，primary）
             Record_activities(nodeid,
                               parent_id,
                               "add",
-                              jmnode[j].innerHTML,
+                              topic_pre,
                               p_concept,
                               "predict",
                               jsMind.util.uuid.newid()
@@ -421,7 +423,6 @@ async function add_node(){
 //答えノード追加ボタンで答えノードを追加する
 async function add_Anode_parentid(parent_id){
     
-   
     var parent_id = parent_id;
     var nodeid = jsMind.util.uuid.newid();//idの生成
     // console.log("node");
@@ -432,11 +433,10 @@ async function add_Anode_parentid(parent_id){
     obj.index = nodeid;
     obj.id = parent_id;
     array.push(obj);
-    console.log(array);
     // nishida わからない
     var node = _jm.add_node(parent_id, nodeid, topic);
-    console.log("node");
-    console.log(node);
+
+    var jmnode = document.getElementsByTagName("jmnode");
 
     //ノードのtype_idを取得
     try {
@@ -446,10 +446,6 @@ async function add_Anode_parentid(parent_id){
     } catch (error) {
         console.log("エラーが発生しました:", error);
     }
-
-    
-
-    var jmnode = document.getElementsByTagName("jmnode");
 
     for(var i=0; i<jmnode.length; i++){
 
@@ -487,11 +483,10 @@ async function add_Anode_parentid(parent_id){
                         content : jmnode[j].innerHTML
                         },
                         success:function(result){
-                        console.log(result);
+                        if(result){ console.log(result);}
                         },
                         error: function(error) {
                         console.log("エラー:", error);
-                        reject(error);
                         }
                 });
 
@@ -545,7 +540,6 @@ async function add_Qnode(){
     var nodeid = jsMind.util.uuid.newid();//idの生成
     var topic = 'New Node';
     var node = _jm.add_node(parent_node, nodeid, topic);
-    console.log(jmnode)
 
     var jmnode = document.getElementsByTagName("jmnode");
 
@@ -580,11 +574,10 @@ async function add_Qnode(){
                       content : jmnode[i].innerHTML
                     },
                     success:function(result){
-                      console.log(result);
+                      if(result){ console.log(result);}
                     },
                     error: function(error) {
                       console.log("エラー:", error);
-                      reject(error);
                     }
             });
 
@@ -593,7 +586,7 @@ async function add_Qnode(){
             Record_activities(nodeid,
                               parent_id,
                               "add",
-                              jmnode[i].innerHTML,
+                              topic,
                               jmnode[i].getAttribute("concept_id"),
                               "toi",
                               jsMind.util.uuid.newid()
@@ -663,9 +656,9 @@ async function add_Anode(node_class, node_type){
     try {
         // get_typeid の非同期処理が完了するまで待つ
         var type_id = await get_Typeid(node_class, node_type);
-      } catch (error) {
+    } catch (error) {
         console.log("エラーが発生しました:", error);
-      }
+    }
 
     for(var i=0; i<jmnode.length; i++){
 
@@ -694,16 +687,15 @@ async function add_Anode(node_class, node_type){
                         parent_id : parent_id,
                         type : type_id['type_id'],
                         concept_id : p_concept,
-                        x : jmnode[i].style.left,
-                        y : jmnode[i].style.top,
-                        content : jmnode[i].innerHTML
+                        x : jmnode[j].style.left,
+                        y : jmnode[j].style.top,
+                        content : jmnode[j].innerHTML,
                       },
                       success:function(result){
-                        console.log(result);
+                        if(result){ console.log(result);}
                       },
                       error: function(error) {
                         console.log("エラー:", error);
-                        reject(error);
                       }
               });
 
@@ -816,11 +808,10 @@ async function add_Pnode(){
                         content : jmnode[j].innerHTML
                       },
                       success:function(result){
-                        console.log(result);
+                        if(result){ console.log(result);}
                       },
                       error: function(error) {
                         console.log("エラー:", error);
-                        reject(error);
                       }
               });
 
@@ -884,7 +875,6 @@ async function add_Cnode_parentid(parent_id,node_type){
     var parent_id = parent_id;
     var nodeid = jsMind.util.uuid.newid();//idの生成
     var topic = '<select name="change_criticism2" id="s_criticism_node2"><optgroup label="批評の観点（タグ）付与"><option value="criticism">批評の観点追加</option>          <option value="evaluation">価値判断</option><optgroup label="----L評価"><option value="e_1">---L有用性</option><option value="e_2">---L新規性</option> <option value="e_3">---L信頼性</option>                   </optgroup>              <option value="objection">意見</option> <optgroup label="----L意見"> <option value="o_1">---L反論</option><option value="o_2">---L改善策</option><option value="o_3">---L代替案</option></optgroup><option value="modification">問題点</option><optgroup label="----L問題点"><option value="m_1">---L語の妥当性</option><option value="m_2">---L証拠の十分生</option><option value="m_3">---L論理の整合性</option></optgroup></optgroup></select>'
-    console.log(topic);
     var node = _jm.add_node(parent_id, nodeid, topic);
 
     var jmnode = document.getElementsByTagName("jmnode");
@@ -923,11 +913,10 @@ async function add_Cnode_parentid(parent_id,node_type){
                         content : jmnode[j].innerHTML,
                     },
                     success:function(result){
-                      console.log(result);
+                      if(result){ console.log(result);}
                     },
                     error: function(error) {
                       console.log("エラー:", error);
-                      reject(error);
                     }
 
             });
@@ -937,7 +926,7 @@ async function add_Cnode_parentid(parent_id,node_type){
             Record_activities(nodeid,
                               parent_id,
                               "add",
-                              jmnode[j].innerHTML,
+                              topic,
                               p_concept,
                               node_type,
                               jsMind.util.uuid.newid()
@@ -982,7 +971,7 @@ async function add_Cnode(node_type){
         }
 
     }
-    topic = '<select name="change_criticism2" id="s_criticism_node2"><optgroup label="批評の観点（タグ）付与"><option value="criticism">批評の観点追加</option>          <option value="evaluation">価値判断</option><optgroup label="----L評価"><option value="e_1">---L有用性</option><option value="e_2">---L新規性</option> <option value="e_3">---L信頼性</option>                   </optgroup>              <option value="objection">意見</option> <optgroup label="----L意見"> <option value="o_1">---L反論</option><option value="o_2">---L改善策</option><option value="o_3">---L代替案</option></optgroup><option value="modification">問題点</option><optgroup label="----L問題点"><option value="m_1">---L語の妥当性</option><option value="m_2">---L証拠の十分生</option><option value="m_3">---L論理の整合性</option></optgroup></optgroup></select>'
+    var topic = '<select name="change_criticism2" id="s_criticism_node2"><optgroup label="批評の観点（タグ）付与"><option value="criticism">批評の観点追加</option>          <option value="evaluation">価値判断</option><optgroup label="----L評価"><option value="e_1">---L有用性</option><option value="e_2">---L新規性</option> <option value="e_3">---L信頼性</option>                   </optgroup>              <option value="objection">意見</option> <optgroup label="----L意見"> <option value="o_1">---L反論</option><option value="o_2">---L改善策</option><option value="o_3">---L代替案</option></optgroup><option value="modification">問題点</option><optgroup label="----L問題点"><option value="m_1">---L語の妥当性</option><option value="m_2">---L証拠の十分生</option><option value="m_3">---L論理の整合性</option></optgroup></optgroup></select>'
 
     var nodeid = jsMind.util.uuid.newid();//idの生成
    
@@ -1024,11 +1013,10 @@ async function add_Cnode(node_type){
                         content : jmnode[j].innerHTML,
                     },
                     success:function(result){
-                      console.log(result);
+                      if(result){ console.log(result);}
                     },
                     error: function(error) {
                       console.log("エラー:", error);
-                      reject(error);
                     }
 
             });
@@ -1038,7 +1026,7 @@ async function add_Cnode(node_type){
             Record_activities(nodeid,
                               parent_id,
                               "add",
-                              jmnode[j].innerHTML,
+                              topic,
                               p_concept,
                               node_type,
                               jsMind.util.uuid.newid()

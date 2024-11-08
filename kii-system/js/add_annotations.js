@@ -401,6 +401,9 @@ async function add_Qnode2(){
           jmnode[i].setAttribute("parent_id",parent_id);
           jmnode[i].className = "";
 
+          var x = jmnode[i].style.left;
+          var y = jmnode[i].style.top;
+
           try {
             var type_name = "toi";
             var class_name = "question";
@@ -419,12 +422,19 @@ async function add_Qnode2(){
                       parent_id : parent_id,
                       type : type_id['type_id'],
                       concept_id : "",
-                      x : jmnode[i].style.left,
-                      y : jmnode[i].style.top,
-                      content : jmnode[i].innerHTML,
+                      x : x,
+                      y : y,
+                      content : topic,
                     },
+                    success:function(result){
+                      if(result){ console.log(result);}
+                    },
+                    error: function(error) {
+                      console.log("エラー:", error);
+                    }
 
           });
+          console.log(jmnode[i].innerHTML);
 
           //yoshioka登録　追加ボタンより自作の問いを追加したこと
           //渡す情報（ノードID，親ノードID，操作，テキスト，法造コンセプトID，タイプ，primary）
@@ -471,6 +481,9 @@ async function add_Qnode2(){
             jmnode[j].setAttribute("type","predict");
             jmnode[j].setAttribute("parent_id",parent_id);
 
+            var x = jmnode[j].style.left;
+            var y = jmnode[j].style.top;
+
             try {
                 var type_name = "predict";
                 // get_typeid の非同期処理が完了するまで待つ
@@ -488,10 +501,16 @@ async function add_Qnode2(){
                         parent_id : parent_id,
                         type : type_id['type_id'],
                         concept_id : p_concept,
-                        x : jmnode[j].style.left,
-                        y : jmnode[j].style.top,
-                        content : jmnode[j].innerHTML,
+                        x : x,
+                        y : y,
+                        content : topic,
                     },
+                    success:function(result){
+                      if(result){ console.log(result);}
+                    },
+                    error: function(error) {
+                      console.log("エラー:", error);
+                    }
 
             });
 
@@ -531,6 +550,14 @@ async function add_Qnode2(){
 
 //答えノード追加ボタンで答えノードを追加する
 async function add_Anode2(node_type){
+
+    try {
+        var type_name = node_type;
+        // get_typeid の非同期処理が完了するまで待つ
+        var type_id = await get_Typeid("", type_name);
+    } catch (error) {
+        console.log("エラーが発生しました:", error);
+    }
 
   var selected_node = _jm.get_selected_node();
 
@@ -574,13 +601,7 @@ async function add_Anode2(node_type){
           jmnode[j].setAttribute("type",node_type);
           jmnode[j].setAttribute("parent_id",parent_id);
 
-          try {
-            var type_name = node_type;
-            // get_typeid の非同期処理が完了するまで待つ
-            var type_id = await get_Typeid("", type_name);
-          } catch (error) {
-            console.log("エラーが発生しました:", error);
-          }
+          
 
           $.ajax({
 

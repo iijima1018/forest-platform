@@ -83,6 +83,7 @@
 		$deleted = 0;
 		$paper_id = rand();
 		$map_mode_link = rand();
+		$map_version = rand();
 		$mode_id = 2; //論文読解モード
 		
 		// $paper_content = "asdgan"; //nishida
@@ -134,6 +135,12 @@
 				exit();
 			}
 
+			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, scenario_title, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['mapname']."', NULL, '".$created_at."', NULL)";
+			if (!$result = $mysqli->query($sql_mv)) {
+				print('Error - SQLSTATE'. mysqli_error($link));
+				exit();
+			}
+
 			header("Location: index.php");
 
 	
@@ -164,6 +171,7 @@
 		$paper_id = $_SESSION["PAPERID"];	
 		$paper_content = $_SESSION["paper_content"]; //nishida
 		$map_mode_link = rand();
+		$map_version = rand();
 		$mode_id = 2; //論文読解モード
 
 	
@@ -173,13 +181,21 @@
 				VALUES (".$_SESSION['MAPID'].", ".$_SESSION['USERID'].", '".$_POST['mapname']."', '".$paper_id."', '".$created_at."', '".$created_at."','".$deleted."')";			
 			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
 
-			
-			if (!$result = $mysqli->query($sql1)) {
-		      print('Error - SQLSTATE'. mysqli_error($link));
+			$result1 = $mysqli->query($sql1);
+			if (!$result1) {
+		      print('Error - SQLSTATE1'. mysqli_error($link));
 		      exit();
 		    }
-			if (!$result = $mysqli->query($sql2)) {
-				print('Error - SQLSTATE'. mysqli_error($link));
+
+			$result2 = $mysqli->query($sql2);
+			if (!$result2) {
+				print('Error - SQLSTATE2'. mysqli_error($link));
+				exit();
+			}
+
+			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, scenario_title, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['mapname']."', NULL, '".$created_at."', NULL)";
+			if (!$result = $mysqli->query($sql_mv)) {
+				print('Error - SQLSTATE3'. mysqli_error($mysqli));
 				exit();
 			}
 

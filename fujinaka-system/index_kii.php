@@ -119,7 +119,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                     疑問ノード追加
                   </button>
                   
-                  <button class="button4" id="s_interpretation" onclick="add_Anode('konkyo','konkyo');">
+                  <button class="button4" id="s_interpretation" onclick="add_Anode('answer','konkyo');">
                    根拠ノード追加
                   </button>
                   <button class="button4" id="s_interpretation" onclick="add_Anode('predict','predict');">

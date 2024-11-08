@@ -119,7 +119,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
                     疑問ノード追加
                   </button>
                     
-                  <button class="button4" id="s_interpretation" onclick="add_Anode('konkyo','konkyo');">
+                  <button class="button4" id="s_interpretation" onclick="add_Anode('answer','konkyo');">
                     根拠ノード追加
                   </button>
                   <button class="button4" id="s_interpretation" onclick="add_Anode('predict','predict');">
@@ -612,7 +612,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
               
               <!-- 他者のマインドマップを表示する部分 -->
               <!-- 現在のマインドマップのコピー -->
-              <div id="jsmind_container_cr3" oncontextmenu="return false;"></div>
+              <div id="jsmind_container3" oncontextmenu="return false;"></div>
               <!-- <div id="#paper_container"> </div> -->
               <div id="paper_area" oncontextmenu="return false;"></div>
              
@@ -633,7 +633,7 @@ if(isset($_POST["logout"])){ //logoutボタンが押された
             </div>
 
               <!--<div>他者のマップ</div>-->
-              <div id="jsmind_container_cr2" oncontextmenu="return false;"></div>
+              <div id="jsmind_container2" oncontextmenu="return false;"></div>
             
 
             <div id="mindmap_conmenu_someone">

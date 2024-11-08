@@ -58,11 +58,11 @@
 			$sql2 = "INSERT INTO map_mode_links (id, map_id, mode_id) VALUES (".$map_mode_link.", ".$_SESSION['MAPID'].", ".$mode_id.")";
 			
 			if (!$result = $mysqli->query($sql1)) {
-		      print('Error - SQLSTATE'. mysqli_error($mysqli));
+		      print('Error - SQLSTATE1'. mysqli_error($mysqli));
 		      exit();
 		    }
 			if (!$result = $mysqli->query($sql2)) {
-				print('Error - SQLSTATE'. mysqli_error($mysqli));
+				print('Error - SQLSTATE2'. mysqli_error($mysqli));
 				exit();
 			}
 
@@ -73,11 +73,11 @@
 		    //   exit();
 		    // }
 			 
-			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['mapname']."', '".$created_at."', NULL)";
+			$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, scenario_title, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['mapname']."', NULL, '".$created_at."', NULL)";
 			if (!$result = $mysqli->query($sql_mv)) {
-		      print('Error - SQLSTATE'. mysqli_error($mysqli));
-		      exit();
-		    }
+				print('Error - SQLSTATE3'. mysqli_error($mysqli));
+				exit();
+			}
 
 			header("Location: index.php");
 
@@ -99,6 +99,7 @@
 		date_default_timezone_set('Asia/Tokyo');
 
 		$_SESSION["MAPID"] = rand();
+		$map_version = rand();
 		$created_at = date("Y-m-d H:i:s");
 		$deleted = 0;
 
@@ -115,8 +116,8 @@
 		//   exit();
 		// }
 
-		//hatakeyama map_versionsにver.1をINSERTする.
-		$sql_mv = "INSERT INTO map_versions (id, map_id, appeared_at, disappeared_at, type, updated_reason) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$created_at."', NULL, 'new', NULL)";
+		
+		$sql_mv = "INSERT INTO map_versions (map_version_id, map_id, name, scenario_title, appeared_at, disappeared_at) VALUES ($map_version, '".$_SESSION['MAPID']."', '".$_POST['mapname']."', NULL, '".$created_at."', NULL)";
 		if (!$result = $mysqli->query($sql_mv)) {
 		  print('Error - SQLSTATE'. mysqli_error($link));
 		  exit();
