@@ -51,7 +51,7 @@
 		echo json_encode($node_id_array);
 
 	}else if($_POST["val"] == "node_id"){
-		$sql = "SELECT * FROM nodes WHERE id = '".$_POST["node_id"]."'";
+		$sql = "SELECT * FROM node_latest WHERE node_id = '".$_POST["node_id"]."'";
 		$result = $mysqli->query($sql);
 
 		if(!$result){

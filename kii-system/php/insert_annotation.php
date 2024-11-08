@@ -15,7 +15,7 @@
     $type = $_POST["type"];
     $paper_content = $_POST["content"];
 	$node_id= $_POST["node_id"];
-	$sql = "SELECT parent_id FROM nodes WHERE id ='$node_id'";
+	$sql = "SELECT parent_id FROM node_latest WHERE node_id ='$node_id'";
 	$parent_id = $mysqli->query($sql);
 
 	if($result = $mysqli->query($sql)){

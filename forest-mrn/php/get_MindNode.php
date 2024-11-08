@@ -13,7 +13,7 @@ $map_id = $_SESSION["MAPID"];//"102774749"; //
 //タイムゾーンの設定
 date_default_timezone_set('Asia/Tokyo');
 
-// $sql = "SELECT scenario_title FROM maps WHERE map_id='$map_id'";
+// $sql = "SELECT scenario_title FROM maps WHERE id='$map_id'";
 $sql = "SELECT * FROM nodes WHERE map_id='$map_id' AND deleted='0'";
 
 $data = array();
