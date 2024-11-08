@@ -214,9 +214,10 @@
 
 	//マップver更新理由の追加
 	}else if($_POST["data"] == "map_reason"){
+		$id = rand();
 		$text = $_POST["text"];
 		$map_version_id = $_POST["map_version_id"];
-		$sql = "UPDATE map_versions SET updated_reason = '".$text."' WHERE id = '".$map_version_id."'";
+		$sql = "INSERT INTO map_version_reasons(id, map_version_id, reason) VALUE (".$id.", ".$map_version_id.", '".$text."')";
 		$result = $mysqli->query($sql);
 
 	//今までにeditしたことあるか確認
@@ -360,7 +361,7 @@
 	}else if($_POST["data"] == "create_sheet"){
 		
 		//mapの名前を取得
-		$sql_get = "SELECT name FROM maps WHERE user_id = ".$_SESSION['USERID']." AND id = ".$_SESSION['MAPID'];
+		$sql_get = "SELECT name FROM maps WHERE user_id = ".$_SESSION['USERID']." AND map_id = ".$_SESSION['MAPID'];
 		if($result_get = $mysqli->query($sql_get)) {
       		while($row = mysqli_fetch_assoc($result_get)){
 				$name = $row['name'];
